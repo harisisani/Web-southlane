@@ -19,6 +19,5 @@ jobs:
           ftp-server: ftp.southlaneanimalhospital.com
           ftp-username: websiteadmin@southlaneanimalhospital.com
           ftp-password: Programmer@12345
-          protocol: ftps
           port: 21
           
