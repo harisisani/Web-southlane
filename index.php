@@ -101,7 +101,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                <ul class="nav navbar-nav page-scroll">
-                  <li class="active"><a href="#page-top">Homer</a></li>
+                  <li class="active"><a href="#page-top">Homers</a></li>
                   <li><a href="#services">Services</a></li>
                   <li><a href="#about">About</a></li>
                   <li><a href="#gallery">Gallery</a></li>
