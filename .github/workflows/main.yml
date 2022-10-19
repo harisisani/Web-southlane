@@ -1,16 +1,21 @@
-on: push
-name: 🚀 Deploy website on push
+name: auto deployment on cpanel
+
+on:
+  push:
+    branches: [main]
+
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.2
-      with:
-        server: ftp.southlaneanimalhospital.com
-        username: websiteadmin@southlaneanimalhospital.com
-        password: Programmer@12345
+      - uses: actions/checkout@v2.1.0
+        with:
+          fetch-depth: 2
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: ftp.southlaneanimalhospital.com
+          ftp-username: websiteadmin@southlaneanimalhospital.com
+          ftp-password: Programmer@12345
