@@ -17,5 +17,5 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
           ftp-server: ftp.southlaneanimalhospital.com
-          ftp-username: testing@southlaneanimalhospital.com
+          ftp-username: websiteadmin@southlaneanimalhospital.com
           ftp-password: Programmer@12345

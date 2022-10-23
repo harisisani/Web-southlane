@@ -191,16 +191,27 @@
 	   <div style="margin-bottom: 50px;" class="container">
 		  <div class="row">
 			 <!-- item 2-->
-			 <div class="col-md-12 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+       <div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+				<div style="width:100%;height:100%" class="img-wrapper">
+					<img style="width: 100%;" src="./img/offers/discount-ad-1.png" alt="">
+				</div>
+				</p>
+			 </div>
+       <div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
 				<div style="width:100%;height:100%" class="img-wrapper">
 					<video style="max-width:100%;" controls poster="img/package.jpg" controls>
 						<source src="img/new-pkg.mp4" type="video/mp4">
 						Your browser does not support the video tag.
 					</video>
 				</div>
-				<!-- <p class="margin">Lets talk through some ideas, look at some pictures and help you choose the next great look for your pet in out shop with the best. -->
 				</p>
-			 </div><!-- /col-md-4-->
+			 </div>
+			 <div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+				<div style="width:100%;height:100%" class="img-wrapper">
+          <img style="width: 100%;" src="./img/offers/discount-ad-2.png" alt="">
+				</div>
+				</p>
+			 </div>
 
 		  </div>
 	   </div>
