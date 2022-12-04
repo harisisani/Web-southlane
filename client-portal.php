@@ -232,7 +232,7 @@
 								<span class="focus-input100" data-placeholder="Owner's Contact*"></span>
 							</div>
 							<div class="wrap-input100">
-								<input style="text-align:center;" class="input100" type="date" name="appdate">
+								<input style="text-align:center;" id="appointment_date" class="input100" type="date" name="appdate">
 								<span class="focus-input100" data-placeholder="Appointment Date*"></span>
 							</div>
 							<div class="wrap-input100">
@@ -502,7 +502,15 @@
 					}
 					$('#hiddenIndex').before(html);
 					console.log(finalResponse);
-				}else{
+				}else if(response=="server error"){
+					Swal.fire({
+						icon: 'error',
+						title: 'Server Error',
+						text: 'Try again later.',
+						footer: '<a href="">Why do I have this issue?</a>'
+					});
+				}
+				else{
 					Swal.fire({
 						icon: 'error',
 						title: 'Oops...',
@@ -558,4 +566,19 @@
 				}
 			});
 	}
+	 $(function() {
+            var dtToday = new Date();
+
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate();
+            var year = dtToday.getFullYear();
+            if (month < 10)
+                month = '0' + month.toString();
+            if (day < 10)
+                day = '0' + day.toString();
+
+            var maxDate = year + '-' + month + '-' + day;
+
+            $('#appointment_date').attr('min', maxDate);
+        });
 </script>
