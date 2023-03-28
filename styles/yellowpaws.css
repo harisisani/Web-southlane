@@ -46,7 +46,10 @@ hr ,
 .navbar-custom .nav li a:focus,
 .slider-pagi__elem ,
 .box > .icon > .image,
-#gallery .nav > li > a:focus {color: #f29c12;}
+#gallery .nav > li > a:focus {
+  color: #F60017;
+  opacity: 0.7;
+}
 
 
 .hr:before ,

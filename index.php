@@ -102,6 +102,7 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                <ul class="nav navbar-nav page-scroll">
                   <li class="active"><a href="#page-top">Home</a></li>
+                  <li><a href="#offers-new">Offers</a></li>
                   <li><a href="#services">Services</a></li>
                   <li><a href="#about">About</a></li>
                   <li><a href="#gallery">Gallery</a></li>
@@ -179,42 +180,109 @@
 	</div>
 	<!--/ Slider ends -->
 
-    <!-- Section services -->
-	<section id="services" class="home-section">
-	   <div class="col-lg-8 col-lg-offset-2">
+	<!-- Section About -->
+	<section id="offers-new">
+		<div class="col-lg-8 col-lg-offset-2">
 		 <!-- Section heading -->
-		  <div class="section-heading" style="margin-bottom:50px;">
-			 <h2>Special Offers</h2>
+		<div class="section-heading" style="margin-top:80px;margin-bottom:50px;">
+			 <h2>Your Pet Deserves the Best Care</h2>
+			 <div class="hr"></div>
+		  </div>
+	   </div>
+		<div style="margin-bottom: 50px;" class="container">
+			<div class="row">
+				<!-- item 2-->
+				<div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+					<div style="width:100%;height:100%" class="img-wrapper">
+						<img style="width: 100%;" src="./img/service brochures/Heatstroke dog.png" alt="">
+					</div>
+					</p>
+				</div>
+				<div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+					<div style="width:100%;height:100%" class="img-wrapper">
+						<img style="width: 100%;" src="./img/service brochures/Monthly Checkup.jpg" alt="">
+					</div>
+					</p>
+				</div>
+				<div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+					<div style="width:100%;height:100%" class="img-wrapper">
+						<img style="width: 100%;" src="./img/service brochures/Heatstrokee cat.png" alt="">
+					</div>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-8 col-lg-offset-2">
+		 <!-- Section heading -->
+		<div class="section-heading" style="margin-top:50px;margin-bottom:50px;">
+			 <h2>Get More for Your Money</h2>
+			 <div class="hr"></div>
+		  </div>
+	   </div>
+		<div style="margin-bottom: 50px;" class="container">
+			<div class="row">
+				<!-- item 2-->
+				<div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+					<div style="width:100%;height:100%" class="img-wrapper">
+						<img style="width: 100%;" src="./img/offers/discount-ad-1.png" alt="">
+					</div>
+					</p>
+				</div>
+				<div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+					<div style="width:100%;height:100%" class="img-wrapper">
+						<img style="width: 100%;" src="./img/offers/Boarding.png" alt="">
+					</div>
+					</p>
+				</div>
+				<div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+					<div style="width:100%;height:100%" class="img-wrapper">
+						<img style="width: 100%;" src="./img/offers/discount-ad-2.png" alt="">
+					</div>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="section-heading" style="margin-top:50px;margin-bottom:50px;">
+			 <h2>Pamper Your Pets This Summer</h2>
 			 <div class="hr"></div>
 		  </div>
 	   </div>
 	   <div style="margin-bottom: 50px;" class="container">
-		  <div class="row">
-			 <!-- item 2-->
-       <div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
-				<div style="width:100%;height:100%" class="img-wrapper">
-					<img style="width: 100%;" src="./img/offers/discount-ad-1.png" alt="">
+			<div class="row">
+				<div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+					<div style="width:100%;height:100%" class="img-wrapper">
+						<video style="max-width:100%;" controls>
+							<source src="videos/South Lane - Summer Deal 1.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					</p>
 				</div>
-				</p>
-			 </div>
-       <div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
-				<div style="width:100%;height:100%" class="img-wrapper">
-					<video style="max-width:100%;" controls poster="img/package.jpg" controls>
-						<source src="img/new-pkg.mp4" type="video/mp4">
-						Your browser does not support the video tag.
-					</video>
+				<div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+					<div style="width:100%;height:100%" class="img-wrapper">
+						<video style="max-width:100%;" controls>
+							<source src="videos/South Lane - Summer Deal 2.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					</p>
 				</div>
-				</p>
-			 </div>
-			 <div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
-				<div style="width:100%;height:100%" class="img-wrapper">
-          <img style="width: 100%;" src="./img/offers/discount-ad-2.png" alt="">
+				<div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+					<div style="width:100%;height:100%" class="img-wrapper">
+						<video style="max-width:100%;" controls>
+							<source src="videos/South Lane - Summer Deal 3.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					</p>
 				</div>
-				</p>
-			 </div>
+		</div>
 
-		  </div>
-	   </div>
+	</section>
+	<!-- Section ends-->
+
+    <!-- Section services -->
+	<section style="padding: 80px 0 60px" id="services" class="home-section">
 	   <div class="col-lg-8 col-lg-offset-2">
 		 <!-- Section heading -->
 		  <div class="section-heading">
@@ -273,6 +341,7 @@
 				<!-- <p>Now you can leave your pet here when you travel with safety and great care for all animals we host here are our hotel. -->
 				</p>
 			 </div><!-- /col-md-4-->
+			 
 		  </div>
 	   </div>
 	</section>
@@ -297,7 +366,6 @@
 			</video>
 		  </div>
 	   </div>
-
 	</section>
 	<!-- Section ends-->
 
