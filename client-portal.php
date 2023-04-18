@@ -61,6 +61,18 @@
 	</div>
 	<!-- Navbar -->
       <nav class="navbar navbar-custom navbar-fixed-top">
+	  	<div class="top-bar-siliver">
+			  <div class="container">
+				  <div class="row">
+					  <div class="col-md-12">
+						  <!-- Start Contact Info -->
+						  <ul class="contact-details">
+							  <li><a href="./promotions.php"><i class="fa fa-arrow-left"></i>&emsp;Avail 50% OFF ON GROOMING SERVICES&emsp;<i class="fa fa-arrow-right"></i></a></li>
+						  </ul><!-- End Contact Info -->
+					  </div>
+				  </div>
+			  </div>
+		  </div>
 	  		<!-- Start Top Bar -->
 			<div class="top-bar hidden-xs hidden-sm">
 				<div class="container">
@@ -532,39 +544,52 @@
 	}
 
 	function bookAppointment(){
-		var settings = {
-			"url": serverName+"/south-lane/api/appointment/create.php",
-			"method": "POST",
-			"timeout": 0,
-			"headers": {
-				"Content-Type": "application/json"
-			},
-			"data": JSON.stringify({
-				"patientname": $('input[name="patientname"]').val(),
-				"mr_number": "Website Entry",
-				"ownername": $('input[name="ownername"]').val(),
-				"contact": $('input[name="contact"]').val(),
-				"procedure_name": $('input[name="notes"]').val(),
-				"procedure_amount": '0',
-				"appointment_date": $('input[name="appdate"]').val()
-			}),
-			};
-
-			$.ajax(settings).done(function (response) {
-				var responseArray=response.split("^");
-				if(responseArray[0].includes("success")){
-					Swal.fire(
-						'Good job',
-						'Your Appointment id is: '+responseArray[2],
-						'success'
-					)
-					$('input[name="patientname"]').val("");
-					$('input[name="ownername"]').val("");
-					$('input[name="contact"]').val("");
-					$('input[name="notes"]').val("");
-					$('input[name="appdate"]').val("");
-				}
+		var patientname =$('input[name="patientname"]').val();
+		var ownername =$('input[name="ownername"]').val();
+		var contact =$('input[name="contact"]').val();
+		var appdate =$('input[name="appdate"]').val();
+		if(patientname=="" || ownername=="" || contact=="" || appdate==""){
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Fill out the required fields (*)'
 			});
+		}else{
+			var settings = {
+				"url": serverName+"/south-lane/api/appointment/create.php",
+				"method": "POST",
+				"timeout": 0,
+				"headers": {
+					"Content-Type": "application/json"
+				},
+				"data": JSON.stringify({
+					"patientname": $('input[name="patientname"]').val(),
+					"mr_number": "Website Entry",
+					"ownername": $('input[name="ownername"]').val(),
+					"contact": $('input[name="contact"]').val(),
+					"procedure_name": $('input[name="notes"]').val(),
+					"procedure_amount": '0',
+					"appointment_date": $('input[name="appdate"]').val()
+				}),
+				};
+	
+				$.ajax(settings).done(function (response) {
+					var responseArray=response.split("^");
+					if(responseArray[0].includes("success")){
+						Swal.fire(
+							'Good job',
+							'Your Appointment id is: '+responseArray[2],
+							'success'
+						)
+						$('input[name="patientname"]').val("");
+						$('input[name="ownername"]').val("");
+						$('input[name="contact"]').val("");
+						$('input[name="notes"]').val("");
+						$('input[name="appdate"]').val("");
+					}
+				});
+		}
+
 	}
 	 $(function() {
             var dtToday = new Date();

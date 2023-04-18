@@ -61,6 +61,18 @@
 	</div>
 	<!-- Navbar -->
       <nav class="navbar navbar-custom navbar-fixed-top">
+		  <div class="top-bar-siliver">
+			  <div class="container">
+				  <div class="row">
+					  <div class="col-md-12">
+						  <!-- Start Contact Info -->
+						  <ul class="contact-details">
+							  <li><a href="./promotions.php"><i class="fa fa-arrow-left"></i>&emsp;Avail 50% OFF ON GROOMING SERVICES&emsp;<i class="fa fa-arrow-right"></i></a></li>
+						  </ul><!-- End Contact Info -->
+					  </div>
+				  </div>
+			  </div>
+		  </div>
 	  		<!-- Start Top Bar -->
 			<div class="top-bar hidden-xs hidden-sm">
 				<div class="container">
@@ -83,7 +95,7 @@
 						</div>
 					</div>
 				</div>
-			</div><!-- End Top bar -->
+			</div>
          <div class="container">
          <!-- navbar -->
             <div class="navbar-header page-scroll">
