@@ -102,8 +102,8 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                <ul class="nav navbar-nav page-scroll">
                   <li class="active"><a href="http://southlaneanimalhospital.com/">Home</a></li>
-                  <li><a href="#appointment">Book an Appointment</a></li>
-                  <li><a href="#history">Track Your History</a></li>
+                  <li><a href="client-portal.php">Book an Appointment</a></li>
+                  <li><a href="client-portal.php">Track Your History</a></li>
                   <li><a href="#contact">Contact</a></li>
                </ul>
             </div>
