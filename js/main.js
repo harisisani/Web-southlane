@@ -11,8 +11,8 @@ Author URI: http://themeforest.net/user/ingridk
 	//Window load function
     $(window).load(function() {
 			//Preloader		
-			$("#preloader").fadeOut("slow");
-			$("#spinner").fadeOut("slow");
+			// $("#preloader").fadeOut("slow");
+			// $("#spinner").fadeOut("slow");
 		//Open street  Map
 		var mapcanvas = document.getElementById("map-canvas");
 			if(mapcanvas){
