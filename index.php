@@ -50,7 +50,7 @@
 
    <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 	<!-- Preloader -->
-	<div id="preloader">
+	<!-- <div id="preloader">
 		<div class="spinner">
 			<div class="rect1"></div>
 			<div class="rect2"></div>
@@ -58,7 +58,7 @@
 			<div class="rect4"></div>
 			<div class="rect5"></div>
 		</div>
-	</div>
+	</div> -->
 	<!-- Navbar -->
       <nav class="navbar navbar-custom navbar-fixed-top">
 		  <div class="top-bar-siliver">
