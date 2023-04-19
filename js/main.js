@@ -10,7 +10,9 @@ Author URI: http://themeforest.net/user/ingridk
 	
 	//Window load function
     $(window).load(function() {
-		
+			//Preloader		
+			$("#preloader").fadeOut("slow");
+			$("#spinner").fadeOut("slow");
 		//Open street  Map
 		var mapcanvas = document.getElementById("map-canvas");
 			if(mapcanvas){
@@ -37,9 +39,7 @@ Author URI: http://themeforest.net/user/ingridk
 			var marker = L.marker(coord, {icon: customIcon}).addTo(map);		
 		}
 		
-		//Preloader		
-		$("#preloader").fadeOut("slow");
-		// $("#spinner").fadeOut("slow");
+	
 		
 
 	//Portfolio Isotope Filter
