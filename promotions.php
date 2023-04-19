@@ -2692,7 +2692,7 @@ document.addEventListener("touchstart", function() {}, false);
     margin: 2px;
   }
   .flipTimebox .flip-clock-divider {
-    width: 5px;
+    width: 12px;
   }
   .flipTimebox .flip-clock-dot {
     height: 5px;
@@ -2778,31 +2778,32 @@ document.addEventListener("touchstart", function() {}, false);
     margin-left: -14px;
   }
   .flipTimebox .flip-clock-wrapper {
-    padding-left: 5px;
+    padding-left: 0;
+    /* padding-left: 5px; */
   }
   .flipTimebox .flip-clock-wrapper ul li {
     width: 25px;
   }
   .flipTimebox .flip-clock-dot {
-    margin-left: -16px;
+    margin-left: -10px;
   }
   .flipTimebox {
-    margin: 50px 0 100px 20px;
+    margin: 50px 0;
   }
 }
 @media screen and (max-width: 320px) {
-  .flipTimebox .flip-clock-wrapper {
+  /* .flipTimebox .flip-clock-wrapper {
     padding-left: 5px;
-  }
+  } */
   .flipTimebox .flip-clock-wrapper ul.flip {
-    width: 22px;
+    width: 40px;
     margin-left: -16px;
   }
   .flipTimebox .flip-clock-wrapper ul li {
-    width: 22px;
+    width: 30px;
   }
   .flipTimebox .flip-clock-dot {
-    margin-left: -18px;
+    margin-left: -11px;
   }
     .flipTimebox .flip-clock-divider.days .flip-clock-label {
     right: 3px;
@@ -2834,7 +2835,7 @@ document.addEventListener("touchstart", function() {}, false);
         </div>
         <div class="row">
           <div style="padding:10px;" class="col-12 mb-4 mb-md-0">
-          <table class="table table-sm">
+          <!-- <table class="table table-sm">
           <thead>
             <tr>
               <th scope="col">Name</th>
@@ -2849,8 +2850,20 @@ document.addEventListener("touchstart", function() {}, false);
               <td id="voucher">@mdo</td>
             </tr>
           </tbody>
-        </table>
-            <img style="width:100%" src="./img/vouchers/voucher.jpg" class="w-100 h-auto">
+        </table> -->
+        <div class="voucher">
+            <div class="labels">
+              <p>Name</p>
+              <p>Pet Name</p>
+              <p>Voucher No.</p>
+            </div>
+            <div class="values">
+              <p>Mark</p>
+              <p>Otto</p>
+              <p>@mdo</p>
+            </div>
+          </div>
+          <img style="width:100%" src="./img/vouchers/voucher.jpg" class="w-100 h-auto">
           </div>
         </div>
       </div>
@@ -2869,5 +2882,41 @@ document.addEventListener("touchstart", function() {}, false);
       margin-bottom: 2rem;
     }
   }
+  .voucher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 62%;
+    left: 39%;
+}
+.voucher p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f94c5c;
+    line-height: 1.2;
+}
+@media screen and (max-width: 320px) {
+  .voucher {
+    top: 70% !important;
+    left: 40% !important;
+  }
+  .voucher p {
+    font-size: 7px !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .voucher {
+    top: 65%;
+    left: 39%;
+  }
+  .voucher p {
+    font-size: 12px;
+  }
+}
 
 </style>
