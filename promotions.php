@@ -2828,7 +2828,7 @@ document.addEventListener("touchstart", function() {}, false);
         <div class="row">
           <div class="col-12 d-flex flex-column justify-content-center align-items-center">
             <div class="text-center">
-              <h2 class="mb-4">Congratulations!</h2>
+              <h2 class="promo-h2 mb-4">Congratulations!</h2>
               <p class="mb-4">Hi <span id="ownername"></span>,<br>Take the Screenshot & avail 50% on your next visit <br/><a style="color: #FE0308;font-weight: bold;" href="client-portal.php">Book an Appointment</a></p>
             </div>
           </div>
@@ -2858,3 +2858,17 @@ document.addEventListener("touchstart", function() {}, false);
     </div>
   </div>
 </div>
+<style>
+  .promo-h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .promo-h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+</style>
