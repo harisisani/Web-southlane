@@ -2858,9 +2858,9 @@ document.addEventListener("touchstart", function() {}, false);
               <p>Voucher No.</p>
             </div>
             <div class="values">
-              <p>Mark</p>
-              <p>Otto</p>
-              <p>@mdo</p>
+              <p id="ownername"></p>
+              <p id="pet"></p>
+              <p id="voucher"></p>
             </div>
           </div>
           <img style="width:100%" src="./img/vouchers/voucher.jpg" class="w-100 h-auto">

@@ -39,7 +39,7 @@ Author URI: http://themeforest.net/user/ingridk
 		
 		//Preloader		
 		$("#preloader").fadeOut("slow");
-		$("#spinner").fadeOut("slow");	
+		// $("#spinner").fadeOut("slow");
 		
 
 	//Portfolio Isotope Filter
