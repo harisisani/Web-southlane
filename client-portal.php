@@ -422,7 +422,7 @@
 			 </div>
 			 <!-- Bottom Credits -->
 			 <div class="col-sm-8 col-md-offset-3 col-md-5 text-center">
-				<p>COPYRIGHT © 2022 All rights reserved by South Lane Animal Hospital</p>
+				<p>COPYRIGHT © 2023 All rights reserved by South Lane Animal Hospital</p>
 			 </div>
 		  </div><!-- /row-->
 	   </div><!-- /container -->
@@ -432,7 +432,6 @@
 	   </div>
 	</footer>
 	<!-- /footer ends -->
-
 	<!-- Core JavaScript Files -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

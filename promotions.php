@@ -110,7 +110,7 @@
          </div>
       </nav><!-- Navbar ends -->
 	<!-- Section Contact -->
-	<section style="cursor:pointer;" id="main" class="home-section promotion container">
+	<section style="padding: 120px 0px 0px 0px;" id="main" class="home-section promotion container">
 		  <!-- Section heading -->
 		  <div style="margin-bottom: 50px;" class="section-heading">
 			 <!-- <h2>Get 50% OFF ON GROOMING SERVICES</h2>
@@ -122,6 +122,7 @@
 					<div class="hr"></div> -->
 					<br>
 					<p>It's time for some pawsome pampering for your pet. 10% OFF ON GROOMING SERVICES - BEST PART? AVAIL BEFORE 31st July'23. SIGN UP BEFORE EID APRIL 30, 2023</p>
+          <p>Enter for a chance to win 100% cashback - we'll be selecting 5 lucky winners in a draw on July 31st, 2023.</p>
 				</div>
 			</div>
 			
@@ -181,6 +182,10 @@
 							<div class="wrap-input100">
 								<input class="input100" type="text" name="contact">
 								<span class="focus-input100" data-placeholder="Owner's Contact*"></span>
+							</div>
+							<div class="wrap-input100">
+								<input class="input100" type="email" name="email">
+								<span class="focus-input100" data-placeholder="Owner's Email"></span>
 							</div>
 							<div class="container" style="width: 100%;float: right;">
 								<div class="wrap-login100-form-btn">
@@ -342,7 +347,7 @@
 			 </div>
 			 <!-- Bottom Credits -->
 			 <div class="col-sm-8 col-md-offset-3 col-md-5 text-center">
-				<p>COPYRIGHT © 2022 All rights reserved by South Lane Animal Hospital</p>
+				<p>COPYRIGHT © 2023 All rights reserved by South Lane Animal Hospital</p>
 			 </div>
 		  </div><!-- /row-->
 	   </div><!-- /container -->
@@ -352,7 +357,6 @@
 	   </div>
 	</footer>
 	<!-- /footer ends -->
-
 	<!-- Core JavaScript Files -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -385,10 +389,33 @@
 		serverName="https://"+serverName;
 	}
 
+  function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+
+  function validatePhoneNumber(phoneNumber) {
+    const phoneRegex = /^(\+92|92|0)?(3\d{2}|4\d{2}|5\d{2}|6\d{2}|7\d{2}|8\d{2}|9\d{2})\d{7}$/;
+    return phoneRegex.test(phoneNumber);
+  }
+
+  function normalizePhoneNumber(phoneNumber) {
+  // Remove any spaces
+  phoneNumber = phoneNumber.replace(/\s/g, '');
+  
+  // Replace "+92" or "92" with "0"
+  phoneNumber = phoneNumber.replace(/^\+?92|^92/, '0');
+  
+  return phoneNumber;
+}
+
+
 	function getVoucher(){
 		var patientname =$('input[name="patientname"]').val();
 		var ownername =$('input[name="ownername"]').val();
-		var contact =$('input[name="contact"]').val();
+		var contact =normalizePhoneNumber($('input[name="contact"]').val());
+		var email =$('input[name="email"]').val();
 		if(patientname=="" || ownername=="" || contact==""){
 			Swal.fire({
 				icon: 'error',
@@ -396,34 +423,57 @@
 				text: 'Fill out the required fields (*)'
 			});
 		}else{
-			var settings = {
-				"url": serverName+"/south-lane/api/voucher/create.php",
-				"method": "POST",
-				"timeout": 0,
-				"headers": {
-					"Content-Type": "application/json"
-				},
-				"data": JSON.stringify({
-					"patientname": $('input[name="patientname"]').val(),
-					"mr_number": "Website Entry",
-					"ownername": $('input[name="ownername"]').val(),
-					"contact": $('input[name="contact"]').val()
-				}),
-				};
-	
-				$.ajax(settings).done(function (response) {
-					var responseArray=response.split("^");
-					if(responseArray[0].includes("success")){
-						Swal.fire(
-							'Good job',
-							'Your Voucher id is: '+responseArray[2],
-							'success'
-						)
-						$('input[name="patientname"]').val("");
-						$('input[name="ownername"]').val("");
-						$('input[name="contact"]').val("");
-					}
-				});
+      if(email!=""  && !validateEmail(email)){
+        Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Email is invalid'
+			});
+      }else if(!validatePhoneNumber(contact)){
+        Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Contact Number is invalid'
+			});
+      }
+      else{
+        var settings = {
+          "url": serverName+"/south-lane/api/voucher/create.php",
+          "method": "POST",
+          "timeout": 0,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "data": JSON.stringify({
+            "patientname": patientname,
+            "mr_number": "Website Entry",
+            "ownername": ownername,
+            "contact": contact,
+            "email": email
+          }),
+          };
+    
+          $.ajax(settings).done(function (response) {
+            var responseArray=response.split("^");
+            if(responseArray[0].includes("success")){
+              $('#name').html(ownername);
+              $('#ownername').html(ownername);
+              $('#voucher').html(responseArray[2]);
+              $('#pet').html(patientname);
+              $('#voucherModal').modal('show');
+              $('input[name="patientname"]').val("");
+              $('input[name="ownername"]').val("");
+              $('input[name="contact"]').val("");
+              $('input[name="email"]').val("");
+            }else if(responseArray[0].includes("contactexists")){
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'The contact number you entered has already availed the voucher'
+              });
+            } 
+          });
+      }
 		}
 	}
 
@@ -2770,3 +2820,41 @@ document.addEventListener("touchstart", function() {}, false);
 }
 
 </style>
+
+<div class="modal fade" id="voucherModal" tabindex="-1" aria-labelledby="voucherModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div style="padding: 30px;" class="modal-body">
+        <div class="row">
+          <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+            <div class="text-center">
+              <h2 class="mb-4">Congratulations!</h2>
+              <p class="mb-4">Hi <span id="ownername"></span>,<br>Take the Screenshot & avail 50% on your next visit <br/><a style="color: #FE0308;font-weight: bold;" href="client-portal.php">Book an Appointment</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div style="padding:10px;" class="col-12 mb-4 mb-md-0">
+          <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Pet Name</th>
+              <th scope="col">Voucher No.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="name">Mark</td>
+              <td id="pet">Otto</td>
+              <td id="voucher">@mdo</td>
+            </tr>
+          </tbody>
+        </table>
+            <img style="width:100%" src="./img/vouchers/voucher.jpg" class="w-100 h-auto">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
