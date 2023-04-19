@@ -120,8 +120,8 @@
 					<!-- <p>Fields with * are required</p>
 					<div class="hr"></div> -->
 					<br>
-					<p>It's time for some pawsome pampering for your pet. 10% OFF ON GROOMING SERVICES - BEST PART? AVAIL BEFORE 31st July'23. SIGN UP BEFORE EID APRIL 30, 2023</p>
-          <p>Enter for a chance to win 100% cashback - we'll be selecting 5 lucky winners in a draw on July 31st, 2023.</p>
+					<p>It's time for some pawsome pampering for your pet. 50% OFF ON GROOMING SERVICES - BEST PART? AVAIL BEFORE 31st July'23. SIGN UP BEFORE APRIL 30, 2023</p>
+          <p>Enter for a chance to win 100% cashback - we'll be selecting 3 lucky winners in a draw on July 31st, 2023.</p>
 				</div>
 			</div>
 			
