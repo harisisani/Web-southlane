@@ -103,7 +103,6 @@
                <ul class="nav navbar-nav page-scroll">
                   <li class="active"><a href="http://southlaneanimalhospital.com/">Home</a></li>
                   <li><a href="client-portal.php">Book an Appointment</a></li>
-                  <li><a href="client-portal.php">Track Your History</a></li>
                   <li><a href="#contact">Contact</a></li>
                </ul>
             </div>
