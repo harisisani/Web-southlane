@@ -122,7 +122,7 @@
          </div>
       </nav><!-- Navbar ends -->
 	<!-- Section Contact -->
-	<section id="main" class="home-section">
+	<section style="padding: 160px 0 120px 0;" id="main" class="home-section">
 	   <div class="col-lg-8 col-lg-offset-2">
 		  <!-- Section heading -->
 		  <div class="section-heading">
