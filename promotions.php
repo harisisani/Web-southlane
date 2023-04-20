@@ -455,7 +455,7 @@
           $.ajax(settings).done(function (response) {
             var responseArray=response.split("^");
             if(responseArray[0].includes("success")){
-              $('#name').html(ownername);
+              $('#ownernamevoucher').html(ownername);
               $('#ownername').html(ownername);
               $('#voucher').html(responseArray[2]);
               $('#pet').html(patientname);
@@ -2858,7 +2858,7 @@ document.addEventListener("touchstart", function() {}, false);
               <p>Voucher No.</p>
             </div>
             <div class="values">
-              <p id="patientname"></p>
+              <p id="ownernamevoucher"></p>
               <p id="pet"></p>
               <p id="voucher"></p>
             </div>
