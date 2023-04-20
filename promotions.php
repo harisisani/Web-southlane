@@ -2853,9 +2853,9 @@ document.addEventListener("touchstart", function() {}, false);
         </table> -->
         <div class="voucher">
             <div class="labels">
-              <p>Name</p>
-              <p>Pet Name</p>
-              <p>Voucher No.</p>
+              <p>Name: </p>
+              <p>Pet Name: </p>
+              <p>Voucher No.: </p>
             </div>
             <div class="values">
               <p id="ownernamevoucher"></p>
