@@ -61,18 +61,20 @@
 	</div> -->
 	<!-- Navbar -->
       <nav class="navbar navbar-custom navbar-fixed-top">
-		  <div class="top-bar-siliver">
-			  <div class="container">
-				  <div class="row">
-					  <div class="col-md-12">
-						  <!-- Start Contact Info -->
-						  <ul class="contact-details">
-							  <li><a href="./promotions.php"><i class="fa fa-arrow-left"></i>&emsp;Avail 50% OFF ON GROOMING SERVICES&emsp;<i class="fa fa-arrow-right"></i></a></li>
-						  </ul><!-- End Contact Info -->
-					  </div>
-				  </div>
-			  </div>
-		  </div>
+	  	<a href="./promotions.php">
+			<div class="top-bar-siliver">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<!-- Start Contact Info -->
+							<ul class="contact-details">
+								<li><i class="fa fa-arrow-left"></i>&emsp;Avail 50% OFF ON GROOMING SERVICES&emsp;<i class="fa fa-arrow-right"></i></li>
+							</ul><!-- End Contact Info -->
+						</div>
+					</div>
+				</div>
+			</div>
+			</a>
 	  		<!-- Start Top Bar -->
 			<div class="top-bar hidden-xs hidden-sm">
 				<div class="container">

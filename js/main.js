@@ -109,7 +109,7 @@ Author URI: http://themeforest.net/user/ingridk
 			
         //Navbar collapse close on click
 
-        $('.navbar li').on('click', function() {
+        $('.navbar navbar-header li').on('click', function() {
             if ($('.navbar-toggle').css('display') != 'none') {
                 $(".navbar-toggle").trigger("click");
             }
