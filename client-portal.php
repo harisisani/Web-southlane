@@ -61,20 +61,19 @@
 	</div> -->
 	<!-- Navbar -->
       <nav class="navbar navbar-custom navbar-fixed-top">
-		<a href="./promotions.php">
+		<!-- <a href="./promotions.php">
 			<div class="top-bar-siliver">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<!-- Start Contact Info -->
 							<ul class="contact-details">
 								<li><i class="fa fa-arrow-left"></i>&emsp;Avail 50% OFF ON GROOMING SERVICES&emsp;<i class="fa fa-arrow-right"></i></li>
-							</ul><!-- End Contact Info -->
+							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-			</a>
+			</a> -->
 	  		<!-- Start Top Bar -->
 			<div class="top-bar hidden-xs hidden-sm">
 				<div class="container">
