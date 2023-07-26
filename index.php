@@ -667,3 +667,6 @@
 	z-index:9999 !important;
 }
 </style>
+<?php
+	include 'pixel-script.php';
+?>

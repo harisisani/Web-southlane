@@ -607,3 +607,6 @@
             $('#appointment_date').attr('min', maxDate);
         });
 </script>
+<?php
+	include 'pixel-script.php';
+?>
