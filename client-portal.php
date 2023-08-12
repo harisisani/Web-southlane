@@ -240,9 +240,13 @@
 								<input class="input100" type="text" name="patientname">
 								<span class="focus-input100" data-placeholder="Patient Name*"></span>
 							</div>
-							<div class="wrap-input100">
+							<div class="wrap-input100 desktop-grid">
 								<input class="input100" type="text" name="contact">
 								<span class="focus-input100" data-placeholder="Owner's Contact*"></span>
+							</div>
+							<div class="wrap-input100 desktop-grid">
+								<input class="input100" type="text" name="email">
+								<span class="focus-input100" data-placeholder="Owner's Email"></span>
 							</div>
 							<div class="wrap-input100">
 								<input style="text-align:center;" id="appointment_date" class="input100" type="date" name="appdate">
@@ -566,6 +570,7 @@
 					"patientname": $('input[name="patientname"]').val(),
 					"mr_number": "Website Entry",
 					"ownername": $('input[name="ownername"]').val(),
+					"email": $('input[name="email"]').val(),
 					"contact": $('input[name="contact"]').val(),
 					"procedure_name": $('input[name="notes"]').val(),
 					"procedure_amount": '0',
@@ -581,6 +586,7 @@
 							'Your Appointment id is: '+responseArray[2],
 							'success'
 						)
+						$('input[name="email"]').val("");
 						$('input[name="patientname"]').val("");
 						$('input[name="ownername"]').val("");
 						$('input[name="contact"]').val("");
