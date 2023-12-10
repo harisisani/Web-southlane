@@ -1,0 +1,109 @@
+Project Name: South Lane Hospital Management System
+Owner Name: Zeeshan
+Developer: Haris Isani (+92344-2329735 | harisisani@gmail.com)
+Languages & Libraries:
+    HTML
+    CSS
+    Bootstrap
+    Jquery
+    Ajax
+    PHP
+    mySql
+
+Database:
+    Tables:
+        users:
+            user_id
+            user_name
+            user_password
+            user_contact
+            user_email
+                user_created_date
+                user_last_login
+
+
+        patients:
+            mr_number *
+            mr_id_unique
+            patient_name *
+            owner_name *
+            owner_contact *
+            pet_notes
+            owner_email
+            owner_address
+                patient_created_date
+                patient_last_modified_date
+                patient_last_modified_by
+                deleted
+
+        billing:
+            bill_id *
+            bill_id_unique
+            mr_number*
+            patient_name *
+            contact *
+            owner_name *
+            user_name
+            bill_date
+            print_receipt
+                doctor
+                paymentmode
+                procedures_with_amount
+                extra_charges
+                discount
+                total_amount
+                received
+                pending
+                deleted
+
+        log:
+            user_name
+            user_id
+            activity
+            status
+            time_stamp
+
+        billing_data:
+            procedure_id * 
+            procedure_name * 
+            procedure_amount *
+
+        extras:
+            extra_id * 
+            extra_name * 
+            extra_amount *
+
+        appointments
+            appointment_id*
+            appointment_id_unique
+            appointment_date
+            mr_number*
+            patient_name *
+            contact *
+            owner_name *
+            user_name
+            appointment_created_date
+            print_receipt
+            amount
+            procedure
+
+Consultation
+Vaccination 
+Surgery 
+Grooming 
+Boarding 
+Treatment 
+ASD (Antiseptic Dressing)
+General Anesthesia
+Local Anesthesia 
+Urinary Catheterization 
+I/V Treatment 
+These all are some of the procedure from the top of my mind, rest will add once the layout is ready
+Discount 
+Stray discount 
+Pending
+
+https://www.google.com/amp/s/parzibyte.me/blog/en/2019/10/10/print-receipt-thermal-printer-javascript-css-html/amp/
+<?php
+    $MAC = exec('getmac');echo strtok($MAC, ' ');
+?>

@@ -1,0 +1,90 @@
+[19-Dec-2021 17:44:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[19-Dec-2021 17:44:25 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[19-Dec-2021 17:55:08 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[19-Dec-2021 17:56:21 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[19-Dec-2021 19:30:38 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[19-Dec-2021 19:30:46 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[19-Dec-2021 19:30:55 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[20-Dec-2021 00:30:55 Asia/Karachi] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/update.php on line 22
+[20-Dec-2021 00:30:55 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/update.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/update.php on line 22
+[19-Dec-2021 19:30:58 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[20-Dec-2021 00:30:58 Asia/Karachi] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/update.php on line 22
+[20-Dec-2021 00:30:58 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/update.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/update.php on line 22
+[19-Dec-2021 19:31:13 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[20-Dec-2021 00:31:13 Asia/Karachi] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/update.php on line 22
+[20-Dec-2021 00:31:13 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/update.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/update.php on line 22
+[19-Dec-2021 19:32:09 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[19-Dec-2021 19:32:15 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[20-Dec-2021 00:32:26 Asia/Karachi] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[20-Dec-2021 00:32:26 Asia/Karachi] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/create.php on line 14
+[20-Dec-2021 00:32:26 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/create.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/create.php on line 14
+[20-Dec-2021 00:33:16 Asia/Karachi] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/update.php on line 22
+[20-Dec-2021 00:33:16 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/update.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/update.php on line 22
+[19-Dec-2021 19:34:26 UTC] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 19:34:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 19:34:29 UTC] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 19:34:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 19:34:31 UTC] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 19:34:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 19:34:34 UTC] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 19:34:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 20:08:00 UTC] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 20:08:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 20:08:47 UTC] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 20:08:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 20:08:53 UTC] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 20:08:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 20:09:24 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[19-Dec-2021 20:09:24 UTC] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 20:09:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 20:10:06 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[19-Dec-2021 20:10:06 UTC] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 20:10:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 20:10:40 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[19-Dec-2021 20:10:40 UTC] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7
+[19-Dec-2021 20:10:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/patients/read.php on line 7

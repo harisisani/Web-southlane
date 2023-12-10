@@ -1,0 +1,407 @@
+﻿<style type="text/css">
+  
+  .toolNewDesign{
+        font-family: "Roboto", sans-serif !important;
+        -webkit-font-smoothing: antialiased;
+        font-size: 14px;
+        color: #333333;
+    }   
+   h2{
+    color:white;
+    /*background-color:rgb(22,49,92);*/
+  }
+  
+   h1{
+    margin: 20px 0 0 0 !important;
+    padding: 4px !important;
+    color:white;
+    background-color:rgb(22,49,92);
+    height:30px;
+    font-size:28px;
+  }
+  
+    .toolNewDesign table {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        border: 1px solid #dfe2e5;
+        border-bottom: 0px;
+        border-right: 0px;
+        border-radius: 5px;
+        overflow: auto;
+        border-collapse: unset;
+    }    
+
+    .toolNewDesign table tr th {
+        background: #fff;
+        border-bottom: 1px solid #dfe2e5;
+        border-right: 1px solid #f2f2f2;
+        color: #333333;
+        font-weight: 500;
+        padding: 8px 8px;
+        text-align: left;
+        font-size: 13px;
+    }
+    .claro .dijitSelect .dijitArrowButtonInner, .claro .dijitComboBox .dijitArrowButtonInner{
+        width: 18px !important;
+    }
+    .toolNewDesign table tr th:last-child {
+        border-radius: 0px 5px 0px 0px;
+    }   
+    .toolNewDesign table tr th:first-child {
+        border-radius: 5px 0px 0px 0px;
+    }
+    .toolNewDesign table tr th:first-child {
+        border-radius: 5px 0px 0px 0px;
+    }
+    .toolNewDesign .table-lightblue-head th {
+        background: #0070d2;
+        color: #fff;
+        border-right: 1px solid #647590;
+    }
+    .toolNewDesign .customer-table tr td {
+        background: #eff2f5;
+    }
+    
+    .align-center {
+        text-align: center !important;
+    }
+    .toolNewDesign .table-blue-head th {
+        background: #16315c;
+        color: #fff;
+        border-right: 1px solid #647590;
+    }
+    .toolNewDesign table .add-remove-sign div.add-arrow i{
+            color: #5fce71;
+    }
+    .toolNewDesign table .add-remove-sign div.remove-arrow i {
+        color: #e9918c;
+    }
+    .toolNewDesign table tr td {
+        background: #fff;
+        border-bottom: 1px solid #dfe2e5;
+        border-right: 1px solid #f2f2f2;
+        font-size: 13px;
+        color: #333333;
+        font-weight: 500;
+        padding: 8px 8px;
+    }
+    .toolNewDesign table.subhead{margin:0px;}
+    .toolNewDesign table.subhead tr td table.sublist{border:none;}
+    .toolNewDesign .customer-table tr td.info-td {background: #fff;}
+    .toolNewDesign table.maintbl {margin: 10px 0px;}
+    
+    /********************************** input, Textarea, Select Css ***************************************/ 
+    .toolNewDesign input[type="text"], .toolNewDesign input[type="password"], .toolNewDesign input[type="number"], .toolNewDesign input[type="email"], .toolNewDesign input[type="search"], .toolNewDesign input[type="date"], .toolNewDesign textarea {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 0px 3px;
+        box-sizing: border-box;
+        background: #fff;
+        height:33px;
+        width:100%;
+    }
+    .toolNewDesign input[readonly]{
+        background: #f7f7f7;
+    }
+    .toolNewDesign select {
+        font-size: 13px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 0px;
+        padding-left:2px;
+        height: 33px;
+        line-height: 30px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        box-sizing: border-box;
+        background-color: #fff;
+        background-image: url(../../../images/client-logo/select-arrow.png);
+        background-repeat: no-repeat;
+        background-position: 95% center;
+        width:100%;
+    }
+    .toolNewDesign table input {
+        margin: 0px;
+    }
+    .toolNewDesign table textarea {
+        margin: 0px;
+        height: 55px;
+        padding:8px 6px;
+        line-height:16px;
+    }
+    .toolNewDesign textarea {
+        resize: none;
+    }
+    /********************************************** Checkbox Css *****************************************/
+    .toolNewDesign .formCheckbox {
+        margin: 0px 6px 0px 0px;
+        text-align:center;
+        float: left;
+    }
+
+    .formCheckbox {
+        position: relative;
+    }
+    .toolNewDesign table th .formCheckbox label {
+        color: #fff;
+    }
+    .toolNewDesign .formCheckbox label {
+        padding: 0px 0px 0px 30px;
+        position: relative;
+        color: #354052;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .toolNewDesign table th .formCheckbox input[type="checkbox"] + label:before {
+        background: transparent;
+        border-color: #fff;
+    }
+    .toolNewDesign .formCheckbox label:before {
+        content: "";
+        border: 2px solid #888888;
+        border-radius: 2px;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background: #fff;
+        transition: all 0.3s ease;
+    }
+    .toolNewDesign .formCheckbox label:after {
+        content: "check";
+        font-family: 'Material Icons';
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        color: #fff;
+        font-size: 16px;
+        opacity: 0;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        font-feature-settings: "liga" 1;
+    }
+    .toolNewDesign .formCheckbox input[type="checkbox"] {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        margin: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .toolNewDesign .formCheckbox input[type="checkbox"]:checked + label:before{
+        border: 2px solid #36af47;
+        background: #36af47;
+    }
+    .toolNewDesign .formCheckbox input[type="checkbox"]:checked + label:after {
+        opacity: 1;
+    }
+    /******************************** Button CSS ***************************************/
+    .toolNewDesign table .edit-btn {
+        padding: 0px 20px;
+        border-radius: 3px;
+        color: #354052;
+        font-size: 13px;
+        line-height: 30px;
+        border: 1px solid #f2f2f2;
+        display: inline-block;
+        background: #fff;
+        margin: 0px 10px 0px 0px;
+    }
+    .toolNewDesign table .hide-btn {
+        padding: 0px 20px;
+        border-radius: 3px;
+        color: #354052;
+        font-size: 13px;
+        line-height: 30px;
+        border: 1px solid #f2f2f2;
+        display: inline-block;
+        margin: 0px 10px 0px 0px;
+        background: #f2f2f2;
+    }
+    .toolNewDesign table .save-btn {
+        padding: 0px 20px;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 13px;
+        line-height: 30px;
+        border: 1px solid #36af47;
+        display: inline-block;
+        margin: 0px 10px 0px 0px;
+        background: #36af47;
+    }
+    .form-button {
+        padding: 9px 9px;
+        margin-bottom: 10px;
+        border: 0;
+        border-radius: 2px;
+        cursor: pointer;
+        min-width: 100px;
+        min-height: 35px;
+        text-align: center;
+        vertical-align: middle;
+        color: #fff;
+        box-sizing: border-box;
+    }
+    .toolNewDesign table .add-remove-sign a.add-arrow i{color: #5fce71;}   
+    .toolNewDesign table .add-remove-sign a.remove-arrow i{color: #e9918c;}
+    .ic_blue {
+        background: #0070d2;
+    }
+    .ic_red {
+        background: #ed1c24;
+    }
+    .main_darkengrey {
+        background: #516173;
+    }
+    .ic_orange {
+        background: #ed7b15;
+    }
+    .main_green {
+        background: #31b544;
+    }
+    .form-button.icon-button i {
+        font-size: 16px;
+        position: relative;
+        top: 2px;
+        margin-right: 5px;
+    }
+
+    .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+    }
+    /***************************************** Up and Down Css ***********************************/
+    .toolNewDesign table .up-down-arrow {
+        margin: 0px;
+        display: flex;
+        border-radius: 30px;
+        overflow: hidden;
+        width: 70px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .toolNewDesign table .add-remove-sign {
+        align-items: center;
+        justify-content: space-around;
+        margin: 3px 0px 0px 0px;
+        display: flex;
+        border-radius: 30px;
+        overflow: hidden;
+        width: 70px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .toolNewDesign table .up-down-arrow .down-arrow {
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .toolNewDesign table .up-down-arrow div {
+        background: #f4f5f8;
+        width: 35px;
+        text-align: center;
+        line-height: 30px;
+        display: inline-block;
+    }
+    .toolNewDesign table .up-down-arrow div i {
+        color: #333333;
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .toolNewDesign table .up-down-arrow .up-arrow{
+        border-right: 1px solid #fff;
+        border-radius: 10px 0px 0px 10px;
+    }
+    /******************************************************* Accordion Css ******************************************************/
+    .toolNewDesign .accordion-expand-btn-wrapper {
+        width: 40px !important;
+        float: left;
+    }
+    .toolNewDesign .accordion-expand-btn {
+        display: inline-block;
+        font-size: 2em;
+        transition: all .2s ease-in-out;
+        position: relative;
+        margin: 0;
+        float: right;
+        margin-right: .25em;
+        color:#666;
+        cursor: pointer;
+    }
+    .toolNewDesign .heading-5 {
+        color: #333333;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    /************************************************* Media Query **************************************************/
+    @media(min-width: 200px) and (max-width: 680px){
+        .toolNewDesign table td{min-width:80px !important;padding: 3px !important;}
+        .toolNewDesign table th{min-width:80px !important;padding: 3px !important;}
+        .toolNewDesign input[type="text"]{width:100% !important;font-size: 1em !important;}
+        .toolNewDesign textarea{width:100% !important;font-size: 1em !important;}
+        .toolNewDesign select{width:100% !important;font-size: 1em !important;}     
+        .toolNewDesign .formCheckbox {
+            margin: 0px 0px 0px 0px;
+            text-align: left;
+        }
+        .form-button{padding: 0px;}
+    }
+  
+  
+#id{
+font-family:Arial;
+	font-size:12px;
+	 width: 100%;
+    
+
+}
+#div{
+
+font-size:12px;
+font-family:Arial;
+   float:center;
+}
+   .toolNewDesigntable {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        border: 1px solid #dfe2e5;
+        border-bottom: 0px;
+        border-right: 0px;
+        border-radius: 5px;
+        overflow: auto;
+        border-collapse: unset;
+    } 
+	 h2{
+    color:white;
+    /*background-color:rgb(22,49,92);*/
+  }
+  #bluetab,.bluetab{
+    background-color: rgb(22,49,92);
+   color: white;
+   text-align: center;
+   font-weight: 500;
+   font-weight: bold;
+ }
+</style>
