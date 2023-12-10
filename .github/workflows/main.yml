@@ -16,6 +16,7 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: ftp.southlaneanimalhospital.com
+          server: ftp://191.96.56.191
           username: u270102017.harisisani
           password: Programmer@12345
+          local-dir: ./
