@@ -4,7 +4,8 @@
          $host="localhost";
             $db_name="u270102017_app_southlane";
             // $db_name="app_southlane";
-            $user="blitz";
+            $user="u270102017_blitz";
+            // $user="blitz";
             // $password='Programmer';
             $password='Programmer@123';
             try{
