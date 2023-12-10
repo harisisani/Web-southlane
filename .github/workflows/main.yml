@@ -14,8 +14,9 @@ jobs:
         with:
           fetch-depth: 2
       - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          ftp-server: ftp.southlaneanimalhospital.com
-          ftp-username: websiteadmin@southlaneanimalhospital.com
-          ftp-password: Programmer@12345
+          server: ftp.southlaneanimalhospital.com
+          username: u270102017.harisisani
+          password: Programmer@12345
+          local-dir: ./
