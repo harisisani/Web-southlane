@@ -7,7 +7,6 @@
             $user="blitz";
             // $password='Programmer';
             $password='Programmer@123';
-            
             try{
                 $connection=new PDO("mysql:host=".$host.";dbname=".$db_name,$user,$password);
             }
