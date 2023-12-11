@@ -24,7 +24,7 @@ if($_POST){
         // $mail->Password = 'Programmer12345'; // YOUR gmail password
     
         $mail->Username = 'no-reply@southlaneanimalhospital.com'; // YOUR gmail email
-        $mail->Password = 'Programmer'; // YOUR gmail password
+        $mail->Password = 'Programmer@123'; // YOUR gmail password
 
         // Sender and recipient settings
         $mail->setFrom('no-reply@southlaneanimalhospital.com', 'South Lane Animal Hospital');
