@@ -1,0 +1,1209 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1671069788611,
+    "data": [
+        {
+            "type": "file",
+            "name": ".htaccess",
+            "size": 163,
+            "hash": "5006c06626c418cf98a5d93356ea770c00225bde9c844f59756b6b609dd2675e"
+        },
+        {
+            "type": "file",
+            "name": "composer.json",
+            "size": 60,
+            "hash": "a371f48f5ca05011923f7b7e8eb2cdaec452d80da9f94afa5a94589948239e35"
+        },
+        {
+            "type": "file",
+            "name": "composer.lock",
+            "size": 7130,
+            "hash": "23a31c98f5bcb2c74ff9214774e0deda1a3033b4f034ffe6a0df7272654e2542"
+        },
+        {
+            "type": "file",
+            "name": "index.php",
+            "size": 32,
+            "hash": "ba3a6d39e35907aefb33dfb3b20990cea9e0ff92df3c415279a8f65f807ce4bf"
+        },
+        {
+            "type": "file",
+            "name": "mail_service_api.php",
+            "size": 1344,
+            "hash": "04df101441b6da50252f4b64f807e820514c16ba35ef1d79276a928e589f68be"
+        },
+        {
+            "type": "file",
+            "name": "send-test-mail.php",
+            "size": 592,
+            "hash": "d11b68abc562592006d08f3b12ce2835f3a01a795e8fd7525fed5b4ab9e6d00a"
+        },
+        {
+            "type": "folder",
+            "name": "vendor"
+        },
+        {
+            "type": "file",
+            "name": "vendor/autoload.php",
+            "size": 427,
+            "hash": "5bcc8b15d5d505e1491632ed100d89b6d7a5d2147d6934fa7c20a923de7013e2"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/composer"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/starkbank"
+        },
+        {
+            "type": "file",
+            "name": "vendor/composer/ClassLoader.php",
+            "size": 16068,
+            "hash": "c944c4b1228ef6bef01b0029205c562c96536f8e550052d753b57723d520e69a"
+        },
+        {
+            "type": "file",
+            "name": "vendor/composer/InstalledVersions.php",
+            "size": 15069,
+            "hash": "3343ca2bf56e8116e7c9a87f9139fad37412f55a18e296a94dd52943332a8bbe"
+        },
+        {
+            "type": "file",
+            "name": "vendor/composer/LICENSE",
+            "size": 1070,
+            "hash": "c8cce4b6b9729f264ffdf9296d505d63432497feeed1f586d1902b942197e024"
+        },
+        {
+            "type": "file",
+            "name": "vendor/composer/autoload_classmap.php",
+            "size": 476,
+            "hash": "d01b466671370ef3e94fbad72475aec404e2b91be343f3225172e37118d65824"
+        },
+        {
+            "type": "file",
+            "name": "vendor/composer/autoload_files.php",
+            "size": 231,
+            "hash": "1bc08d5e2876ab54b801864e1cd5faa97c6c46e2ae398fee28ab6e5102976887"
+        },
+        {
+            "type": "file",
+            "name": "vendor/composer/autoload_namespaces.php",
+            "size": 139,
+            "hash": "ede505407590638a435137f4e060136f1008de79fc169b3de9793423b0cea38c"
+        },
+        {
+            "type": "file",
+            "name": "vendor/composer/autoload_psr4.php",
+            "size": 621,
+            "hash": "a04662f1746a9cb964342bc0bdc06123025d1aa1d3e5f2e39be226fbde14ee1b"
+        },
+        {
+            "type": "file",
+            "name": "vendor/composer/autoload_real.php",
+            "size": 1738,
+            "hash": "ba2b129759f9beab361c2fd83792c3fc9a749d5618bfa710f6b37ccb6da82fe0"
+        },
+        {
+            "type": "file",
+            "name": "vendor/composer/autoload_static.php",
+            "size": 2358,
+            "hash": "3b425d65c09ae9db8721cf7dc12f7cbbe6c2c55c304bcf9c1a955d117cf19fe1"
+        },
+        {
+            "type": "file",
+            "name": "vendor/composer/installed.json",
+            "size": 7055,
+            "hash": "6a23c41b82e836a4e8e31d2f5816b2533deb9222f3d79ed38c14230d09d3ed3b"
+        },
+        {
+            "type": "file",
+            "name": "vendor/composer/installed.php",
+            "size": 2020,
+            "hash": "a9653ce8d9f21b8ed7fcc4e6e739906d7f9bb7497bc60ddeddecad8a75dd0bac"
+        },
+        {
+            "type": "file",
+            "name": "vendor/composer/platform_check.php",
+            "size": 925,
+            "hash": "a35a93ad352c7c414cd970603b92d1b8f0e01c96108d2e0febfbdc7c9558f1fa"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/php-http-client"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/starkbank/ecdsa"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/.php_cs.dist",
+            "size": 603,
+            "hash": "8430b376233c4eab25f94f73e4617693b8808dbe0f4876e76c8b19ef53ce55a2"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/CHANGELOG.md",
+            "size": 16386,
+            "hash": "b78620c1db68a867746a60523b72bbad9f6cf3f8a8263ee9f16d6297c23c5a0f"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/CODE_OF_CONDUCT.md",
+            "size": 3251,
+            "hash": "04564983389e2a2651906ec5eb32529f7ef4f2d08ca428d63d7a9c0d68e39854"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/CONTRIBUTING.md",
+            "size": 6521,
+            "hash": "89d524b6ca70203eb919ee73d9203abb42e7b7268ee6f0349d5db2fd4497526e"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/Dockerfile",
+            "size": 326,
+            "hash": "37307a7ee48945f5af561c28fb5e0eaf12ee52218dcca5542aadace03e8ed9d1"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/FIRST_TIMERS.md",
+            "size": 6795,
+            "hash": "8f1eda0d23b00ad32ecc34c6342d01af93c81598a56f4831120144b57494d14e"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/ISSUE_TEMPLATE.md",
+            "size": 743,
+            "hash": "8140db01cef8d4534ee083e605398746b3a46e512c5310dc45a1d894e0913ba6"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/LICENSE",
+            "size": 1097,
+            "hash": "d2654c53ea74723104ed54d7d42f395d3b357cadcc8c964652c059cda0ff96d9"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/Makefile",
+            "size": 356,
+            "hash": "c8e60976b2ce06d771ddbb696777ab61b598af3b7cd51d586ccdb37aa677aac5"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/PULL_REQUEST_TEMPLATE.md",
+            "size": 1645,
+            "hash": "604bace6bb78b2871cdc58d29760ee67eb53a391c04c2f5c40bf9b6822255b1f"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/README.md",
+            "size": 5528,
+            "hash": "4935800d3147787388135a9474d5b67e25f7016ca3a2a3ce99fe1c1d3925445d"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/TROUBLESHOOTING.md",
+            "size": 1055,
+            "hash": "70f92b638f2c2a8c8aa142a1c0ab4cac71f4311390f36438afb719ea11afecdf"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/USAGE.md",
+            "size": 2882,
+            "hash": "6d638c9ede660e171818de5fdfb19a0ee475b2400e3fcfd9c183cc373c81fc42"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/composer.json",
+            "size": 1160,
+            "hash": "f5d0cc7c9ca992357836d61b96c7fd88262967bcbe04ecaa8ba4ac94e8966856"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/php-http-client/examples"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/php-http-client/lib"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/php-http-client/static"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/php-http-client/test"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/twilio_sendgrid_logo.png",
+            "size": 14596,
+            "hash": "8f277aaba8ab1755cfd8c231dfc312248f90afd1c288861422181d556e47c7d6"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/php-http-client/use_cases"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/.editorconfig",
+            "size": 135,
+            "hash": "732e3096d5d0952f497898f9fda16ddf7fba5b9dc8047ba98ed5fc405580b06a"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/.env.sample",
+            "size": 27,
+            "hash": "e2958fbc972727a63920aec234977775dd947ad660a4cdcc81c50466a76643af"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/Dockerfile",
+            "size": 335,
+            "hash": "82c4b5d28a7fdd74d5e344360d38c0b155a725c6e2d5abb9d4fc5cd1ec7f857a"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/FIRST_TIMERS.md",
+            "size": 6780,
+            "hash": "2764908f11d36f75000cf1a67121679e7a8bc48e56ee0858243f4314ce469d44"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/LICENSE",
+            "size": 1097,
+            "hash": "d2654c53ea74723104ed54d7d42f395d3b357cadcc8c964652c059cda0ff96d9"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/composer.json",
+            "size": 1371,
+            "hash": "546dc2037e654ef70f911aea91732a7beab713257a14cb0adc4c68069177e489"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/lib"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/phpcs.xml",
+            "size": 10313,
+            "hash": "d89f1f0452765e9a2eae76aeec373e0586d75a2fd4ce9128ecacea5792ec7929"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/scripts"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/sendgrid-php.php",
+            "size": 997,
+            "hash": "ba31ff189f33f7e0461a85b03028090c148a14c971dfd1dadd29e791858dd0a3"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/static"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/twilio_sendgrid_logo.png",
+            "size": 14596,
+            "hash": "8f277aaba8ab1755cfd8c231dfc312248f90afd1c288861422181d556e47c7d6"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/.travis.yml",
+            "size": 168,
+            "hash": "f046c5142c060cd54cf614a9e50a5014fac13656df40fd2480d707d1b2aa80ec"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/LICENSE",
+            "size": 1072,
+            "hash": "b2c865eead944bfab4edbd463041c2b689b50e321fad672b1140c315bc18714e"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/README.md",
+            "size": 4149,
+            "hash": "de98c48015f09da28efc3ddc7ec46b7bb3b62d82ca5640e3b06573e8247c1edf"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/composer.json",
+            "size": 603,
+            "hash": "fc20178e750eea27a3001fbd933bcf03f7a2b780cee29185f6b96bd26240926d"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/starkbank/ecdsa/src"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/starkbank/ecdsa/tests"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/php-http-client/.github/ISSUE_TEMPLATE"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/php-http-client/.github/workflows"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/examples/.env_sample",
+            "size": 26,
+            "hash": "851d13e4de04c0ccc6df15f830687723d072256fc190498794e57fc71b362b00"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/examples/example.php",
+            "size": 2191,
+            "hash": "029240ca7cb4c7f21c5c120fe2cb2686bae771aa0aa362fb0e6455cc2a9c5b53"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/lib/Client.php",
+            "size": 17538,
+            "hash": "30fc3a0f8cdb3c62f7fcc045dedc2476c658a4b5b27bd6c706f659cf0befd28f"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/php-http-client/lib/Exception"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/lib/Response.php",
+            "size": 1964,
+            "hash": "4a59bbd34d1fe3cf8fd71e855bf1fc6db4b30c80357a41311388b0337e05d9ee"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/php-http-client/static/img"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/test/phpunit.xml.dist",
+            "size": 399,
+            "hash": "154b35e3dd4cfadc7b30118e46e8019e0dcad63ffcedee2a8c85b6035afeb52d"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/php-http-client/test/unit"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/use_cases/README.md",
+            "size": 263,
+            "hash": "419731262e7189a8627497c55198c04e6250f2892ee09eb1630f4b4d830ae7bd"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/use_cases/docker.md",
+            "size": 581,
+            "hash": "ad50f8e2d922ecebc3f449be3370d3724d74c6d07def0bb90e1a53c0186d33a3"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/.github/ISSUE_TEMPLATE"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/.github/workflows"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/accesssettings"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/alerts"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/apikeys"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/asm"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/browsers"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/campaigns"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/categories"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/clients"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/contactdb"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/devices"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/geo"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/helpers"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/ips"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/mail"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/mailboxproviders"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/mailsettings"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/partnersettings"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/scopes"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/senderauthentication"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/senders"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/stats"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/subusers"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/suppression"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/templates"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/trackingsettings"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/user"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/BaseSendGridClientInterface.php",
+            "size": 1885,
+            "hash": "a734ef9d81a6997c20af5c4dfca6e2cd8f0bb27d3c306cd5b22d678b4b557ea4"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/SendGrid.php",
+            "size": 740,
+            "hash": "e47458e98a3229b496732d1fceb80edd254ec5ea0d9672561aeab006fe1fc20f"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/TwilioEmail.php",
+            "size": 848,
+            "hash": "103c839ce94f60b55a7b8dfeac634eb43557e573d1e90e2c03dfc0e5436ba57e"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/lib/contacts"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/lib/eventwebhook"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/lib/helper"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/lib/mail"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/lib/stats"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/scripts/package.sh",
+            "size": 276,
+            "hash": "585ff8f0aa5d7d1730270cad71f9bd266c65c509680dc8deba2c9b4b94ce7d0c"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/static/img"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/src/ecdsa.php",
+            "size": 598,
+            "hash": "53e0405025821c1561eca69bd47747bdcf6cb5a6ace38bb2d7dc7905fe0173d2"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/src/ellipticcurve.php",
+            "size": 204,
+            "hash": "6d21ca676bf740ef91f9d8b9b1a9875a4467c791f6430c1339fd0b62091e5569"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/src/privatekey.php",
+            "size": 2250,
+            "hash": "bc7cd522e17053a37c8cf11ae74df7cc55f84027760c0e5144efb73be7521ecb"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/src/publickey.php",
+            "size": 1386,
+            "hash": "f799e0594b038937432872ee6c94d76a11921de287676105c74551ead8048e56"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/src/signature.php",
+            "size": 437,
+            "hash": "508fab6a611656227afb9e89926c4e62d8f2f145c422deb24115e515adeff4b9"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/starkbank/ecdsa/src/utils"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/tests/message.txt",
+            "size": 170,
+            "hash": "d94b9ba3e7dd18a7a265b4d619286c0615ccb24817bb6898578c160a0fec4baa"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/tests/privateKey.pem",
+            "size": 294,
+            "hash": "46ef1fc3fa34194a6c84a4a4e3b51c15951bafeaae9a4312c81af9b9386be802"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/tests/publicKey.pem",
+            "size": 174,
+            "hash": "232c9b15a2d7aecec80d1fbc34558de9d01d23991678b715f627e1d47cc413d1"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/tests/signatureDer.txt",
+            "size": 71,
+            "hash": "2211fab3a4b4e862eff6082efad15be9a658673d49aeb9b3f533e1c4404d407c"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/tests/test.php",
+            "size": 4610,
+            "hash": "13b7c4b2f66475439beba855c663f12cf2ba8ef7487ba13a20c02c680ca6ca6a"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/.github/ISSUE_TEMPLATE/config.yml",
+            "size": 377,
+            "hash": "f4423f3ca542375677241adcefd2aa98d2e7dd6754a087790131bb9d557d1f6a"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/.github/workflows/test-and-deploy.yml",
+            "size": 2695,
+            "hash": "d10f780c00f5cf8cfa0796b2bc8a5ccb67556e0473844cf48a22ef670c763383"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/lib/Exception/InvalidRequest.php",
+            "size": 501,
+            "hash": "38972ebdd544f5c7b47a6d6b61a30b01157e3af53e2f1b7abb35251ebdfc051b"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/static/img/github-fork.png",
+            "size": 13855,
+            "hash": "30f644d10f055c45480bbcbb39dfd1fe7e228d8c5351f0e905631701c30fc53e"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/static/img/github-sign-up.png",
+            "size": 86857,
+            "hash": "65fc74c5c81878b94b509f0ac0e1cab208ddc5403983641d5a8d94b90b10c61a"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/test/unit/ClientTest.php",
+            "size": 8476,
+            "hash": "c914dbc53b0e2cec7441f93e392db6a9e4824d197d7bf8e57cf72975c1ab83f7"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/test/unit/FilesExistTest.php",
+            "size": 944,
+            "hash": "4cba9ddfbc112a260aaf6360317833a32487792242b95be162f5e53d1117229d"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/test/unit/LicenceYearTest.php",
+            "size": 480,
+            "hash": "58fadf11a8bf9769f66eccd583518e278118b88dd90d6f5e3431fbab5c28c6c3"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/test/unit/MockClient.php",
+            "size": 439,
+            "hash": "f80bda3e30a4277132c9faaa10182424082a159e4f25d7d962f1d4b3d1898d60"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/php-http-client/test/unit/ResponseTest.php",
+            "size": 1478,
+            "hash": "ef0330600093040b80275ebf73611387f028308f7251e32ec01a8fcc93a011e6"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/.github/ISSUE_TEMPLATE/config.yml",
+            "size": 374,
+            "hash": "d91505b8211774d98a6da65d94d145b7b7ec075a987cadf17f78a733f43a431f"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/.github/workflows/test-and-deploy.yml",
+            "size": 2481,
+            "hash": "df9e9c54a554d6f20efe1ad1c05f9acbff1490a4a9cb79c1384ab0914efdd122"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/accesssettings/accesssettings.php",
+            "size": 3120,
+            "hash": "b39a46e6bf6116ec36dd4bfe815455068080cba26b53759e594e15ed973ec439"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/alerts/alerts.php",
+            "size": 2368,
+            "hash": "56916a137519db2d2725455cbdb42f1335b551d36f48c3dc1cd9aa1b0e4e064d"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/apikeys/apikeys.php",
+            "size": 3094,
+            "hash": "39901d23ecca024d89727ef64ba66f0258c99c45100d27f414ee2d73441939c3"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/asm/asm.php",
+            "size": 7159,
+            "hash": "f5a68ba2d1fa2fc5b2ec15d415672cdfc45945fc465732aae3fbb5f2ec85b8ca"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/browsers/browsers.php",
+            "size": 829,
+            "hash": "b5deb3c799311bedcf6abb4f27757bc18f99fd8a094d3779c9942f48070c902f"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/campaigns/campaigns.php",
+            "size": 6034,
+            "hash": "c02514fd90d163f92f2d4b0b3ffc42926ef1f63bddfea4d3108c1697c289c490"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/categories/categories.php",
+            "size": 1948,
+            "hash": "6d38d85283fc44abf04950afb01b58b41a45b2bec0d014abf179baeaf4ae13da"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/clients/clients.php",
+            "size": 1333,
+            "hash": "f4ff59fde107997163e2929ee01c4c4b1a7c3f0a8a38800b9f43e8614aa28f62"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/contactdb/contactdb.php",
+            "size": 15770,
+            "hash": "3a6003ab096222060b1d34d83a86a943a75809e46c9447ac21decdf5ec1d5983"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/devices/devices.php",
+            "size": 779,
+            "hash": "5aa176e68d85471c768265bedc8aeca21881c31b5ec9bd9b27dd1031e7e20f2a"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/geo/geo.php",
+            "size": 803,
+            "hash": "42ef883b9749ccd0fbcffff2cb6709ee371e36fc6571b1df87f2d20b7adbc39e"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/helpers/contacts"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/helpers/eventwebhook"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/helpers/mail"
+        },
+        {
+            "type": "folder",
+            "name": "vendor/sendgrid/sendgrid/examples/helpers/stats"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/ips/ips.php",
+            "size": 6317,
+            "hash": "e03f3296d9f5ff9a975debb27c02bdea0c908df7fbd66ecdb7f3f3bc38ac7325"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/mail/mail.php",
+            "size": 5052,
+            "hash": "00a49943b4c96d70825fc3d386171b7e87e1379a80f7ebc7b82db79dccc136b6"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/mailboxproviders/mailboxproviders.php",
+            "size": 840,
+            "hash": "7bfb2c061e82c9c9bc94c731509629a75c93bbc013bdd406942a04360cc3f679"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/mailsettings/mailsettings.php",
+            "size": 8822,
+            "hash": "e6db171e1d98d0bf3c3f83d84b9b886fb301240c50c1e7357c42b0f5bb1773ca"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/partnersettings/partnersettings.php",
+            "size": 1645,
+            "hash": "597e34403cef673d0b2ef197afdbd64c75f15baf984c5e7b7609a81edb4d8f8e"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/scopes/scopes.php",
+            "size": 622,
+            "hash": "1c1caeaaca0cbdfb315adf9f8e2e7c1bf4b6fd6bcee42b42f1fe018ab0660b25"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/senderauthentication/senderauthentication.php",
+            "size": 13106,
+            "hash": "cbb5ea5517797f0fecd569ad50daf0a75a3a2b75cd2ec381b5c2a24e8bf3a56c"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/senders/senders.php",
+            "size": 3421,
+            "hash": "be582263d507451ce9caa42918c7d42d26f687fd3c26f814a7f633f59cfdcfe5"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/stats/stats.php",
+            "size": 751,
+            "hash": "f21eb0fda3b74c744c3dabd1027b4204ab75e5408491ec48ea0375afb823be66"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/subusers/subusers.php",
+            "size": 7576,
+            "hash": "8ce9e67ad83dac04f36cab7307ebffa9299529bed4bf017e6965318ee52a9010"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/suppression/suppression.php",
+            "size": 8387,
+            "hash": "b60bae55378ab1332f4781b91d8f264cf0b3aa453184cb355b91082d4db7834e"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/templates/templates.php",
+            "size": 5522,
+            "hash": "a0f53ad43a6278d4fe0416801e94708a5aa3d0bc61bf11adfb4742d9d930e472"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/trackingsettings/trackingsettings.php",
+            "size": 4483,
+            "hash": "65791bf3fa0d29fb5d90a830e2f6ed3a0a6476ef9caff1cec7b3064a947483dc"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/user/user.php",
+            "size": 11877,
+            "hash": "e92ff8d6204c334a5f44d66c6444a495b97ce26038edd68908ceb2bd80b048c2"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/contacts/Recipient.php",
+            "size": 2016,
+            "hash": "b49d23056bb2a2cd8557d7c0d7b9571ce3eb570129ddeeda7a0ff37db00c4a8b"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/contacts/RecipientForm.php",
+            "size": 1046,
+            "hash": "81c39db8ed8059c9724d813d39971e5f69f7a590c45e60165c77a2898fe9c5cd"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/eventwebhook/EventWebhook.php",
+            "size": 1490,
+            "hash": "4c6d6a94ceef79944a198c7b0e7b42de193ea4bfb2b79deefc44e3522aaa881f"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/eventwebhook/EventWebhookHeader.php",
+            "size": 407,
+            "hash": "cd73073b6539f8697d91e16b7824730bde5b56ef24fd8d826330e8c4e20be01d"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/helper/Assert.php",
+            "size": 9937,
+            "hash": "1038cb643fb2c0e729871e26527ec11cbc335eda3a493b8e56086bde35e5543c"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Asm.php",
+            "size": 4698,
+            "hash": "f376cd1007ef6aa8ca7e3f22b428fb50d4cf39ab69c39e9dfbfd0ee5d4a5c618"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Attachment.php",
+            "size": 5917,
+            "hash": "05a38cc633e546c6ed764663304132739b7da325e0fdaa1012b2bd54b40f5cfd"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/BatchId.php",
+            "size": 1603,
+            "hash": "998d0ce672925bfc2da9c3f1fcbfad558c1668a83006cc676d354495fe97f32a"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Bcc.php",
+            "size": 281,
+            "hash": "25588f05179264c261d7f22b6d5354ce78123a63096b6b5175b6d37ea983d678"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/BccSettings.php",
+            "size": 2544,
+            "hash": "f4a9ef72c1219763697a0e3b84746e601baa7006ce8e3e3380c883692ced0128"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/BypassBounceManagement.php",
+            "size": 1994,
+            "hash": "18e07b144235aba23c0bf57ea522084f3b4a3a4b7dc2e44bcc47275f7c261cc3"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/BypassListManagement.php",
+            "size": 1939,
+            "hash": "f96eb6fa49fe53862e33ed49e54d7bf67acd77ef304e1997c9e5172430cdf630"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/BypassSpamManagement.php",
+            "size": 1982,
+            "hash": "48a94901bcbbd4544dbd9bbab1fd97f8bbf65524515a10fae45851cecd787280"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/BypassUnsubscribeManagement.php",
+            "size": 2122,
+            "hash": "09f437c6012acec6e42eb4a22632e1c4cad8f7d2b29fc2fd408ed0022da0dd35"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Category.php",
+            "size": 1747,
+            "hash": "52d1e4090e4d249feac677effcb2e2f0b6b4dbf42783c6841db231a8c3e82615"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Cc.php",
+            "size": 278,
+            "hash": "0a4a38edca8dbeb896ea0c11abb7236c28221943eb79188450e881f944b79a86"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/ClickTracking.php",
+            "size": 2715,
+            "hash": "c9f72a70f8d0f580d20ee42b42e37b454d68a95dcbaf273eeda5b77c506dc1f4"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Content.php",
+            "size": 2924,
+            "hash": "9a959c9d501334d88f5c5a3aef1eb2819d2cba4b261b4b9364c201bd0eed15bb"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/CustomArg.php",
+            "size": 2677,
+            "hash": "02839f47608a5f128dc0763d98cfc4896a6ea120082ce2a0f33fca92f5ab05da"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/EmailAddress.php",
+            "size": 5028,
+            "hash": "9c5c66c5610d752f0568522ab5bc2b01b91ac87c188e52a06f321b1eebf34bc7"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Footer.php",
+            "size": 3056,
+            "hash": "803699b6d9fe4e92b40a564b390758c9745e20c0bcb649d61e1a578cfdfe5bdf"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/From.php",
+            "size": 284,
+            "hash": "6d098fccf1e0a8687710d3e380c4b45676b580380b2da042ae875ab4fd06f22a"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Ganalytics.php",
+            "size": 6456,
+            "hash": "4decf7386bb848e7f85ce14ca2caaf629ec50b45c2a04e8d2084a90a634592bc"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/GroupId.php",
+            "size": 1477,
+            "hash": "9d6dd269adcb9557fa4e369d7bb84fee5832d1f5623a1eef37e4f1e2805e745e"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/GroupsToDisplay.php",
+            "size": 3236,
+            "hash": "3fc3b982b49d142d81725b38ff6393c724ef76f24b41198e7832f9920bf62278"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Header.php",
+            "size": 2363,
+            "hash": "eb9938c7db19620a0703d3e6afba01dfcbe32bb56272ecf32fa0086b83f1192b"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/HtmlContent.php",
+            "size": 531,
+            "hash": "0aea08aa5ee27a2d267add2f349a0ddd94266f87a249f18ca5d3bb3b19463caa"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/IpPoolName.php",
+            "size": 2009,
+            "hash": "baabf046906758c32f50fba7e90203235da36542273b2f099bf5ab369d6db4f3"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Mail.php",
+            "size": 69793,
+            "hash": "55eb8267eacbdf9d47b971f3c1d38887df807b1901c5ce74e12374064df461c7"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/MailSettings.php",
+            "size": 13751,
+            "hash": "fcb3e01d97ec7fe4dac5c2280ef29200d51a49b693f485911e431146a2b69717"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/MimeType.php",
+            "size": 319,
+            "hash": "afaed9a2780302db523de835db05106f9d949223f43629915a89b5a9bbf89407"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/OpenTracking.php",
+            "size": 3650,
+            "hash": "98859b2d0009da815bd35919f9bb33b6ec1bd078a10ab2969311d23f6a513f40"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Personalization.php",
+            "size": 8408,
+            "hash": "3cb5df196fc01f42a84e995aa977e29fe94b14fb5a04b9256d2ff2e7b2f46bf7"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/PlainTextContent.php",
+            "size": 547,
+            "hash": "752a9f9ed0d0385710f31a91d1b555cc5dd46aafce2cfc98bd65b9a65ce94be4"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/ReplyTo.php",
+            "size": 293,
+            "hash": "b43dbec1ce5ce6eabdfb7906c045c83649322c662d507c00dd5f46d2628689cb"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/SandBoxMode.php",
+            "size": 1632,
+            "hash": "6493e5348c227859aba14d0a77a42e3d658a10d3f6c53343824957dc6ac01f52"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Section.php",
+            "size": 2256,
+            "hash": "694aa772fced63992adb609dc40205b1f7bdf62904c936587e7b9fcebe07b274"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/SendAt.php",
+            "size": 3605,
+            "hash": "53b4d00a87651851a5ddda2999d04d9d7a8d9cc758c98f19d388c3ea4a70726b"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/SpamCheck.php",
+            "size": 4319,
+            "hash": "4eba603c4c2971f1731fecc1507f9fdc494a3a0d6753978f9c69fc401d3ab96b"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Subject.php",
+            "size": 1399,
+            "hash": "461754c6b04d76bb433c03e73d3de64ae5a8cbcb2e90d8f92c01c494df79f015"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/SubscriptionTracking.php",
+            "size": 6783,
+            "hash": "c3981b943f82075ab1fda2667dd7e641e85027791afc936c4c94d7d5bda3ea2b"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/Substitution.php",
+            "size": 2993,
+            "hash": "c6bccf2bde674e6f186872da1e15b44a2ab749fae887917582a23230c05e5cad"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/TemplateId.php",
+            "size": 2342,
+            "hash": "d831fcaf12318171c6d5cadd7b0312b61a9076af71e31eae197998836fd725c0"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/To.php",
+            "size": 278,
+            "hash": "7a2b36c4c8648a43ae84bae9980045b57feae020377d4558fdf141e298933264"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/TrackingSettings.php",
+            "size": 9260,
+            "hash": "89d0794cdc50bf4513bfc1c401300f090554b6f5a455967214234bdcc67c23b0"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/mail/TypeException.php",
+            "size": 77,
+            "hash": "747470bbd08bd5c8d3aa03ba2338e7960c7d4d042ef4dd2b32dd91e84ec9df8b"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/lib/stats/Stats.php",
+            "size": 7716,
+            "hash": "11fd9ed650913e7ff9dc806f63716e4e000e62603f7513dbe0abfacccdefff2f"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/static/img/github-fork.png",
+            "size": 15189,
+            "hash": "7602df85ae565be61ee305b6e2118b77238627573a1bf1945a8d312680c3f6cc"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/static/img/github-sign-up.png",
+            "size": 116981,
+            "hash": "8591cbc77bc41b83813a83c5190e229845f40c94fc264ded0cd0e7a35db6299a"
+        },
+        {
+            "type": "file",
+            "name": "vendor/starkbank/ecdsa/src/utils/file.php",
+            "size": 243,
+            "hash": "6953b197576b80862803ed0579b3c684f56db411d7acc30ec2aa09888faa1d1d"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/helpers/contacts/recipients.php",
+            "size": 1920,
+            "hash": "703904b38820c2e12ef10d39c1526706d1aa4d1ac67d86c62068d4475340d685"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/helpers/eventwebhook/example.php",
+            "size": 511,
+            "hash": "4545d688f93155d01aeb4e493882f947a00830456d23dabccd66ee3f996e2f45"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/helpers/mail/example.php",
+            "size": 11572,
+            "hash": "c9dc5dc5a80c6773c47435c867bdecc1ac68b5a5b0c184e039db9485d7c31726"
+        },
+        {
+            "type": "file",
+            "name": "vendor/sendgrid/sendgrid/examples/helpers/stats/example.php",
+            "size": 1243,
+            "hash": "08b043afa58e1c0adb398a0533708b7e4a228e5c8e5f9552285df53b0233f738"
+        }
+    ]
+}

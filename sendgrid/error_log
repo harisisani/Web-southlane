@@ -1,0 +1,76 @@
+[11-Dec-2022 17:58:12 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/send-test-mail.php:11
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/send-test-mail.php on line 11
+[11-Dec-2022 18:36:03 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/send-test-mail.php:11
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/send-test-mail.php on line 11
+[11-Dec-2022 18:37:02 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/send-test-mail.php:11
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/send-test-mail.php on line 11
+[11-Dec-2022 18:37:18 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/send-test-mail.php:12
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/send-test-mail.php on line 12
+[11-Dec-2022 18:39:31 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/send-test-mail.php:12
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/send-test-mail.php on line 12
+[11-Dec-2022 18:39:56 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:26
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 26
+[11-Dec-2022 18:43:36 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:26
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 26
+[11-Dec-2022 18:44:57 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:26
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 26
+[11-Dec-2022 18:45:43 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:26
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 26
+[11-Dec-2022 18:46:37 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:26
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 26
+[11-Dec-2022 18:52:47 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:26
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 26
+[11-Dec-2022 18:54:38 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:26
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 26
+[11-Dec-2022 18:59:14 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:26
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 26
+[11-Dec-2022 19:02:30 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:25
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 25
+[11-Dec-2022 19:02:58 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:25
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 25
+[11-Dec-2022 19:03:53 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:25
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 25
+[11-Dec-2022 19:06:53 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:25
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 25
+[11-Dec-2022 19:10:05 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:25
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 25
+[11-Dec-2022 19:16:48 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function statusCode() on null in /home4/hbelqfmy/public_html/sendgrid/sendmail.php:25
+Stack trace:
+#0 {main}
+  thrown in /home4/hbelqfmy/public_html/sendgrid/sendmail.php on line 25
