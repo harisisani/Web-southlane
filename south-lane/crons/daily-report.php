@@ -102,15 +102,6 @@ $reportHtml.='</tbody>
 
     // $filename = './reports/Daily Report - Dated '.$date.'.csv';
     $filename = './reports/Daily Report - Dated '.$date.'.csv';
-
-
-    $permissions = 0777;
-
-    if (chmod($filename, $permissions)) {
-        echo 'Permissions changed successfully.';
-    } else {
-        echo 'Unable to change permissions.';
-    }
     // open csv file for writing
     $f = fopen($filename, 'w');
 
@@ -129,7 +120,7 @@ $reportHtml.='</tbody>
         'subject' => 'Daily Report - Dated: '.$date,
         'body' => $reportHtml,
         // 'file_path' => 'C:\xampp\htdocs\south-lane\crons\reports\Daily Report - Dated '.$date.'.csv',
-        'file_path' => 'https://srv864-files.hstgr.io/2978459ea7b51b4a/api/raw/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
+        'file_path' => $filename,
     );
 
     // close the file
@@ -170,6 +161,7 @@ $reportHtml.='</tbody>
             echo "failure";
         }
 
+        https://srv864-files.hstgr.io/2978459ea7b51b4a/api/raw/public_html/south-lane/crons/reports/Daily%20Report%20-%20Dated%202023-12-12.csv
         $recipientsDetailsOther=array(
             'receiver_email' => 'zeeshan.shouket@gmail.com',
             'receiver_name' => 'Zeeshan Shouket',
