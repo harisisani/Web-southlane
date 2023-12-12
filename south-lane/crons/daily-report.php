@@ -102,7 +102,7 @@ $reportHtml.='</tbody>
 
     // $filename = './reports/Daily Report - Dated '.$date.'.csv';
     $filename = './reports/Daily Report - Dated '.$date.'.csv';
-
+    $file_path = "https://southlaneanimalhospital.com/south-lane/crons/reports//Daily Report - Dated '.$date.'.csv'";
     // open csv file for writing
     $f = fopen($filename, 'w');
 
@@ -120,7 +120,7 @@ https://srv864-files.hstgr.io/2978459ea7b51b4a/api/raw/public_html/south-lane/cr
         'subject' => 'Daily Report - Dated: '.$date,
         'body' => $reportHtml,
         // 'file_path' => 'C:\xampp\htdocs\south-lane\crons\reports\Daily Report - Dated '.$date.'.csv',
-        'file_path' => '/home/2978459ea7b51b4a/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
+        'file_path' => $file_path,
     );
 
     // close the file
