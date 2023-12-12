@@ -109,18 +109,19 @@ $reportHtml.='</tbody>
     if ($f === false) {
         die('Error opening the file ' . $filename);
     }
-
+   
     // write each row at a time to a file
     foreach ($csvData as $row) {
         fputcsv($f, $row);
     }
+
     $recipientsDetails=array(
         'receiver_email' => 'harisisani@gmail.com',
         'receiver_name' => 'Haris Isani',
         'subject' => 'Daily Report - Dated: '.$date,
         'body' => $reportHtml,
         // 'file_path' => 'C:\xampp\htdocs\south-lane\crons\reports\Daily Report - Dated '.$date.'.csv',
-        'file_path' => '/home/b5y4wt260iyj/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
+        'file_path' => 'https://srv864-files.hstgr.io/2978459ea7b51b4a/api/raw/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
     );
 
     // close the file
