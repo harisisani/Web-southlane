@@ -102,25 +102,25 @@ $reportHtml.='</tbody>
 
     // $filename = './reports/Daily Report - Dated '.$date.'.csv';
     $filename = './reports/Daily Report - Dated '.$date.'.csv';
+
     // open csv file for writing
     $f = fopen($filename, 'w');
 
     if ($f === false) {
         die('Error opening the file ' . $filename);
     }
-   
+https://srv864-files.hstgr.io/2978459ea7b51b4a/api/raw/public_html/south-lane/crons/reports/Daily%20Report%20-%20Dated%2005-03-2022.csv?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbl9HQiIsInZpZXdNb2RlIjoibGlzdCIsInNpbmdsZUNsaWNrIjpmYWxzZSwicGVybSI6eyJhZG1pbiI6ZmFsc2UsImV4ZWN1dGUiOmZhbHNlLCJjcmVhdGUiOnRydWUsInJlbmFtZSI6dHJ1ZSwibW9kaWZ5Ijp0cnVlLCJkZWxldGUiOnRydWUsInNoYXJlIjpmYWxzZSwiZG93bmxvYWQiOnRydWV9LCJjb21tYW5kcyI6W10sImxvY2tQYXNzd29yZCI6dHJ1ZSwiaGlkZURvdGZpbGVzIjpmYWxzZSwiZGF0ZUZvcm1hdCI6ZmFsc2V9LCJpc3MiOiJGaWxlIEJyb3dzZXIiLCJleHAiOjE3MDIzNDg5NDAsImlhdCI6MTcwMjM0MTc0MH0.iqqJw4T3mazG6it8EFnKOyD9KGHIbpDiixR37wEdris&
     // write each row at a time to a file
     foreach ($csvData as $row) {
         fputcsv($f, $row);
     }
-
     $recipientsDetails=array(
         'receiver_email' => 'harisisani@gmail.com',
         'receiver_name' => 'Haris Isani',
         'subject' => 'Daily Report - Dated: '.$date,
         'body' => $reportHtml,
         // 'file_path' => 'C:\xampp\htdocs\south-lane\crons\reports\Daily Report - Dated '.$date.'.csv',
-        'file_path' => $filename,
+        'file_path' => '/home/2978459ea7b51b4a/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
     );
 
     // close the file
@@ -161,7 +161,6 @@ $reportHtml.='</tbody>
             echo "failure";
         }
 
-        https://srv864-files.hstgr.io/2978459ea7b51b4a/api/raw/public_html/south-lane/crons/reports/Daily%20Report%20-%20Dated%202023-12-12.csv
         $recipientsDetailsOther=array(
             'receiver_email' => 'zeeshan.shouket@gmail.com',
             'receiver_name' => 'Zeeshan Shouket',
