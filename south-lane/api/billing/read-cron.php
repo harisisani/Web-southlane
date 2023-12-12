@@ -37,7 +37,13 @@ function safe_json_encode($value){
     }
     $activity="Fetching Billing List";
     session_start();
-    $date=date("Y-m-d");
+    if (isset($_GET['date'])) {
+        // Retrieve the value of the 'age' parameter
+        $date=$_GET['date'];
+    } else {
+        $date=date("Y-m-d");
+    }
+    
     // $date='2022-03-04';
 
     try {
