@@ -102,18 +102,18 @@ $reportHtml.='</tbody>
 
 
     // $filename = './reports/Daily Report - Dated '.$date.'.csv';
-    // $filename = './reports/Daily Report - Dated '.$date.'.csv';
+    $filename = './reports/Daily Report - Dated '.$date.'.csv';
     // // open csv file for writing
-    // $f = fopen($filename, 'w');
+    $f = fopen($filename, 'w');
 
-    // if ($f === false) {
-    //     die('Error opening the file ' . $filename);
-    // }
+    if ($f === false) {
+        die('Error opening the file ' . $filename);
+    }
 
     // write each row at a time to a file
-    // foreach ($csvData as $row) {
-    //     fputcsv($f, $row);
-    // }
+    foreach ($csvData as $row) {
+        fputcsv($f, $row);
+    }
     $recipientsDetails=array(
         'receiver_email' => 'harisisani@gmail.com',
         'receiver_name' => 'Haris Isani',
@@ -124,7 +124,7 @@ $reportHtml.='</tbody>
     );
 
     // close the file
-    // fclose($f);
+    fclose($f);
         try{
             // print_r($allData);
             $curl = curl_init();
