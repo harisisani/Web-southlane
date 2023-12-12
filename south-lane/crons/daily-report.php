@@ -102,7 +102,6 @@ $reportHtml.='</tbody>
 
     // $filename = './reports/Daily Report - Dated '.$date.'.csv';
     $filename = './reports/Daily Report - Dated '.$date.'.csv';
-    $file_path = "https://southlaneanimalhospital.com/south-lane/crons/reports/Daily Report - Dated $date.csv";
 
     // open csv file for writing
     $f = fopen($filename, 'w');
@@ -115,15 +114,13 @@ $reportHtml.='</tbody>
     foreach ($csvData as $row) {
         fputcsv($f, $row);
     }
-
-    fclose($f); // Close the file handle
-
-    $recipientsDetails = array(
+    $recipientsDetails=array(
         'receiver_email' => 'harisisani@gmail.com',
         'receiver_name' => 'Haris Isani',
         'subject' => 'Daily Report - Dated: '.$date,
         'body' => $reportHtml,
-        'file_path' => $filename, // Use the local file path here
+        // 'file_path' => 'C:\xampp\htdocs\south-lane\crons\reports\Daily Report - Dated '.$date.'.csv',
+        'file_path' => 'https://srv864-files.hstgr.io/2978459ea7b51b4a/api/raw/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
     );
 
     // close the file
