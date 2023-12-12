@@ -120,7 +120,7 @@ $reportHtml.='</tbody>
         'subject' => 'Daily Report - Dated: '.$date,
         'body' => $reportHtml,
         // 'file_path' => 'C:\xampp\htdocs\south-lane\crons\reports\Daily Report - Dated '.$date.'.csv',
-        // 'file_path' => $filepath,
+        'file_path' => '/home/u270102017/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
     );
 
     // close the file
@@ -167,7 +167,7 @@ $reportHtml.='</tbody>
             'subject' => 'Daily Report - Dated: '.$date,
             'body' => $reportHtml,
             // 'file_path' => 'C:\xampp\htdocs\south-lane\crons\reports\Daily Report - Dated '.$date.'.csv',
-            // 'file_path' => '/home/b5y4wt260iyj/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
+            'file_path' => '/home/u270102017/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
         );
 
         try{
