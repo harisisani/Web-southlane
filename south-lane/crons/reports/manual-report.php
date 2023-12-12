@@ -101,13 +101,13 @@ $reportHtml.='</tbody>
 
 
     // $filename = './reports/Daily Report - Dated '.$date.'.csv';
-    $filename = './reports/Daily Report - Dated '.$date.'.csv';
-    // open csv file for writing
-    $f = fopen($filename, 'w');
+    // $filename = './reports/Daily Report - Dated '.$date.'.csv';
+    // // open csv file for writing
+    // $f = fopen($filename, 'w');
 
-    if ($f === false) {
-        die('Error opening the file ' . $filename);
-    }
+    // if ($f === false) {
+    //     die('Error opening the file ' . $filename);
+    // }
 
     // write each row at a time to a file
     foreach ($csvData as $row) {
