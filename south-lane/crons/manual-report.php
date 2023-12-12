@@ -161,49 +161,49 @@ $reportHtml.='</tbody>
             echo "failure";
         }
 
-        // $recipientsDetailsOther=array(
-        //     'receiver_email' => 'zeeshan.shouket@gmail.com',
-        //     'receiver_name' => 'Zeeshan Shouket',
-        //     'subject' => 'Daily Report - Dated: '.$date,
-        //     'body' => $reportHtml,
-        //     // 'file_path' => 'C:\xampp\htdocs\south-lane\crons\reports\Daily Report - Dated '.$date.'.csv',
-        //     // 'file_path' => '/home/b5y4wt260iyj/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
-        // );
+        $recipientsDetailsOther=array(
+            'receiver_email' => 'zeeshan.shouket@gmail.com',
+            'receiver_name' => 'Zeeshan Shouket',
+            'subject' => 'Daily Report - Dated: '.$date,
+            'body' => $reportHtml,
+            // 'file_path' => 'C:\xampp\htdocs\south-lane\crons\reports\Daily Report - Dated '.$date.'.csv',
+            // 'file_path' => '/home/b5y4wt260iyj/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
+        );
 
-        // try{
-        //     // print_r($allData);
-        //     $curl = curl_init();
-        //     curl_setopt_array($curl, array(
-        //     CURLOPT_URL => 'https://southlaneanimalhospital.com/south-lane/api/email/sendmail.php',
-        //     CURLOPT_RETURNTRANSFER => true,
-        //     CURLOPT_ENCODING => '',
-        //     CURLOPT_MAXREDIRS => 10,
-        //     CURLOPT_TIMEOUT => 0,
-        //     CURLOPT_FOLLOWLOCATION => true,
-        //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        //     CURLOPT_CUSTOMREQUEST => 'POST',
-        //     CURLOPT_POSTFIELDS => json_encode($recipientsDetailsOther),
-        //     CURLOPT_HTTPHEADER => array(
-        //             'Content-Type: application/json'
-        //         ),
-        //     ));
-        //     $response = curl_exec($curl);
-        //     curl_close($curl);
-        //     $logArray=array(
-        //         "user_name" => isset($_SESSION["user_name"])? $_SESSION["user_name"] : "no user" ,
-        //         "activity" => $activity,
-        //         "status" => "Successful",
-        //     );
-        //     echo $response;
-        // }
-        // catch (Exception $e){
-        //     echo $e;
-        //     $logArray=array(
-        //         "user_name" => isset($_SESSION["user_name"])? $_SESSION["user_name"] : "no user" ,
-        //         "activity" => $activity,
-        //         "status" => "Query Execution Failed",
-        //     );
-        //     echo "failure";
-        // }
+        try{
+            // print_r($allData);
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://southlaneanimalhospital.com/south-lane/api/email/sendmail.php',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => json_encode($recipientsDetailsOther),
+            CURLOPT_HTTPHEADER => array(
+                    'Content-Type: application/json'
+                ),
+            ));
+            $response = curl_exec($curl);
+            curl_close($curl);
+            $logArray=array(
+                "user_name" => isset($_SESSION["user_name"])? $_SESSION["user_name"] : "no user" ,
+                "activity" => $activity,
+                "status" => "Successful",
+            );
+            echo $response;
+        }
+        catch (Exception $e){
+            echo $e;
+            $logArray=array(
+                "user_name" => isset($_SESSION["user_name"])? $_SESSION["user_name"] : "no user" ,
+                "activity" => $activity,
+                "status" => "Query Execution Failed",
+            );
+            echo "failure";
+        }
     include '../api/log/logApi.php';
 ?>
