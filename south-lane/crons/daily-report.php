@@ -103,6 +103,14 @@ $reportHtml.='</tbody>
     // $filename = './reports/Daily Report - Dated '.$date.'.csv';
     $filename = './reports/Daily Report - Dated '.$date.'.csv';
 
+
+    $permissions = 0777;
+
+    if (chmod($filename, $permissions)) {
+        echo 'Permissions changed successfully.';
+    } else {
+        echo 'Unable to change permissions.';
+    }
     // open csv file for writing
     $f = fopen($filename, 'w');
 
