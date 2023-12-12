@@ -96,7 +96,7 @@ $reportHtml.='</tbody>
 </table><br/><br/>
 </div>';
 
- $date=date("Y-m-d");
+ $date=$_GET['date'];
 //  $date='2022-04-04';
 
 
@@ -166,7 +166,7 @@ $reportHtml.='</tbody>
             'subject' => 'Daily Report - Dated: '.$date,
             'body' => $reportHtml,
             // 'file_path' => 'C:\xampp\htdocs\south-lane\crons\reports\Daily Report - Dated '.$date.'.csv',
-            'file_path' => '/home/b5y4wt260iyj/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
+            // 'file_path' => '/home/b5y4wt260iyj/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv',
         );
 
         try{
