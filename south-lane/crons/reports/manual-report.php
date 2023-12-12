@@ -110,9 +110,9 @@ $reportHtml.='</tbody>
     // }
 
     // write each row at a time to a file
-    foreach ($csvData as $row) {
-        fputcsv($f, $row);
-    }
+    // foreach ($csvData as $row) {
+    //     fputcsv($f, $row);
+    // }
     $recipientsDetails=array(
         'receiver_email' => 'harisisani@gmail.com',
         'receiver_name' => 'Haris Isani',
