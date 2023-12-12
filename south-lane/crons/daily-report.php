@@ -121,7 +121,7 @@ $reportHtml.='</tbody>
         'subject' => 'Daily Report - Dated: '.$date,
         'body' => $reportHtml,
         // 'file_path' => 'C:\xampp\htdocs\south-lane\crons\reports\Daily Report - Dated '.$date.'.csv',
-        'file_path' => $filepath,
+        // 'file_path' => $filepath,
     );
 
     // close the file
