@@ -103,6 +103,7 @@ $reportHtml.='</tbody>
     // $filename = './reports/Daily Report - Dated '.$date.'.csv';
     $filename = './reports/Daily Report - Dated '.$date.'.csv';
     $filepath=urldecode('https://srv864-files.hstgr.io/2978459ea7b51b4a/api/raw/public_html/south-lane/crons/reports/Daily Report - Dated '.$date.'.csv');
+    echo $filepath;
     // open csv file for writing
     $f = fopen($filename, 'w');
 
