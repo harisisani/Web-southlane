@@ -28,18 +28,14 @@ if($_POST){
 
 
         $mail->isSMTP();
-        $mail->Host = 'smtp.titan.email';
-        $mail->SMTPAuth = true;
-        $mail->SMTPAutoTLS = false;
+        $mail->Host = 'smtp.hostinger.com';
+        $mail->SMTPDebug = 2;
         $mail->Port = 587; // You can also use 465 for SSL/TLS (deprecated) or 587 for STARTTLS
+        $mail->SMTPAuth = true;
 
         // Set your username and password for SMTP authentication
         $mail->Username = 'no-reply@southlaneanimalhospital.com'; // YOUR gmail email
         $mail->Password = 'Programmer@123'; 
-
-        // Enable SSL/TLS encryption
-        $mail->SMTPSecure = 'tls'; // You can also use 'ssl' (deprecated)
-
 
 
         // Sender and recipient settings
