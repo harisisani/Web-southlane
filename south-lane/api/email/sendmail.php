@@ -3,62 +3,49 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-include './Exception.php';
-include './PHPMailer.php';
-include './SMTP.php';
+require './Exception.php';
+require './PHPMailer.php';
+require './SMTP.php';
 
-// passing true in constructor enables exceptions in PHPMailer
 $mail = new PHPMailer(true);
+
 $_POST = json_decode(file_get_contents('php://input'), true);
-if($_POST){
+
+if ($_POST) {
     try {
         // Server settings
-        // $mail->SMTPDebug = SMTP::DEBUG_SERVER; // for detailed debug output
-        // $mail->isSMTP();
-        // $mail->Host = 'localhost';
-        // $mail->SMTPAuth = false;
-        // $mail->SMTPAutoTLS = false;
-        // $mail->Port = 25;
-    
-        // // $mail->Username = 'profilewebsite162@gmail.com'; // YOUR gmail email
-        // // $mail->Password = 'Programmer12345'; // YOUR gmail password
-    
-        // $mail->Username = 'no-reply@southlaneanimalhospital.com'; // YOUR gmail email
-        // $mail->Password = 'Programmer@123'; // YOUR gmail password
-
-
         $mail->isSMTP();
         $mail->Host = 'smtp.hostinger.com';
-        $mail->SMTPDebug = 2;
-        $mail->Port = 587; // You can also use 465 for SSL/TLS (deprecated) or 587 for STARTTLS
+        $mail->SMTPDebug = 0; // Set to 2 for debugging, 0 for production
+        $mail->Port = 587; // Use 465 for SSL/TLS (deprecated) or 587 for STARTTLS
         $mail->SMTPAuth = true;
 
         // Set your username and password for SMTP authentication
-        $mail->Username = 'no-reply@southlaneanimalhospital.com'; // YOUR gmail email
-        $mail->Password = 'Programmer@123'; 
-
+        $mail->Username = 'no-reply@southlaneanimalhospital.com';
+        $mail->Password = 'Programmer@123';
 
         // Sender and recipient settings
         $mail->setFrom('no-reply@southlaneanimalhospital.com', 'South Lane Animal Hospital');
-        $mail->addAddress( $_POST['receiver_email'], $_POST['receiver_name']);
-        $mail->addReplyTo('harisisani@gmail.com', 'South Lane Animal Hospital'); // to set the reply to
+        $mail->addAddress($_POST['receiver_email'], $_POST['receiver_name']);
+        $mail->addReplyTo('harisisani@gmail.com', 'South Lane Animal Hospital');
 
         // Setting the email content
-        $mail->IsHTML(true);
+        $mail->isHTML(true);
         $mail->Subject = $_POST['subject'];
         $mail->Body = $_POST['body'];
-        if(isset($_POST['file_path'])){
+
+        if (isset($_POST['file_path']) && file_exists($_POST['file_path'])) {
             $mail->addAttachment($_POST['file_path']);
         }
 
         $mail->send();
         echo "success";
     } catch (Exception $e) {
-        // echo $e;
-        echo $mail->ErrorInfo;
+        // Log the error, avoid displaying sensitive information
+        // error_log("Email error: " . $e->getMessage());
+        echo "An error occurred while sending the email. Please try again later.";
     }
-}else{
+} else {
     echo "POST failed";
 }
-
 ?>
