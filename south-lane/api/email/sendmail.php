@@ -16,7 +16,7 @@ if ($_POST) {
         // Server settings
         $mail->isSMTP();
         $mail->Host = 'smtp.hostinger.com';
-        $mail->SMTPDebug = 0; // Set to 2 for debugging, 0 for production
+        $mail->SMTPDebug = 2; // Set to 2 for debugging, 0 for production
         $mail->Port = 587; // Use 465 for SSL/TLS (deprecated) or 587 for STARTTLS
         $mail->SMTPAuth = true;
 
