@@ -123,7 +123,7 @@ $reportHtml.='</tbody>
     );
 
     // close the file
-    fclose($f);
+    // fclose($f);
         try{
             // print_r($allData);
             $curl = curl_init();
