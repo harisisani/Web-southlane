@@ -40,7 +40,7 @@
 			<div class="wrap-login100">
 				<form  class="login100-form validate-form" action="./api/users/verify-login.php" method="post">
 					<span class="login100-form-title p-b-26">
-						Login
+						Sign In
 					</span>
 					<span class="login100-form-title p-b-48">
 						<img src="./assets/images/logo.jpg" alt="logo" style="max-height:100px;">
