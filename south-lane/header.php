@@ -1,5 +1,8 @@
 
 <?php
+    if($_SERVER['SERVER_NAME']=="localhost"){
+        $_SERVER['SERVER_NAME'].="/Web-southlane/";
+    }
  if(!isset($_SESSION)) 
  { 
      session_start(); 

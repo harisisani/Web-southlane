@@ -194,6 +194,39 @@ include './header.php';
 		});
 		flagNewCheck=1;
 		$('.input100').focus();
+		
+		 // Get the dynamic hostname
+		 var hostname = window.location.origin;
+		 if(hostname=="http://localhost"){
+			hostname+="/Web-southlane";
+		 }
+
+		// Example MR number (replace this with the actual MR number dynamically if needed)
+		var mrNumber = $(tr).find('td.patientId').text();
+
+		// Construct the API URL
+		var apiUrl = `${hostname}/south-lane/api/billing/get-pending.php?mr_number=${encodeURIComponent(mrNumber)}`;
+
+		// Make the AJAX request
+		$.ajax({
+			url: apiUrl,
+			type: "GET",
+			dataType: "json",
+			success: function (response) {
+				console.log("response:", response);
+				if (response.total_pending) {
+					console.log("Total Pending Amount:", response.total_pending);
+					// You can update the UI with the response data
+					$("input[name='previous_balance']").val(response.total_pending)
+				} else {
+					console.log("No pending amount found for this MR number.");
+				}
+			},
+			error: function (xhr, status, error) {
+				console.error("Error:", error);
+				console.error("Response:", xhr.responseText);
+			}
+		});
 		Swal.fire('Details with Mr-Id: '+$(tr).find('td.patientId').text()+' are added');
 	}
 
@@ -489,7 +522,8 @@ include './header.php';
 			procedurePrint+="</table><table style='width:80%; margin:0 auto; margin-left:20%;color:auto'>";
 		}
 		var discountGiven=$("input[name='discount']").val();
-		var grandTotal=parseFloat(total)-parseFloat(discountGiven);
+		var previous_balance=$("input[name='previous_balance']").val();
+		var grandTotal=(parseFloat(total)-parseFloat(discountGiven))+parseFloat(previous_balance);
 		$("input[name='total_amount']").val(grandTotal);
 		$("input[name='procedures_with_amount']").val(procedure);
 		$("input[name='extra_charges']").val(charges);
@@ -754,6 +788,20 @@ include './header.php';
 										</td>
 										<td>
 											<input name="discount" onblur="updateTotal();" type="text" value="0" class="form-control amount" placeholder="Amount">
+										</td>
+									</tr>
+									<tr class="templateTwo">
+										<td>
+											<select onchange="updateTotal();" class="show_receipt form-control">
+												<option value="yes">Show</option>
+												<option value="no">Hide</option>
+											</select>
+										</td>
+										<td>
+											<input type="text" value="Previous Pending Balance" class="form-control text" placeholder="Previous Pending Balance">
+										</td>
+										<td>
+											<input readonly="" name="previous_balance" readonly="" type="text" value="0" class="form-control amount">
 										</td>
 									</tr>
 									<tr class="templateTwo">

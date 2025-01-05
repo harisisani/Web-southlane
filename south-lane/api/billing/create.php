@@ -25,6 +25,7 @@ if($_POST){
 
         // Format the new patient ID with the "PT" prefix
         $newBillId = "INV " . str_pad($newId, 4, "0", STR_PAD_LEFT);
+        
 
         // insert query
         $query = "INSERT INTO billing SET
@@ -87,6 +88,66 @@ if($_POST){
                     "status" => "Successful",
                 );
             echo 'success^'.date('Y-m-d H:i:s')."^".$newBillId;
+            //clear previous pendings
+            $mr_number = $_POST['mr_number'];
+$previousQuery = "SELECT SUM(pending) as total_pending FROM billing WHERE mr_number = :mr_number";
+$stmt = $connection->prepare($previousQuery);
+$stmt->bindParam(':mr_number', $mr_number, PDO::PARAM_STR);
+$stmt->execute();
+
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+if ($result) {
+    $pendingAmounts = $result['total_pending'];
+    if ($pendingAmounts > 0) {
+        // Calculate the current bill total
+        $currentBillTotal = $_POST['extra_charges'] - $_POST['discount'];
+        $extraMoneyReceived = $_POST['received'] - $currentBillTotal;
+        if ($extraMoneyReceived > 0) {
+            // Logic to clear pending amounts using the extra money
+            $clearPendingsQuery = "SELECT * FROM billing WHERE mr_number = :mr_number AND pending > 0 ORDER BY bill_id ASC";
+            $stmtClear = $connection->prepare($clearPendingsQuery);
+            $stmtClear->bindParam(':mr_number', $mr_number, PDO::PARAM_STR);
+            $stmtClear->execute();
+
+            $pendingRecords = $stmtClear->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($pendingRecords as $record) {
+                if ($extraMoneyReceived <= 0) {
+                    break; // Stop if no extra money is left
+                }
+
+                $pending = $record['pending'];
+                $billId = $record['bill_id'];
+
+                if ($extraMoneyReceived >= $pending) {
+                    // Fully clear this pending amount
+                    $updateQuery = "UPDATE billing SET pending = 0 WHERE bill_id = :bill_id";
+                    $stmtUpdate = $connection->prepare($updateQuery);
+                    $stmtUpdate->bindParam(':bill_id', $billId, PDO::PARAM_INT);
+                    $stmtUpdate->execute();
+
+                    // Deduct the cleared amount from extra money
+                    $extraMoneyReceived -= $pending;
+                } else {
+                    // Partially clear this pending amount
+                    $remainingPending = $pending - $extraMoneyReceived;
+                    $updateQuery = "UPDATE billing SET pending = :remaining_pending WHERE bill_id = :bill_id";
+                    $stmtUpdate = $connection->prepare($updateQuery);
+                    $stmtUpdate->bindParam(':remaining_pending', $remainingPending, PDO::PARAM_INT);
+                    $stmtUpdate->bindParam(':bill_id', $billId, PDO::PARAM_INT);
+                    $stmtUpdate->execute();
+
+                    // All extra money has been used
+                    $extraMoneyReceived = 0;
+                }
+            }
+        }
+        }
+    }
+
+        
+
+
         }else{
             // die('Unable to add record.');
             $logArray=array(
