@@ -526,7 +526,10 @@ include './header.php';
 		}
 		var discountGiven=$("input[name='discount']").val();
 		var previous_balance=$("input[name='previous_balance']").val();
-		var grandTotal=(parseFloat(total)-parseFloat(discountGiven))+parseFloat(previous_balance);
+		var grandTotal=(parseFloat(total)-parseFloat(discountGiven));
+		if($('#applyprevious').val()=="yes"){
+			 grandTotal+=parseFloat(previous_balance);
+		}
 		$("input[name='total_amount']").val(grandTotal);
 		$("input[name='procedures_with_amount']").val(procedure);
 		$("input[name='extra_charges']").val(charges);
@@ -815,7 +818,7 @@ include './header.php';
 									</tr>
 									<tr class="templateTwo">
 										<td>
-											<select onchange="updateTotal();" class="show_receipt form-control">
+											<select id="applyprevious" onchange="updateTotal();" class="show_receipt form-control">
 												<option value="yes">Show</option>
 												<option value="no">Hide</option>
 											</select>
