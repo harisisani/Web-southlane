@@ -6,7 +6,7 @@ if (isset($_GET['contact_number'])) {
         $urlToHit.="&pending=true";
     }
 }else{
-    $urlToHit=$_SERVER['SERVER_NAME'].'south-lane/api/billing/read.php';
+    $urlToHit=$_SERVER['SERVER_NAME'].'/south-lane/api/billing/read.php';
     if (isset($_GET['pending']) && $_GET['pending']=="true") {
         $urlToHit.="?pending=true";
     }
