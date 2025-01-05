@@ -1,8 +1,24 @@
-<?php include './header.php'; ?>
+<?php 
+include './header.php'; 
+if (isset($_GET['contact_number'])) {
+    $urlToHit=$_SERVER['SERVER_NAME'].'south-lane/api/billing/read.php?contact_number='.urlencode($_GET['contact_number']);
+    if (isset($_GET['pending']) && $_GET['pending']=="true") {
+        $urlToHit.="&pending=true";
+    }
+}else{
+    $urlToHit=$_SERVER['SERVER_NAME'].'south-lane/api/billing/read.php';
+    if (isset($_GET['pending']) && $_GET['pending']=="true") {
+        $urlToHit.="?pending=true";
+    }
+}
+
+
+
+?>
 <?php
     $curl = curl_init();
     curl_setopt_array($curl, array(
-    CURLOPT_URL => $_SERVER['SERVER_NAME'].'/south-lane/api/billing/read.php',
+    CURLOPT_URL => ($urlToHit),
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -95,7 +111,7 @@ include './header.php'; ?>
             <div class="row">
                 <div class="col">
                     <div class="section_title_container text-center">
-                        <h2 class="section_title">View Billings</h2>
+                        <h2 class="section_title">View Billings <?=$urlToHit?></h2>
                     </div>
                 </div>
             </div>

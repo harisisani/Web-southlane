@@ -45,41 +45,46 @@ if($_POST){
         bill_date='".date('Y-m-d H:i:s')."',
         user_name='".$_SESSION["user_name"]."'";
         $stmt = $connection->prepare($query);
-
+        $sendSms=true;
+        if($_POST['sendsms']=="no"){
+            $sendSms=false;
+        }
         if($stmt->execute()){
-            $sms_text="Greetings ".$_POST['ownername']."!\n";
-            $sms_text.="Thank you for visiting South Lane Animal Hospital.\n";
-            if($_POST['paymentmode']!="Pending"){
-                $sms_text.="Your bill is Rs.".$_POST['total_amount']." (Invoice ID. ".$newBillId.").\n\n";
-            }else{
-                $sms_text.="Your pending bill amount is Rs.".$_POST['total_amount']." (Invoice ID. ".$newBillId.").\n\n";
+            if($sendSms){
+                $sms_text="Greetings ".$_POST['ownername']."!\n";
+                $sms_text.="Thank you for visiting South Lane Animal Hospital.\n";
+                if($_POST['paymentmode']!="Pending"){
+                    $sms_text.="Your bill is Rs.".$_POST['total_amount']." (Invoice ID. ".$newBillId.").\n\n";
+                }else{
+                    $sms_text.="Your pending bill amount is Rs.".$_POST['total_amount']." (Invoice ID. ".$newBillId.").\n\n";
+                }
+                $sms_text.="Take Care of ".$_POST['patientname']."\n";
+                $sms_text.="M.R #: ".$_POST['mr_number']."\n\n";
+                $sms_text.="For Online Appointment & Tracking Patient's History: shorturl.at/cjouF";
+                $paymentArray=array(
+                    "mr_number" => $_POST['mr_number'],
+                    "contact"   => $_POST['contact'],
+                    "sms_text"  => $sms_text,
+                );
+                $curl = curl_init();
+                $_SERVER['SERVER_NAME'] = ($_SERVER['SERVER_NAME'] =="localhost")? $_SERVER['SERVER_NAME'] : "https://".$_SERVER['SERVER_NAME'];
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => $_SERVER['SERVER_NAME'].'/south-lane/api/sms/send-single.php',
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => '',
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => 'POST',
+                    CURLOPT_POSTFIELDS => json_encode($paymentArray),
+                    CURLOPT_HTTPHEADER => array(
+                        'Content-Type: application/json'
+                    ),
+                ));
+                $response = curl_exec($curl);
+                curl_close($curl);
             }
-            $sms_text.="Take Care of ".$_POST['patientname']."\n";
-            $sms_text.="M.R #: ".$_POST['mr_number']."\n\n";
-            $sms_text.="For Online Appointment & Tracking Patient's History: shorturl.at/cjouF";
-            $paymentArray=array(
-                "mr_number" => $_POST['mr_number'],
-                "contact"   => $_POST['contact'],
-                "sms_text"  => $sms_text,
-            );
-            $curl = curl_init();
-            $_SERVER['SERVER_NAME'] = ($_SERVER['SERVER_NAME'] =="localhost")? $_SERVER['SERVER_NAME'] : "https://".$_SERVER['SERVER_NAME'];
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => $_SERVER['SERVER_NAME'].'/south-lane/api/sms/send-single.php',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => '',
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => json_encode($paymentArray),
-                CURLOPT_HTTPHEADER => array(
-                    'Content-Type: application/json'
-                ),
-            ));
-            $response = curl_exec($curl);
-            curl_close($curl);
             // redirect to read records page and
                 // tell the user record was deleted
                 $logArray=array(
@@ -89,10 +94,10 @@ if($_POST){
                 );
             echo 'success^'.date('Y-m-d H:i:s')."^".$newBillId;
             //clear previous pendings
-            $mr_number = $_POST['mr_number'];
-$previousQuery = "SELECT SUM(pending) as total_pending FROM billing WHERE mr_number = :mr_number";
+            $contact = $_POST['contact'];
+$previousQuery = "SELECT SUM(pending) as total_pending FROM billing WHERE contact = :contact";
 $stmt = $connection->prepare($previousQuery);
-$stmt->bindParam(':mr_number', $mr_number, PDO::PARAM_STR);
+$stmt->bindParam(':contact', $contact, PDO::PARAM_STR);
 $stmt->execute();
 
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -104,9 +109,9 @@ if ($result) {
         $extraMoneyReceived = $_POST['received'] - $currentBillTotal;
         if ($extraMoneyReceived > 0) {
             // Logic to clear pending amounts using the extra money
-            $clearPendingsQuery = "SELECT * FROM billing WHERE mr_number = :mr_number AND pending > 0 ORDER BY bill_id ASC";
+            $clearPendingsQuery = "SELECT * FROM billing WHERE contact = :contact AND pending > 0 ORDER BY bill_id ASC";
             $stmtClear = $connection->prepare($clearPendingsQuery);
-            $stmtClear->bindParam(':mr_number', $mr_number, PDO::PARAM_STR);
+            $stmtClear->bindParam(':contact', $contact, PDO::PARAM_STR);
             $stmtClear->execute();
 
             $pendingRecords = $stmtClear->fetchAll(PDO::FETCH_ASSOC);

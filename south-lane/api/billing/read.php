@@ -1,4 +1,23 @@
 <?php
+if (isset($_GET['contact_number'])) {
+    $contact_number = $_GET['contact_number'];
+    if (isset($_GET['pending']) && $_GET['pending']=="true") {
+        $query = "SELECT * FROM billing WHERE deleted = 0 AND contact = '$contact_number' AND pending > 0 ORDER BY bill_id DESC";
+    }else{
+        $query = "SELECT * FROM billing WHERE deleted = 0 AND contact = '$contact_number' ORDER BY bill_id DESC";
+    }
+   
+} else {
+    if (isset($_GET['pending']) && $_GET['pending']=="true") {
+        $query = "SELECT * FROM billing WHERE deleted = 0 AND pending > 0 ORDER BY bill_id DESC";
+    }else{
+        $query = "SELECT * FROM billing WHERE deleted = 0 ORDER BY bill_id DESC";
+    }
+   
+}
+
+
+
 function safe_json_encode($value){
     if (version_compare(PHP_VERSION, '5.4.0') >= 0) {
         $encoded = json_encode($value, JSON_PRETTY_PRINT);
@@ -39,7 +58,7 @@ function safe_json_encode($value){
     session_start();
     try {
         include '../database.php';
-        $query = "SELECT * FROM billing where deleted = 0 ORDER BY bill_id DESC";
+        
         $stmt = $connection->prepare($query);
         $stmt->execute();
         $usersData = $stmt->fetchAll(PDO::FETCH_ASSOC);

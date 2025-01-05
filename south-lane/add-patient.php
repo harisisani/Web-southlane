@@ -202,11 +202,11 @@ include './header.php';
 		 }
 
 		// Example MR number (replace this with the actual MR number dynamically if needed)
-		var mrNumber = $(tr).find('td.patientId').text();
+		var contact = $('input[name="contact"]').val();
 
 		// Construct the API URL
-		var apiUrl = `${hostname}/south-lane/api/billing/get-pending.php?mr_number=${encodeURIComponent(mrNumber)}`;
-
+		var apiUrl = `${hostname}/south-lane/api/billing/get-pending.php?contact_number=${encodeURIComponent(contact)}`;
+		 console.log(apiUrl);
 		// Make the AJAX request
 		$.ajax({
 			url: apiUrl,
@@ -217,8 +217,11 @@ include './header.php';
 				if (response.total_pending) {
 					console.log("Total Pending Amount:", response.total_pending);
 					// You can update the UI with the response data
-					$("input[name='previous_balance']").val(response.total_pending)
+					$("input[name='previous_balance']").val(response.total_pending);
+					var hostURL = `${hostname}/south-lane/view-receipt.php?pending=true&contact_number=${encodeURIComponent(contact)}`;
+					$('#previousReceipt').attr('href', hostURL);
 				} else {
+					$('#previousReceipt').hide();
 					console.log("No pending amount found for this MR number.");
 				}
 			},
@@ -718,6 +721,26 @@ include './header.php';
 										</select>
 									</td>
 								</tr>
+								<style>
+									.circle-badge{
+										padding: 10px;
+										color: white;
+										background: blue;
+										border-radius: 10px;
+										margin: 10px;
+									}
+								</style>
+								<tr>
+									<td style="float: right;">
+										<span class="circle-badge">Send SMS After Bill Creation?</span>
+									</td>
+									<td>
+										<select class="form-control" name="sendsms">
+											<option selected value="yes">Yes</option>
+											<option value="no">No</option>
+										</select>
+									</td>
+								</tr></td>
 							</table>
 							<table class="table tableClass procedures">
 								<thead>
@@ -799,6 +822,7 @@ include './header.php';
 										</td>
 										<td>
 											<input type="text" value="Previous Pending Balance" class="form-control text" placeholder="Previous Pending Balance">
+											<a target="_blank" id="previousReceipt" href="">See All Pending Receipts</a>
 										</td>
 										<td>
 											<input readonly="" name="previous_balance" readonly="" type="text" value="0" class="form-control amount">
