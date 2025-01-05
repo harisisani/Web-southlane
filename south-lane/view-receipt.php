@@ -111,7 +111,7 @@ include './header.php'; ?>
             <div class="row">
                 <div class="col">
                     <div class="section_title_container text-center">
-                        <h2 class="section_title">View Billings <?=$urlToHit?></h2>
+                        <h2 class="section_title">View Billings</h2>
                     </div>
                 </div>
             </div>
