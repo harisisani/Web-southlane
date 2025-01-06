@@ -1,7 +1,7 @@
 <?php 
 include './header.php'; 
 if (isset($_GET['contact_number'])) {
-    $urlToHit=$_SERVER['SERVER_NAME'].'south-lane/api/billing/read.php?contact_number='.urlencode($_GET['contact_number']);
+    $urlToHit=$_SERVER['SERVER_NAME'].'/south-lane/api/billing/read.php?contact_number='.urlencode($_GET['contact_number']);
     if (isset($_GET['pending']) && $_GET['pending']=="true") {
         $urlToHit.="&pending=true";
     }
