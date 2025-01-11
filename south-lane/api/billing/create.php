@@ -67,9 +67,10 @@ if($_POST){
                     "sms_text"  => $sms_text,
                 );
                 $curl = curl_init();
-                $_SERVER['SERVER_NAME'] = ($_SERVER['SERVER_NAME'] =="localhost")? $_SERVER['SERVER_NAME'] : "https://".$_SERVER['SERVER_NAME'];
+                $_SERVER['SERVER_NAME'] = ($_SERVER['SERVER_NAME'] =="localhost")? $_SERVER['SERVER_NAME']."/Web-southlane/" : "https://".$_SERVER['SERVER_NAME'];
+                $apiURL=$_SERVER['SERVER_NAME'].'/south-lane/api/sms/send-single.php';
                 curl_setopt_array($curl, array(
-                    CURLOPT_URL => $_SERVER['SERVER_NAME'].'/south-lane/api/sms/send-single.php',
+                    CURLOPT_URL =>  $apiURL,
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_ENCODING => '',
                     CURLOPT_MAXREDIRS => 10,

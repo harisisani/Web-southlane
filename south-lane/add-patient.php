@@ -375,6 +375,7 @@ include './header.php';
 							"total_amount":  $('input[name="total_amount"]').val(),
 							"pending": $("input[name='amountToBePaid']").val(),
 							"received": $("input[name='amountReceived']").val(),
+							"sendsms": $("select[name='sendsms']").val(),
 						}),
 						};
 

@@ -10,7 +10,7 @@ if($_POST){
     // Configuration variables
     $type = "xml";
     $id = "rchsouthlane";
-    $pass = "hospital@122";
+    $pass = "southlane123";
     $lang = "English"; 
     $mask = "SouthLane";
     // Data for text message

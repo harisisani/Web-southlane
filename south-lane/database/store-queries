@@ -1,0 +1,9 @@
+-- Add the new column to the table
+ALTER TABLE billing
+ADD COLUMN type VARCHAR(50) DEFAULT 'normal';
+
+-- Update the existing records to have the default value
+UPDATE billing
+SET type = 'normal';
+
+
