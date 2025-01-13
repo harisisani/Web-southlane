@@ -116,6 +116,10 @@ if(!isset($_SESSION["user_id"])){
                                                     <div style="font-weight: bold;"><a style="color: white;" href="vouchers.php">Vouchers</a></div>
                                                 </li>
                                                 <li>
+                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                    <div style="font-weight: bold;"><a style="color: white;" href="store.php">Store</a></div>
+                                                </li>
+                                                <li>
                                                     <i class="fa fa-lock" aria-hidden="true"></i>
                                                     <div style="font-weight: bold;"><a style="color: white;" href="logout.php">Log out</a></div>
                                                 </li>
@@ -142,14 +146,17 @@ if(!isset($_SESSION["user_id"])){
                                         </div>
                                         <nav class="main_nav_contaner ml-auto">
                                             <ul class="main_nav">
+                                                <li><a href="index.php">Home</a></li>
                                                 <li><a href="create-patient.php">Add Patient</a></li>
-                                                <li><a href="view-patients.php">Patient</a></li>
-                                                <li><a href="view-receipt.php">Receipt</a></li>
-                                                <li><a href="summary.php">Summary</a></li>
-                                                <li><a href="procedure.php">Procedures</a></li>
-                                                <li><a href="extras.php">Extras</a></li>
-                                                <li><a href="add-patient.php">Create</a></li>
-                                                <li><a href="vouchers.php">Vouchers</a></li>
+                                                <li><a href="add-patient.php">Create Normal Bill</a></li>
+                                                <li><a href="add-store-bill.php">Create Store Bill</a></li>
+                                                <!-- <li><a href="view-patients.php">Patients</a></li> -->
+                                                <!-- <li><a href="view-receipt.php">Receipt</a></li> -->
+                                                <!-- <li><a href="summary.php">Summary</a></li> -->
+                                                <!-- <li><a href="procedure.php">Procedures</a></li>
+                                                <li><a href="extras.php">Extras</a></li> -->
+                                                <li><a href="store.php">Store</a></li>
+                                                <!-- <li><a href="vouchers.php">Vouchers</a></li> -->
                                             </ul>
                                             <!-- Hamburger -->
                                             <div class="hamburger menu_mm">
@@ -179,16 +186,17 @@ if(!isset($_SESSION["user_id"])){
 
                     <nav class="menu_nav">
                         <ul class="menu_mm">
-                            <li><a href="#">User: <?=$_SESSION["user_name"]?></a></li>
-                             <li><a href="index.php">Home</a></li>
-                            <li><a href="add-patient.php">Add Patient</a></li>
-                            <li><a href="view-patients.php">View Patient</a></li>
-                            <li><a href="receipt.php">Receipt</a></li>
-                            <li><a href="summary.php">Summary</a></li>
-                            <li><a href="procedure.php">Procedures</a></li>
-                            <li><a href="extras.php">Extras</a></li>
-                            <li><a href="create-patient.php">Create</a></li>
-                            <li><a href="logout.php">Log out</a></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="create-patient.php">Add Patient</a></li>
+                            <li><a href="add-patient.php">Create Normal Bill</a></li>
+                            <li><a href="add-store-bill.php">Create Store Bill</a></li>
+                            <!-- <li><a href="view-patients.php">Patients</a></li> -->
+                            <!-- <li><a href="view-receipt.php">Receipt</a></li> -->
+                            <!-- <li><a href="summary.php">Summary</a></li> -->
+                            <!-- <li><a href="procedure.php">Procedures</a></li>
+                            <li><a href="extras.php">Extras</a></li> -->
+                            <li><a href="store.php">Store</a></li>
+                            <!-- <li><a href="vouchers.php">Vouchers</a></li> -->
                         </ul>
                     </nav>
 

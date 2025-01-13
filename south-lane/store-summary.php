@@ -2,7 +2,7 @@
 <?php
     $curl = curl_init();
     curl_setopt_array($curl, array(
-    CURLOPT_URL => $_SERVER['SERVER_NAME'].'/south-lane/api/billing/read.php',
+    CURLOPT_URL => $_SERVER['SERVER_NAME'].'/south-lane/api/billing/read-shop.php',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -109,7 +109,7 @@ include './header.php'; ?>
             <div class="row">
                 <div class="col">
                     <div class="section_title_container text-center">
-                        <h2 class="section_title">View Summary | Normal Billings</h2>
+                        <h2 class="section_title">View Summary | Store Billings</h2>
                     </div>
                 </div>
             </div>
@@ -149,11 +149,12 @@ include './header.php'; ?>
                         <th style="vertical-align: middle;">M.R. Number</th>
                         <th style="vertical-align: middle;">Invoice TimeStamp</th>
                         <th style="vertical-align: middle;">Invoice Date</th>
-                        <th style="vertical-align: middle;">Doctor</th>
                         <th style="vertical-align: middle;">Procedures</th>
                         <th style="vertical-align: middle;">Charges</th>
                         <th style="vertical-align: middle;">Discount</th>
                         <th style="vertical-align: middle;">Total Amount</th>
+                        <th style="vertical-align: middle;">Costs</th>
+                        <th style="vertical-align: middle;">Profit</th>
                         <th style="vertical-align: middle;">Payment Mode</th>
                     </tr>
                 </thead>
@@ -164,11 +165,12 @@ include './header.php'; ?>
                     <td class="patientContact"><?=$value->mr_number?></td>
                     <td class="patientEmail"><?=$value->bill_date?></td>
                     <td class="patientEmail"><?=date('Y-m-d',strtotime($value->bill_date))?></td>
-                    <td class="patientAddress"><?=$value->doctor?></td>
                     <td class="patientnotes"><?=$value->procedures_with_amount?></td>
                     <td class="patientcreated"><?=$value->extra_charges?></td>
                     <td class="patientmodified"><?=$value->discount?></td>
                     <td class="patientmodified"><?=$value->total_amount?></td>
+                    <td class="patientmodified"><?=$value->cost?></td>
+                    <td class="patientmodified"><?=$value->total_amount - $value->cost ?></td>
                     <td class="patientmodified"><?=$value->paymentmode?></td>
                 </tr>
                 <?php }?>

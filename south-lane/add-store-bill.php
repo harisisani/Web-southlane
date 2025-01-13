@@ -4,8 +4,7 @@ include './header.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Receipt</title>
-	<title>Receipt</title>
+	<title>Store Receipt</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
@@ -85,7 +84,7 @@ include './header.php';
 	$curl = curl_init();
 
 	curl_setopt_array($curl, array(
-	CURLOPT_URL => $_SERVER['SERVER_NAME'].'/south-lane/api/procedure/read.php',
+	CURLOPT_URL => $_SERVER['SERVER_NAME'].'/south-lane/api/products/read.php',
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_ENCODING => '',
 	CURLOPT_MAXREDIRS => 10,
@@ -264,7 +263,6 @@ include './header.php';
 			'<tr><td>Owner Name</td><td>: '+$('input[name="ownername"]').val()+"</td></tr>"+
 			'<tr><td>Patient Name</td><td>: '+$('input[name="patientname"]').val()+"</td></tr>"+
 			'<tr><td>Contact</td><td>: '+$('input[name="contact"]').val()+"</td></tr>";
-			completeReceipt+=($('input[name="doctor"]').val()!="")? '<tr><td>Doctor Name</td><td>: '+$('input[name="doctor"]').val()+"</td></tr>" : "";
 			completeReceipt+=($('Select[name="paymentmode"]').val()!="0" && $('Select[name="checkPaymentMode"]').val()!="no")? '<tr><td>Payment Mode</td><td>: '+$('Select[name="paymentmode"]').val()+"</td></tr>" : "";
 			completeReceipt+=($('input[name="procedures_with_amount_print"]').val()!="")? ""+$('input[name="procedures_with_amount_print"]').val()+"" : "";
 			completeReceipt+="</table>";
@@ -376,8 +374,8 @@ include './header.php';
 							"pending": $("input[name='amountToBePaid']").val(),
 							"received": $("input[name='amountReceived']").val(),
 							"sendsms": $("select[name='sendsms']").val(),
-							"type": "normal",
-							"cost": "0",
+							"type": "shop",
+							"cost": $('input[name="total_cost"]').val(),
 						}),
 						};
 
@@ -430,6 +428,46 @@ include './header.php';
 							$.ajax(settings).done(function (response) {
 							});
 							nextForm(2,1);
+							var qtys= $("input[name='product_qtys']").val();
+							var ids= $("input[name='product_ids']").val();
+
+							// Split the values into arrays and ensure no trailing commas cause issues
+							var qtyArray = qtys.split(',').filter(value => value.trim() !== "");
+							var idArray = ids.split(',').filter(value => value.trim() !== "");
+
+
+							// Convert the arrays into the required JSON structure
+							var items = [];
+							for (var i = 0; i < idArray.length; i++) {
+								items.push({
+									id: parseInt(idArray[i].trim()), // Convert ID to an integer
+									qty: parseInt(qtyArray[i].trim()) // Convert quantity to an integer
+								});
+							}
+
+							// Final JSON object
+							var jsonData = {
+								items: items
+							};
+
+							// AJAX request to the API
+							$.ajax({
+								url: "./api/products/update-inventory.php", // API endpoint
+								method: "POST",
+								timeout: 0,
+								headers: {
+									"Content-Type": "application/json"
+								},
+								data: JSON.stringify(jsonData), // Convert JSON object to string
+								success: function (response) {
+									console.log("API Response:", response);
+								},
+								error: function (xhr, status, error) {
+									console.error("API Error:", error);
+								}
+							});
+
+
 						}
 					});
 
@@ -478,14 +516,36 @@ include './header.php';
 	function validateInput(obj){
 		var tr=$(obj).closest("tr");
 		if(parseFloat($(obj).val())){
-			var unit = $(tr).find('input.unit').val();
+			//check if the current qty is available
+			var stockinhand = $(tr).find('input.stockinhand').val();
 			var qty = $(tr).find('input.qty').val();
-			var total=parseFloat(qty)*parseFloat(unit);
-			$(tr).find('input.amount').val(total);
-			updateTotal();
+			var unit = $(tr).find('input.unit').val();
+			var cost = $(tr).find('input.cost').val();
+			if(parseFloat(qty) > parseFloat(stockinhand)){
+				console.log("error: stock");
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'The requested quantity exceeds the available stock',
+					footer: '<a href="">Why do I have this issue?</a>'
+				});
+				$(tr).find('input.qty').val(stockinhand);
+				var total=parseFloat(stockinhand)*parseFloat(unit);
+				var totalcost=parseFloat(cost)*parseFloat(qty);
+				$(tr).find('input.amount').val(total);
+				$(tr).find('input.totalcost').val(totalcost);
+				updateTotal();
+			}else{
+				var total=parseFloat(qty)*parseFloat(unit);
+				var totalcost=parseFloat(cost)*parseFloat(qty);
+				$(tr).find('input.amount').val(total);
+				$(tr).find('input.totalcost').val(totalcost);
+				updateTotal();
+			}
 		}else{
 			parseFloat($(obj).val("0"));
 		}
+	
 	}
 
 	function updateTotal(){
@@ -506,19 +566,28 @@ include './header.php';
 			procedurePrint="</table><table style='width:100%; margin:0 auto;color:auto'>";
 			procedurePrint+="<tr><th>Description</th><th>Unit</th><th>Qty</th><th>Amount</th>";
 		}
+		var totalCosts=0;
+
+		var productQtys = "";
+		var productIds = "";
 		$('tr.template').each(function(){
 			if($(this).find("input.valueBox").val()=="yes"){
 				var text = ($(this).find("input.text").val());
+				var id = ($(this).find("input.id").val());
 				var qty = ($(this).find("input.qty").val());
 				var unit = ($(this).find("input.unit").val());
+				var cost = ($(this).find("input.totalcost").val());
+				totalCosts+=parseFloat(cost);
 				var amount = parseFloat($(this).find("input.amount").val());
+				productQtys+=qty+",";
+				productIds+=id+",";
 				total+=amount;
 				if(amount>0){
 					charges+=amount;
 				}else{
 					discount+=amount;
 				}
-				procedure+=text+": "+amount+"<br/>";
+				procedure+=text+"X"+qty+" : "+amount+"<br/>";
 				if($(this).find("select.show_receipt").val()=="yes"){
 					procedurePrint+="<tr><td>"+text+"</td><td>"+unit+"</td><td>"+qty+"</td><td>: "+amount+"<td/></tr>";
 				}
@@ -527,6 +596,9 @@ include './header.php';
 		if(tHEadSlip!=0){
 			procedurePrint+="</table><table style='width:80%; margin:0 auto; margin-left:20%;color:auto'>";
 		}
+		$("input[name='total_cost']").val(totalCosts);
+		$("input[name='product_qtys']").val(productQtys);
+		$("input[name='product_ids']").val(productIds);
 		var discountGiven=$("input[name='discount']").val();
 		var previous_balance=$("input[name='previous_balance']").val();
 		var grandTotal=(parseFloat(total)-parseFloat(discountGiven));
@@ -642,24 +714,16 @@ include './header.php';
 
 	function searchExtras() {
 		var searchTerm = $('#searchInputExtras').val().toLowerCase(); // Get the search term and convert it to lowercase
+		
+        $('#ExtrasTable tbody tr').each(function() {
+            var rowText = $(this).text().toLowerCase(); // Get the text of each row and convert it to lowercase
 
-		$('#ExtrasTable tbody tr').each(function() {
-			var rowMatch = false; // Initialize a flag to check if the row matches
-
-			// Loop through all text fields in the row
-			$(this).find('input[type="text"]').each(function() {
-				if ($(this).val().toLowerCase().indexOf(searchTerm) !== -1) {
-					rowMatch = true; // Set the flag if any field matches
-					return false; // Break out of the loop
-				}
-			});
-
-			if (rowMatch) {
-				$(this).show(); // Show the row if any field matches the search term
-			} else {
-				$(this).hide(); // Hide the row if no fields match
-			}
-		});
+            if (rowText.indexOf(searchTerm) !== -1) {
+                $(this).show(); // Show the row if it matches the search term
+            } else {
+                $(this).hide(); // Hide the row if it doesn't match the search term
+            }
+        });
 	}
 
 	
@@ -741,13 +805,8 @@ include './header.php';
 					</script>
 					<div class="tab-pane " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 						<div class="login100-form validate-form">
-							<div class="wrap-input100">
-								<input class="input100" type="text" name="doctor">
-								<span class="focus-input100" data-placeholder="Doctor's Name(optional)"></span>
-							</div>
-
-							<button type="button" onclick="tabReceipt('procedures');" class="btn btn-success">Procedures</button>
-							<button type="button" onclick="tabReceipt('extras');" class="btn btn-success">Extras</button>
+							<button type="button" onclick="tabReceipt('procedures');" class="btn btn-success">In Stock Products</button>
+							<button type="button" onclick="tabReceipt('extras');" class="btn btn-success">Out of Stock Product</button>
 							<button type="button" onclick="tabReceipt('breakdown');" class="btn btn-success">Breakdown</button>
 							<button type="button" onclick="tabReceipt('paymentmode');" class="btn btn-success">Payment Mode</button>
 							<br>
@@ -798,20 +857,22 @@ include './header.php';
 								<thead>
 									<tr>
 										<td colspan=6>
-											<input id="searchInputProcedures" onkeyup="searchProcedures()" placeholder="Search Procedures" class="form-control" type="text">
+											<input id="searchInputProcedures" onkeyup="searchProcedures()" placeholder="Search Products" class="form-control" type="text">
 										</td>
 									</tr>
 									<tr>
 										<th scope="col" style="width:5%">Inc./Exc.</th>
 										<th scope="col" style="width:15%">Receipt</th>
-										<th scope="col" style="width:35%">Procedure</th>
-										<th scope="col" style="width:15%">Unit</th>
+										<th scope="col" style="width:35%">Item</th>
+										<th scope="col" style="width:15%">Unit Price</th>
 										<th scope="col" style="width:15%">Quantity</th>
-										<th scope="col" style="width:15%">Charges</th>
+										<th scope="col" style="width:15%">Total Price</th>
 									</tr>
 								</thead>
 								<tbody>
-								<?php foreach($allData as $key => $value){?>
+								<?php foreach($allData as $key => $value){
+								if( $value->stockinhand>0){
+								?>
 								<tr class="template">
 									<td>
 										<div class="form-check">
@@ -825,12 +886,20 @@ include './header.php';
 											<option value="no">Hide</option>
 										</select>
 									</td>
-									<td><input type="text" value="<?=$value->procedure_name?>" class="form-control text" placeholder="Label"></td>
-									<td><input type="text" onblur="validateInput(this);" value="<?= floatval($value->procedure_amount)? $value->procedure_amount : 0  ?>" class="form-control unit" placeholder="Unit Price"></td>
-									<td><input type="text" onblur="validateInput(this);" value="1" class="form-control qty" placeholder="Quantity"></td>
-									<td><input type="text" readonly=""  value="<?= floatval($value->procedure_amount)? $value->procedure_amount : 0  ?>" class="form-control amount" placeholder="Amount"></td>
+									<td>
+										<input type="text" value="<?=$value->name?>" class="form-control text" placeholder="Label">
+										<input type="hidden" value="<?=$value->id?>" class="form-control id" placeholder="Label">
+										<input type="hidden" value="<?=$value->cost?>" class="form-control cost" placeholder="Label">
+										<input type="hidden" value="<?=$value->stockinhand?>" class="form-control stockinhand" placeholder="Label">
+										<input type="hidden" value="<?= floatval($value->cost)? $value->cost : 0  ?>" class="form-control totalcost" placeholder="Label">
+									</td>
+									<td><input type="text" onblur="validateInput(this);" value="<?= floatval($value->price)? $value->price : 0  ?>" class="form-control unit" placeholder="Unit Price"></td>
+									<td><input type="text" onblur="validateInput(this);" value="1" class="form-control qty" placeholder="Quantity">
+									Available in Stock: <?=$value->stockinhand?>
+									</td>
+									<td><input type="text" readonly=""  value="<?= floatval($value->price)? $value->price : 0  ?>" class="form-control amount" placeholder="Amount"></td>
 								</tr>
-								<?php }?>
+								<?php }}?>
 								</tbody>
 							</table>
 							<table style="display:none" class="table tableClass breakdown">
@@ -874,7 +943,7 @@ include './header.php';
 										<td>
 											<select id="applyprevious" onchange="updateTotal();" class="show_receipt form-control">
 												<option value="yes">Show</option>
-												<option value="no">Hide</option>
+												<option selected value="no">Hide</option>
 											</select>
 										</td>
 										<td>
@@ -900,6 +969,9 @@ include './header.php';
 										</td>
 										<td>
 											<input name="total_amount" readonly="" type="text" readonly="" value="0" class="form-control amount" placeholder="Amount">
+											<input name="total_cost" readonly="" type="hidden" readonly="" value="0" class="form-control cost">
+											<input name="product_ids" readonly="" type="text" readonly="" value="" class="form-control">
+											<input name="product_qtys" readonly="" type="text" readonly="" value="" class="form-control">
 										</td>
 									</tr>
 									<tr class="templateTwo">
@@ -936,39 +1008,25 @@ include './header.php';
 								<thead>
 									<tr>
 										<td colspan="6">
-											<input id="searchInputExtras" onkeyup="searchExtras()" placeholder="Search Extras" class="form-control" type="text">
+											<input id="searchInputExtras" onkeyup="searchExtras()" placeholder="Search Products" class="form-control" type="text">
+											<br/>
+											<a style="color:#F60017;font-weight:bold;text-decoration:none;" href="store-products.php">Update Stock Now!</a>
 										</td>
 									</tr>
 									<tr>
-										<th scope="col" style="width:5%">Inc./Exc.</th>
-										<th scope="col" style="width:15%">Receipt</th>
 										<th scope="col" style="width:35%">Item</th>
-										<th scope="col" style="width:15%">Unit</th>
-										<th scope="col" style="width:15%">Quantity</th>
-										<th scope="col" style="width:15%">Charges</th>
+										<th scope="col" style="width:15%">Price</th>
 									</tr>
 								</thead>
 								<tbody>
-								<?php foreach($allExtraData as $key => $value){?>
+								<?php foreach($allData as $key => $value){
+								if( $value->stockinhand<=0){
+								?>
 								<tr class="template">
-									<td>
-										<div class="form-check">
-											<input class="form-check-input position-static" onclick="setHiddenValue(this);" type="checkbox" value="option1" aria-label="...">
-											<input class="valueBox" type="hidden" value="no">
-										</div>
-									</td>
-									<td>
-										<select onchange="updateTotal();" class="show_receipt form-control">
-											<option value="yes">Show</option>
-											<option value="no">Hide</option>
-										</select>
-									</td>
-									<td><input type="text" value="<?=$value->extra_name?>" class="form-control text" placeholder="Label"></td>
-									<td><input type="text" onblur="validateInput(this); "value="<?= floatval($value->extra_amount)? $value->extra_amount : 0  ?>" class="form-control unit" placeholder="Unit Price"></td>
-									<td><input type="text" onblur="validateInput(this);" value="1" class="form-control qty" placeholder="Quantity"></td>
-									<td><input type="text" readonly=""  value="<?= floatval($value->extra_amount)? $value->extra_amount : 0  ?>" class="form-control amount" placeholder="Amount"></td>
+									<td><?=$value->name?></td>
+									<td><?=$value->price?></td>
 								</tr>
-								<?php }?>
+								<?php } }?>
 								</tbody>
 							</table>
 							<div class="container-login100-form-btn">

@@ -42,6 +42,8 @@ if($_POST){
         total_amount='".$_POST['total_amount']."',
         pending='".$_POST['pending']."',
         received='".$_POST['received']."',
+        type='".$_POST['type']."',
+        cost='".$_POST['cost']."',
         bill_date='".date('Y-m-d H:i:s')."',
         user_name='".$_SESSION["user_name"]."'";
         $stmt = $connection->prepare($query);

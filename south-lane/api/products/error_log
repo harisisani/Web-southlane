@@ -1,0 +1,7 @@
+[19-Dec-2021 17:44:25 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[19-Dec-2021 19:32:15 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/b5y4wt260iyj/public_html/south-lane/api/database.php on line 2
+[19-Dec-2021 19:34:31 UTC] PHP Notice:  Undefined variable: connection in /home/b5y4wt260iyj/public_html/south-lane/api/extras/read.php on line 7
+[19-Dec-2021 19:34:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/b5y4wt260iyj/public_html/south-lane/api/extras/read.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/b5y4wt260iyj/public_html/south-lane/api/extras/read.php on line 7

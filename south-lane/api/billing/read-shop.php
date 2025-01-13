@@ -11,7 +11,7 @@ if (isset($_GET['contact_number'])) {
     if (isset($_GET['pending']) && $_GET['pending']=="true") {
         $query = "SELECT * FROM billing WHERE deleted = 0 AND pending > 0 ORDER BY bill_id DESC";
     }else{
-        $query = "SELECT * FROM billing WHERE deleted = 0 AND type='normal' ORDER BY bill_id DESC";
+        $query = "SELECT * FROM billing WHERE deleted = 0 AND type='shop' ORDER BY bill_id DESC";
     }
    
 }

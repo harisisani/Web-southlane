@@ -48,7 +48,7 @@ function safe_json_encode($value){
 
     try {
         include '../database.php';
-        $query = "SELECT patient_name,owner_name,user_name,procedures_with_amount,contact,bill_id_unique,extra_charges,discount,total_amount,pending,received FROM billing where deleted = 0 AND bill_date like '%".$date."%' ORDER BY bill_id DESC limit 20";
+        $query = "SELECT patient_name,owner_name,user_name,procedures_with_amount,contact,bill_id_unique,extra_charges,discount,total_amount,pending,received FROM billing where type = 'normal' AND deleted = 0 AND bill_date like '%".$date."%' ORDER BY bill_id DESC limit 20";
         $stmt = $connection->prepare($query);
         $stmt->execute();
         $usersData = $stmt->fetchAll(PDO::FETCH_ASSOC);
