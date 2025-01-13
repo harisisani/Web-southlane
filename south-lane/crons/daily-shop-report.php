@@ -3,7 +3,7 @@
 
 $activity="Sending Daily Report";
     $csvData = [
-        ['Invoice ID','Patient Name','Owner Name','Owner Contact','Procedures','Sub-Total', 'Discount' , 'Total Amount' , 'Pending' ,'Received','Created By'],
+        ['Invoice ID','Patient Name','Owner Name','Owner Contact','Procedures','Sub-Total', 'Discount' , 'Total Amount' ,'Cost','Profit', 'Pending' ,'Received','Created By'],
     ];
 
 
@@ -64,6 +64,8 @@ $activity="Sending Daily Report";
             <td class="extra_charges">'.$value->extra_charges.'</td>
             <td class="discount">'.$value->discount.'</td>
             <td class="total_amount">'.$value->total_amount.'</td>
+            <td class="total_amount">'.$value->cost.'</td>
+            <td class="total_amount">'.$value->total_amount - $value->cost.'</td>
             <td class="amount_pending"><span class="value">'.$value->pending.'</span></td>
             <td class="amount_received">'.$value->received.'</td>
         </tr>';
@@ -86,7 +88,7 @@ $reportHtml.='<div class="container" style="margin-top:50px;">
             <th style="vertical-align: middle;">Discount</th>
             <th style="vertical-align: middle;">Total Amount</th>
             <th style="vertical-align: middle;">Cost</th>
-            <th style="vertical-align: middle;">Profit/th>
+            <th style="vertical-align: middle;">Profit</th>
             <th style="vertical-align: middle;">Pending</th>
             <th style="vertical-align: middle;">Received</th>
         </tr>
