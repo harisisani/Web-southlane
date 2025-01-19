@@ -30,7 +30,7 @@ if($_POST){
                 $payment_due = $quantity_added * $_POST['cost']; // Assuming cost is the vendor's cost price
                 
                 // Insert vendor transaction
-                $transaction_query = "INSERT INTO VendorTransactions 
+                $transaction_query = "INSERT INTO vendortransactions 
                                         SET 
                                             vendor_id = :vendor_id,
                                             item_id = :item_id,
