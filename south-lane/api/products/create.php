@@ -1,6 +1,6 @@
 <?php
 session_start();
-$activity="Adding a new vendor";
+$activity="Adding a new products";
 // $_POST = json_decode(file_get_contents('php://input'), true);
 if($_POST){
     // include database connection
@@ -19,15 +19,10 @@ if($_POST){
             if ($stmt->execute()) {
                 // Record added successfully in the store table
                 $new_store_id = $connection->lastInsertId(); // Get the ID of the newly added product
-                echo $new_store_id; 
                 // Calculate payment due
                 $vendor_id = $_POST['vendor_id'];
                 $quantity_added = $_POST['stockinhand'];
                 $payment_due = $quantity_added * $_POST['cost']; // Assuming cost is the vendor's cost price
-
-                echo $vendor_id; 
-                echo $quantity_added; 
-                echo $payment_due;
 
                 // Insert vendor transaction
                 $transaction_query = "INSERT INTO VendorTransactions 
@@ -73,7 +68,14 @@ if($_POST){
         );
         // die('ERROR: ' . $exception->getMessage());
     }
+    }else{
+        $logArray=array(
+            "user_name" => isset($_SESSION["user_name"])? $_SESSION["user_name"] : "no user" ,
+            "activity" => $activity,
+            "status" => "POST failed",
+        );
     }
+  
     include '../../api/log/logApi.php';
     header("Location: ../../store-products.php");
 ?>
