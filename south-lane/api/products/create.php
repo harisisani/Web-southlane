@@ -1,7 +1,7 @@
 <?php
 session_start();
 $activity="Adding a new products";
-$_POST = json_decode(file_get_contents('php://input'), true);
+// $_POST = json_decode(file_get_contents('php://input'), true);
 if($_POST){
     // include database connection
     include '../database.php';
