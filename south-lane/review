@@ -1,0 +1,48 @@
+low
+store linking
+
+
+high
+store receipts: total profit and total cost etc. in the filters
+vendors management: billing cycle 
+vendor payments: prepare invoicing based on sold inventory | allow to mark paid
+
+
+Use cases to update vendor items:
+
+1) new store item is added
+2) store item is updated
+3) store item is sold
+
+
+
+
+-- Create VendorTransactions Table
+CREATE TABLE VendorTransactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    vendor_id INT NOT NULL,
+    item_id INT NOT NULL,
+    quantity_added INT DEFAULT 0,
+    quantity_sold INT DEFAULT 0,
+    payment_due DECIMAL(10, 2) DEFAULT 0.00,
+    payment_status ENUM('Paid', 'Unpaid') DEFAULT 'Unpaid',
+    transaction_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (vendor_id) REFERENCES vendor(id),
+    FOREIGN KEY (item_id) REFERENCES store(id)
+);
+
+ALTER TABLE Vendortransactions 
+ADD COLUMN transactionId VARCHAR(50) NOT NULL AFTER id;
+
+
+
+-- Create VendorInvoices Table
+CREATE TABLE VendorInvoices (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    vendor_id INT NOT NULL,
+    invoice_number VARCHAR(50) NOT NULL,
+    invoice_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    payment_status ENUM('Paid', 'Unpaid') DEFAULT 'Unpaid',
+    FOREIGN KEY (vendor_id) REFERENCES vendor(id)
+);

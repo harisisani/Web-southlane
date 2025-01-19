@@ -365,7 +365,7 @@ include './header.php';
 							"mr_number": ""+mrNumber,
 							"ownername":  $('input[name="ownername"]').val(),
 							"contact":  $('input[name="contact"]').val(),
-							"doctor":  $('input[name="doctor"]').val(),
+							"doctor":  "",
 							"paymentmode":  $('Select[name="paymentmode"]').val(),
 							"procedures_with_amount":  $('input[name="procedures_with_amount"]').val(),
 							"extra_charges":  $('input[name="extra_charges"]').val(),
@@ -394,7 +394,6 @@ include './header.php';
 							'<tr><td>Owner Name</td><td>: '+$('input[name="ownername"]').val()+"</td></tr>"+
 							'<tr><td>Patient Name</td><td>: '+$('input[name="patientname"]').val()+"</td></tr>"+
 							'<tr><td>Contact</td><td>: '+$('input[name="contact"]').val()+"</td></tr>";
-							printReceipt+=($('input[name="doctor"]').val()!="")? '<tr><td>Doctor Name</td><td>: '+$('input[name="doctor"]').val()+"</td></tr>" : "";
 							printReceipt+=($('Select[name="paymentmode"]').val()!="0" && $('Select[name="checkPaymentMode"]').val()!="no")? '<tr><td>Payment Mode</td><td>: '+$('Select[name="paymentmode"]').val()+"</td></tr>" : "";
 							printReceipt+=($('input[name="procedures_with_amount_print"]').val()!="")? ""+$('input[name="procedures_with_amount_print"]').val()+"" : "";
 							// printReceipt+='<tr><td>Amount Paid</td><td>: '+$('input[name="total_amount"]').val()+"</td></tr>";
@@ -430,10 +429,12 @@ include './header.php';
 							nextForm(2,1);
 							var qtys= $("input[name='product_qtys']").val();
 							var ids= $("input[name='product_ids']").val();
+							var vendor_ids= $("input[name='product_vendor_ids']").val();
 
 							// Split the values into arrays and ensure no trailing commas cause issues
 							var qtyArray = qtys.split(',').filter(value => value.trim() !== "");
 							var idArray = ids.split(',').filter(value => value.trim() !== "");
+							var vendoridArray = vendor_ids.split(',').filter(value => value.trim() !== "");
 
 
 							// Convert the arrays into the required JSON structure
@@ -441,7 +442,9 @@ include './header.php';
 							for (var i = 0; i < idArray.length; i++) {
 								items.push({
 									id: parseInt(idArray[i].trim()), // Convert ID to an integer
-									qty: parseInt(qtyArray[i].trim()) // Convert quantity to an integer
+									qty: parseInt(qtyArray[i].trim()), // Convert quantity to an integer
+									vendorId: vendoridArray[i].trim(),
+									transactionId: invoiceId,
 								});
 							}
 
@@ -570,17 +573,20 @@ include './header.php';
 
 		var productQtys = "";
 		var productIds = "";
+		var productVendorIds = "";
 		$('tr.template').each(function(){
 			if($(this).find("input.valueBox").val()=="yes"){
 				var text = ($(this).find("input.text").val());
 				var id = ($(this).find("input.id").val());
 				var qty = ($(this).find("input.qty").val());
+				var vendorId = ($(this).find("input.vendorId").val());
 				var unit = ($(this).find("input.unit").val());
 				var cost = ($(this).find("input.totalcost").val());
 				totalCosts+=parseFloat(cost);
 				var amount = parseFloat($(this).find("input.amount").val());
 				productQtys+=qty+",";
 				productIds+=id+",";
+				productVendorIds+=vendorId+",";
 				total+=amount;
 				if(amount>0){
 					charges+=amount;
@@ -599,6 +605,7 @@ include './header.php';
 		$("input[name='total_cost']").val(totalCosts);
 		$("input[name='product_qtys']").val(productQtys);
 		$("input[name='product_ids']").val(productIds);
+		$("input[name='product_vendor_ids']").val(productVendorIds);
 		var discountGiven=$("input[name='discount']").val();
 		var previous_balance=$("input[name='previous_balance']").val();
 		var grandTotal=(parseFloat(total)-parseFloat(discountGiven));
@@ -888,6 +895,7 @@ include './header.php';
 									</td>
 									<td>
 										<input type="text" value="<?=$value->name?>" class="form-control text" placeholder="Label">
+										<input type="hidden" value="<?=$value->vendor_id?>" class="form-control vendorId" placeholder="Label">
 										<input type="hidden" value="<?=$value->id?>" class="form-control id" placeholder="Label">
 										<input type="hidden" value="<?=$value->cost?>" class="form-control cost" placeholder="Label">
 										<input type="hidden" value="<?=$value->stockinhand?>" class="form-control stockinhand" placeholder="Label">
@@ -970,8 +978,9 @@ include './header.php';
 										<td>
 											<input name="total_amount" readonly="" type="text" readonly="" value="0" class="form-control amount" placeholder="Amount">
 											<input name="total_cost" readonly="" type="hidden" readonly="" value="0" class="form-control cost">
-											<input name="product_ids" readonly="" type="text" readonly="" value="" class="form-control">
-											<input name="product_qtys" readonly="" type="text" readonly="" value="" class="form-control">
+											<input name="product_ids" readonly="" type="hidden" readonly="" value="" class="form-control">
+											<input name="product_qtys" readonly="" type="hidden" readonly="" value="" class="form-control">
+											<input name="product_vendor_ids" readonly="" type="hidden" readonly="" value="" class="form-control">
 										</td>
 									</tr>
 									<tr class="templateTwo">

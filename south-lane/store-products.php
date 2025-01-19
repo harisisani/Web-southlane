@@ -145,8 +145,8 @@ $vendors=json_decode($response);
                     </select>
                 </td>
                 <td><input style="width:75px;" type="number" class="input" name="updateStockInHand" value="${stockInHand}" ></td>
-                <td><input style="width:75px;" type="number" class="input" name="updateTotalStock" value="${totalStock}" ></td>
-                <td><input style="width:75px;" type="number" class="input" name="updateSoldStock" value="${soldStock}" ></td>
+                <td>${totalStock}</td>
+                <td>${soldStock}</td>
                 <td><input style="width:75px;" type="number" class="input" name="updateProductPrice" step="0.01" value="${price}" ></td>
                 <td><input style="width:75px;" type="number" class="input" name="updateProductCost" step="0.01" value="${cost}" ></td>
             </tr>`;
@@ -166,8 +166,8 @@ $vendors=json_decode($response);
         var vendorId = $("select[name='updateVendorId']").val();
         var vendorName = $("select[name='updateVendorId'] option:selected").text();
         var stockInHand = $("input[name='updateStockInHand']").val();
-        var totalStock = $("input[name='updateTotalStock']").val();
-        var soldStock = $("input[name='updateSoldStock']").val();
+        // var totalStock = $("input[name='updateTotalStock']").val();
+        // var soldStock = $("input[name='updateSoldStock']").val();
         var price = $("input[name='updateProductPrice']").val();
         var cost = $("input[name='updateProductCost']").val();
 
@@ -184,8 +184,8 @@ $vendors=json_decode($response);
             $(current_tr).find('td.vendorId').text(vendorId); // Update vendor ID
             $(current_tr).find('td.vendorName').text(vendorName); // Update vendor Name
             $(current_tr).find('td.stockInHand').text(stockInHand);
-            $(current_tr).find('td.totalStock').text(totalStock);
-            $(current_tr).find('td.soldStock').text(soldStock);
+            // $(current_tr).find('td.totalStock').text(totalStock);
+            // $(current_tr).find('td.soldStock').text(soldStock);
             $(current_tr).find('td.productPrice').text(parseFloat(price).toFixed(2));
             $(current_tr).find('td.productCost').text(parseFloat(cost).toFixed(2));
             $(current_tr).find('td.productProfit').text((parseFloat(price) - parseFloat(cost)).toFixed(2));
@@ -197,8 +197,8 @@ $vendors=json_decode($response);
                 category: category,
                 vendor_id: vendorId,
                 stock_in_hand: stockInHand,
-                total_stock: totalStock,
-                sold_stock: soldStock,
+                // total_stock: totalStock,
+                // sold_stock: soldStock,
                 price: price,
                 cost: cost
             };
@@ -363,19 +363,19 @@ $vendors=json_decode($response);
                     <tr>
                         <td>Category*</td>
                         <td><input required type="text" class="form-control" name="category"></td>
-                        <td>Stock in Hand</td>
-                        <td><input type="number" class="form-control" name="stockinhand" value="0"></td>
+                        <td>Stock Added*</td>
+                        <td><input required type="number" class="form-control" name="stockinhand" value=""></td>
                     </tr>
-                    <tr>
+                    <tr style="display:none;">
                         <td>Total Stock</td>
                         <td><input type="number" class="form-control" name="totalstock" value="0"></td>
                         <td>Sold Stock</td>
                         <td><input type="number" class="form-control" name="soldstock" value="0"></td>
                     </tr>
                     <tr>
-                        <td>Price*</td>
+                        <td>Selling Price*</td>
                         <td><input required type="number" step="0.01" class="form-control" name="price"></td>
-                        <td>Cost*</td>
+                        <td>Buying Cost*</td>
                         <td><input required type="number" step="0.01" class="form-control" name="cost"></td>
                     </tr>
                     <tr>
@@ -399,7 +399,7 @@ $vendors=json_decode($response);
                 </tr>
                 <tr>
                     <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Cancel</th>
                     <th>ID</th>
                     <th>Product Name</th>
                     <th>Category</th>
@@ -423,11 +423,11 @@ $vendors=json_decode($response);
                         </div>
                     </td>
                     <td style="text-align:center;">
-                        <div class="add-remove-sign">
+                        <!-- <div class="add-remove-sign">
                             <a href="javascript:void(0)" onclick="deleteProduct(this)" class="remove-arrow">
                                 <i class="material-icons">remove_circle</i>
                             </a>
-                        </div>
+                        </div> -->
                     </td>
                     <td class="productId"><?= $product->id ?></td>
                     <td class="productName"><?= $product->name ?></td>

@@ -27,21 +27,6 @@ include './header.php'; ?>
                     </div>
 
                     <!-- Features Item -->
-
-                    <!-- Features Item -->
-
-                    <div class="col-lg-6 feature_col">
-                        <a href="./view-patients.php">
-                        <div class="feature text-center trans_400">
-                            <div class="feature_icon"><img class="section-icon" src="./assets/images/update-2.png" alt=""></div>
-                            <h3 class="feature_title">View Customers</h3>
-                            <p>view/edit/delete all customers</p>
-                        </div>
-                        </a>
-                    </div>
-
-                    <!-- Features Item -->
-
                     <div class="col-lg-6 feature_col">
                         <a href="./create-patient.php">
                             <div class="feature text-center trans_400">
@@ -52,6 +37,10 @@ include './header.php'; ?>
                         </a>
                     </div>
 
+                    <!-- Features Item -->
+
+
+            
                     <div class="col-lg-6 feature_col">
                         <a href="./store-view-receipt.php">
                             <div class="feature text-center trans_400">
@@ -83,6 +72,17 @@ include './header.php'; ?>
                         </a>
                     </div>
 
+                    
+                    <div class="col-lg-6 feature_col">
+                        <a href="./manage-vendor.php">
+                            <div class="feature text-center trans_400">
+                                <div class="feature_icon"><img class="section-icon" src="./assets/images/create-1.png" alt=""></div>
+                                <h3 class="feature_title">Vendors Payments</h3>
+                                <p>everything related to vendor payments, invoicing</p>
+                            </div>
+                        </a>
+                    </div>
+
                     <div class="col-lg-6 feature_col">
                         <a href="./store-products.php">
                             <div class="feature text-center trans_400">
@@ -92,6 +92,19 @@ include './header.php'; ?>
                             </div>
                         </a>
                     </div>
+
+                    
+                    <div class="col-lg-6 feature_col">
+                        <a href="./view-patients.php">
+                        <div class="feature text-center trans_400">
+                            <div class="feature_icon"><img class="section-icon" src="./assets/images/update-2.png" alt=""></div>
+                            <h3 class="feature_title">View Customers</h3>
+                            <p>view/edit/delete all customers</p>
+                        </div>
+                        </a>
+                    </div>
+
+                    <!-- Features Item -->
                    
                 </div>
             </div>

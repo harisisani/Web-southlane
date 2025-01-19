@@ -22,19 +22,50 @@ try {
         $stmt = $connection->prepare($query);
 
         if($stmt->execute()){
-            $logArray=array(
-                "user_name" => isset($_SESSION["user_name"])? $_SESSION["user_name"] : "no user" ,
-                "activity" => $activity,
-                "status" => "Successful",
-            );
-            echo date('Y-m-d H:i:s');
+             // Calculate payment due (cost * quantity sold)
+        $getCostQuery = "SELECT cost FROM store WHERE id = :item_id";
+        $costStmt = $connection->prepare($getCostQuery);
+        $costStmt->bindParam(':item_id', $item['id'], PDO::PARAM_INT);
+        $costStmt->execute();
+        $itemCost = $costStmt->fetchColumn();
+        $paymentDue = $itemCost * $item['qty'];
+
+        // Record the transaction for the vendor
+        $transactionQuery = "INSERT INTO VendorTransactions 
+            (transactionId,vendor_id, item_id, quantity_sold, payment_due, payment_status, transaction_date) 
+            VALUES 
+            (:transactionId,:vendor_id, :item_id, :quantity_sold, :payment_due, 'Unpaid', :transaction_date)";
+        $transactionStmt = $connection->prepare($transactionQuery);
+
+        // Bind parameters for the vendor transaction query
+        $transactionStmt->bindParam(':transactionId', $item['transactionId'], PDO::PARAM_STR);
+        $transactionStmt->bindParam(':vendor_id', $item['vendorId'], PDO::PARAM_INT);
+        $transactionStmt->bindParam(':item_id', $item['id'], PDO::PARAM_INT);
+        $transactionStmt->bindParam(':quantity_sold', $item['qty'], PDO::PARAM_INT);
+        $transactionStmt->bindParam(':payment_due', $paymentDue, PDO::PARAM_STR);
+        $transactionStmt->bindParam(':transaction_date', $transactionDate, PDO::PARAM_STR);
+
+        // Set transaction date
+        $transactionDate = date('Y-m-d H:i:s');
+
+            if ($transactionStmt->execute()) {
+                // Log activity for vendor transaction
+                $logArray=array(
+                    "user_name" => isset($_SESSION["user_name"])? $_SESSION["user_name"] : "no user" ,
+                    "activity" => $activity,
+                    "status" => "Successful",
+                );
+            } else {
+                // Log failure for vendor transaction
+                $logArray=array(
+                    "user_name" => isset($_SESSION["user_name"])? $_SESSION["user_name"] : "no user" ,
+                    "activity" => $activity,
+                    "status" => "Query Execution Failed",
+                );
+            }
+            // echo date('Y-m-d H:i:s');
         }else{
-            $logArray=array(
-                "user_name" => isset($_SESSION["user_name"])? $_SESSION["user_name"] : "no user" ,
-                "activity" => $activity,
-                "status" => "Query Execution Failed",
-            );
-            echo 'not updated';
+            // echo 'not updated';
         }
     }
 
@@ -51,6 +82,7 @@ catch(PDOException $exception){
         "activity" => $activity,
         "status" => "POST failed",
     );
+    echo  $exception;
 }
 
 include '../../api/log/logApi.php';

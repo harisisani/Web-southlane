@@ -6,42 +6,62 @@ if($_POST){
     // include database connection
     include '../database.php';
     try{
-        // insert query
         $query = "INSERT INTO store 
-          SET 
-              name = '".$_POST['product_name']."',
-              category = '".$_POST['category']."',
-              vendor_id = '".$_POST['vendor_id']."',
-              stockinhand = '".$_POST['stockinhand']."',
-              totalstock = '".$_POST['totalstock']."',
-              soldstock = '".$_POST['soldstock']."',
-              price = '".$_POST['price']."',
-              cost = '".$_POST['cost']."'";
-        $stmt = $connection->prepare($query);
+        SET 
+            name = '".$_POST['product_name']."',
+            category = '".$_POST['category']."',
+            vendor_id = '".$_POST['vendor_id']."',
+            stockinhand = '".$_POST['stockinhand']."',
+            price = '".$_POST['price']."',
+            cost = '".$_POST['cost']."'";
+            $stmt = $connection->prepare($query);
 
-        if($stmt->execute()){
-            // redirect to read records page and
-                // tell the user record was deleted
-                $logArray=array(
-                    "user_name" => isset($_SESSION["user_name"])? $_SESSION["user_name"] : "no user" ,
-                    "activity" => $activity,
-                    "status" => "Successful",
-                );
-            echo "success";
-        }else{
-            // die('Unable to add record.');
-            $logArray=array(
-                "user_name" => isset($_SESSION["user_name"])? $_SESSION["user_name"] : "no user" ,
-                "activity" => $activity,
-                "status" => "Query Execution Failed",
-            );
-            echo "failure";
-        }
+            if ($stmt->execute()) {
+                // Record added successfully in the store table
+                $new_store_id = $connection->lastInsertId(); // Get the ID of the newly added product
+
+                // Calculate payment due
+                $vendor_id = $_POST['vendor_id'];
+                $quantity_added = $_POST['stockinhand'];
+                $payment_due = $quantity_added * $_POST['cost']; // Assuming cost is the vendor's cost price
+
+                // Insert vendor transaction
+                $transaction_query = "INSERT INTO VendorTransactions 
+                                        SET 
+                                            vendor_id = :vendor_id,
+                                            item_id = :item_id,
+                                            quantity_added = :quantity_added,
+                                            payment_due = :payment_due,
+                                            payment_status = 'Unpaid',
+                                            transaction_date = NOW()";
+
+                $transaction_stmt = $connection->prepare($transaction_query);
+                $transaction_stmt->bindParam(':vendor_id', $vendor_id);
+                $transaction_stmt->bindParam(':item_id', $new_store_id);
+                $transaction_stmt->bindParam(':quantity_added', $quantity_added);
+                $transaction_stmt->bindParam(':payment_due', $payment_due);
+
+                if ($transaction_stmt->execute()) {
+                    // echo "Store product and vendor transaction added successfully.";
+                    $logArray = array(
+                        "user_name" => isset($_SESSION["user_name"]) ? $_SESSION["user_name"] : "no user",
+                        "activity" => "Added store product and vendor transaction",
+                        "status" => "Successful",
+                    );
+                } else {
+                    // echo "Store product added, but vendor transaction failed.";
+                    $logArray = array(
+                        "user_name" => isset($_SESSION["user_name"]) ? $_SESSION["user_name"] : "no user",
+                        "activity" => "Add store product",
+                        "status" => "Query Execution Failed",
+                    );
+                }
+            }
     }
 
     // show error
     catch(PDOException $exception){
-        echo "failure";
+        // echo "failure";
         $logArray=array(
             "user_name" => isset($_SESSION["user_name"])? $_SESSION["user_name"] : "no user" ,
             "activity" => $activity,

@@ -248,6 +248,7 @@ $procedures=json_decode($response);
                         <th>ID</th>
                         <th>Vendor Name</th>
                         <th>Vendor Contact</th>
+                        <th>Vendor Transactions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -266,6 +267,7 @@ $procedures=json_decode($response);
                         <td class="procedureId"><?=$value->id?></td>
                         <td class="procedureName"><?=$value->name?></td>
                         <td class="procedureAmount"><?=$value->contact?></td>
+                        <td class=""><a href="manage-vendor.php?vendor_id=<?=$value->id?>">View</a></td>
                     </tr>
                     <?php }?>
                 </tbody>

@@ -208,6 +208,14 @@ include './header.php'; ?>
                             <td id="total">0 PKR</td>
                         </tr>
                         <tr>
+                            <td scope="col">Total Costs</td>
+                            <td id="total_cost">0 PKR</td>
+                        </tr>
+                        <tr>
+                            <td scope="col">Total Profit</td>
+                            <td id="total_profit">0 PKR</td>
+                        </tr>
+                        <tr>
                             <td scope="col">Total Received</td>
                             <td id="received">0 PKR</td>
                         </tr>
@@ -313,17 +321,21 @@ include './header.php'; ?>
 </style>
 <script>
     function updateClosingTotals(){
-        var subTotal=0,discount=0,total=0,pending=0,received=0;
+        var subTotal=0,discount=0,total=0,pending=0,received=0,totalCost=0,totalProfit=0;
         $('tr.template').each(function (){
             subTotal+=parseFloat($(this).find('td.extra_charges').text());
             discount+=parseFloat($(this).find('td.discount').text());
             total+=parseFloat($(this).find('td.total_amount').text());
+            totalCost+=parseFloat($(this).find('td.total_cost').text());
+            totalProfit+=parseFloat($(this).find('td.total_profit').text());
             received+=parseFloat($(this).find('td.amount_received').text());
             pending+=parseFloat($(this).find('td.amount_pending').text());
         });
         $('#subTotal').text(subTotal+" PKR");
         $('#discount').text(discount+" PKR");
         $('#total').text(total+" PKR");
+        $('#total_cost').text(totalCost+" PKR");
+        $('#total_profit').text(totalProfit+" PKR");
         $('#pending').text(pending+" PKR");
         $('#received').text(received+" PKR");
         console.log("testing purpose");
