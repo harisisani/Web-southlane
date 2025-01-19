@@ -49,7 +49,7 @@ if ($stmt->execute()) {
 
         // Insert or update vendor transaction
         // if ($quantity_difference > 0) {
-            $transaction_query = "INSERT INTO VendorTransactions 
+            $transaction_query = "INSERT INTO vendortransactions 
                                   SET 
                                       vendor_id = :vendor_id,
                                       item_id = :item_id,
