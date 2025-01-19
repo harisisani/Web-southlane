@@ -16,6 +16,7 @@ if($_POST){
             cost = '".$_POST['cost']."'";
             $stmt = $connection->prepare($query);
             if ($stmt->execute()) {
+                echo "Store product added successfully.";
                 $logArray = array(
                     "user_name" => isset($_SESSION["user_name"]) ? $_SESSION["user_name"] : "no user",
                     "activity" => "Added store product",
