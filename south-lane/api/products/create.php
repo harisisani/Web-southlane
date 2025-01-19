@@ -1,7 +1,7 @@
 <?php
-session_start();
+// session_start();
 $activity="Adding a new products";
-// $_POST = json_decode(file_get_contents('php://input'), true);
+$_POST = json_decode(file_get_contents('php://input'), true);
 if($_POST){
     // include database connection
     include '../database.php';
@@ -15,7 +15,6 @@ if($_POST){
             price = '".$_POST['price']."',
             cost = '".$_POST['cost']."'";
             $stmt = $connection->prepare($query);
-
             if ($stmt->execute()) {
                 $logArray = array(
                     "user_name" => isset($_SESSION["user_name"]) ? $_SESSION["user_name"] : "no user",
@@ -28,7 +27,7 @@ if($_POST){
                 $vendor_id = $_POST['vendor_id'];
                 $quantity_added = $_POST['stockinhand'];
                 $payment_due = $quantity_added * $_POST['cost']; // Assuming cost is the vendor's cost price
-
+                
                 // Insert vendor transaction
                 $transaction_query = "INSERT INTO VendorTransactions 
                                         SET 
@@ -46,7 +45,7 @@ if($_POST){
                 $transaction_stmt->bindParam(':payment_due', $payment_due);
 
                 if ($transaction_stmt->execute()) {
-                    // echo "Store product and vendor transaction added successfully.";
+                    echo "Store product and vendor transaction added successfully.";
                     $logArray = array(
                         "user_name" => isset($_SESSION["user_name"]) ? $_SESSION["user_name"] : "no user",
                         "activity" => "Added store product and vendor transaction",
@@ -82,5 +81,5 @@ if($_POST){
     }
   
     include '../../api/log/logApi.php';
-    header("Location: ../../store-products.php");
+    // header("Location: ../../store-products.php");
 ?>
