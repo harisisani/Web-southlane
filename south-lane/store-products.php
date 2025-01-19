@@ -423,11 +423,11 @@ $vendors=json_decode($response);
                         </div>
                     </td>
                     <td style="text-align:center;">
-                        <!-- <div class="add-remove-sign">
+                        <div class="add-remove-sign">
                             <a href="javascript:void(0)" onclick="deleteProduct(this)" class="remove-arrow">
                                 <i class="material-icons">remove_circle</i>
                             </a>
-                        </div> -->
+                        </div>
                     </td>
                     <td class="productId"><?= $product->id ?></td>
                     <td class="productName"><?= $product->name ?></td>
