@@ -19,11 +19,15 @@ if($_POST){
             if ($stmt->execute()) {
                 // Record added successfully in the store table
                 $new_store_id = $connection->lastInsertId(); // Get the ID of the newly added product
-
+                echo $new_store_id; 
                 // Calculate payment due
                 $vendor_id = $_POST['vendor_id'];
                 $quantity_added = $_POST['stockinhand'];
                 $payment_due = $quantity_added * $_POST['cost']; // Assuming cost is the vendor's cost price
+
+                echo $vendor_id; 
+                echo $quantity_added; 
+                echo $payment_due;
 
                 // Insert vendor transaction
                 $transaction_query = "INSERT INTO VendorTransactions 
