@@ -17,6 +17,11 @@ if($_POST){
             $stmt = $connection->prepare($query);
 
             if ($stmt->execute()) {
+                $logArray = array(
+                    "user_name" => isset($_SESSION["user_name"]) ? $_SESSION["user_name"] : "no user",
+                    "activity" => "Added store product",
+                    "status" => "Successful",
+                );
                 // Record added successfully in the store table
                 $new_store_id = $connection->lastInsertId(); // Get the ID of the newly added product
                 // Calculate payment due

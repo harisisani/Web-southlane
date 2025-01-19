@@ -345,7 +345,7 @@ $vendors=json_decode($response);
             <div class="container">
                 <table class="table table-bordered">
                     <tr>
-                        <th colspan="4">Insert Products v1</th>
+                        <th colspan="4">Insert Products v2</th>
                     </tr>
                     <tr>
                         <td>Vendor*</td>
