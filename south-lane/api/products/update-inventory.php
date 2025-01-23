@@ -31,7 +31,7 @@ try {
         $paymentDue = $itemCost * $item['qty'];
 
         // Record the transaction for the vendor
-        $transactionQuery = "INSERT INTO Vendortransactions 
+        $transactionQuery = "INSERT INTO vendortransactions 
             (transactionId,vendor_id, item_id, quantity_sold, payment_due, payment_status, transaction_date) 
             VALUES 
             (:transactionId,:vendor_id, :item_id, :quantity_sold, :payment_due, 'Unpaid', :transaction_date)";
