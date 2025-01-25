@@ -64,6 +64,16 @@ include './header.php'; ?>
                     </div>
 
                     <div class="col-lg-4 feature_col">
+                        <a href="./view-receipt-90.php">
+                            <div class="feature text-center trans_400">
+                                <div class="feature_icon"><img class="section-icon" src="./assets/images/update-2.png" alt=""></div>
+                                <h3 class="feature_title">View Receipts | last 90 days</h3>
+                                <p>view/edit/delete all receipts from last 90 days</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 feature_col">
                         <a href="./summary.php">
                             <div class="feature text-center trans_400">
                                 <div class="feature_icon"><img class="section-icon" src="./assets/images/summary.png" alt=""></div>
