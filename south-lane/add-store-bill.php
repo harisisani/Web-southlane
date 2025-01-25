@@ -524,27 +524,32 @@ include './header.php';
 			var qty = $(tr).find('input.qty').val();
 			var unit = $(tr).find('input.unit').val();
 			var cost = $(tr).find('input.cost').val();
-			if(parseFloat(qty) > parseFloat(stockinhand)){
-				console.log("error: stock");
-				Swal.fire({
-					icon: 'error',
-					title: 'Oops...',
-					text: 'The requested quantity exceeds the available stock',
-					footer: '<a href="">Why do I have this issue?</a>'
-				});
-				$(tr).find('input.qty').val(stockinhand);
-				var total=parseFloat(stockinhand)*parseFloat(unit);
+			// if(parseFloat(qty) > parseFloat(stockinhand)){
+			// 	console.log("error: stock");
+			// 	Swal.fire({
+			// 		icon: 'error',
+			// 		title: 'Oops...',
+			// 		text: 'The requested quantity exceeds the available stock',
+			// 		footer: '<a href="">Why do I have this issue?</a>'
+			// 	});
+			// 	$(tr).find('input.qty').val(stockinhand);
+			// 	var total=parseFloat(stockinhand)*parseFloat(unit);
+			// 	var totalcost=parseFloat(cost)*parseFloat(qty);
+			// 	$(tr).find('input.amount').val(total);
+			// 	$(tr).find('input.totalcost').val(totalcost);
+			// 	updateTotal();
+			// }else{
+			// 	var total=parseFloat(qty)*parseFloat(unit);
+			// 	var totalcost=parseFloat(cost)*parseFloat(qty);
+			// 	$(tr).find('input.amount').val(total);
+			// 	$(tr).find('input.totalcost').val(totalcost);
+			// 	updateTotal();
+			// }
+			var total=parseFloat(qty)*parseFloat(unit);
 				var totalcost=parseFloat(cost)*parseFloat(qty);
 				$(tr).find('input.amount').val(total);
 				$(tr).find('input.totalcost').val(totalcost);
 				updateTotal();
-			}else{
-				var total=parseFloat(qty)*parseFloat(unit);
-				var totalcost=parseFloat(cost)*parseFloat(qty);
-				$(tr).find('input.amount').val(total);
-				$(tr).find('input.totalcost').val(totalcost);
-				updateTotal();
-			}
 		}else{
 			parseFloat($(obj).val("0"));
 		}
