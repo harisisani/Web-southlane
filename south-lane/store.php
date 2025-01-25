@@ -26,6 +26,16 @@ include './header.php'; ?>
                         </a>
                     </div>
 
+                    <div class="col-lg-6 feature_col">
+                       <a href="./clear-store-pending.php">
+                        <div class="feature text-center trans_400">
+                            <div class="feature_icon"><img class="section-icon" src="./assets/images/create-1.png" alt=""></div>
+                            <h3 class="feature_title">Add Customer & Create Receipt for Pending</h3>
+                            <p>add new customer/billing details & create reciept for pending</p>
+                        </div>
+                        </a>
+                    </div>
+
                     <!-- Features Item -->
                     <div class="col-lg-6 feature_col">
                         <a href="./create-patient.php">

@@ -427,50 +427,6 @@ include './header.php';
 							$.ajax(settings).done(function (response) {
 							});
 							nextForm(2,1);
-							var qtys= $("input[name='product_qtys']").val();
-							var ids= $("input[name='product_ids']").val();
-							var vendor_ids= $("input[name='product_vendor_ids']").val();
-
-							// Split the values into arrays and ensure no trailing commas cause issues
-							var qtyArray = qtys.split(',').filter(value => value.trim() !== "");
-							var idArray = ids.split(',').filter(value => value.trim() !== "");
-							var vendoridArray = vendor_ids.split(',').filter(value => value.trim() !== "");
-
-
-							// Convert the arrays into the required JSON structure
-							var items = [];
-							for (var i = 0; i < idArray.length; i++) {
-								items.push({
-									id: parseInt(idArray[i].trim()), // Convert ID to an integer
-									qty: parseInt(qtyArray[i].trim()), // Convert quantity to an integer
-									vendorId: vendoridArray[i].trim(),
-									transactionId: invoiceId,
-								});
-							}
-
-							// Final JSON object
-							var jsonData = {
-								items: items
-							};
-
-							// AJAX request to the API
-							$.ajax({
-								url: "./api/products/update-inventory.php", // API endpoint
-								method: "POST",
-								timeout: 0,
-								headers: {
-									"Content-Type": "application/json"
-								},
-								data: JSON.stringify(jsonData), // Convert JSON object to string
-								success: function (response) {
-									console.log("API Response:", response);
-								},
-								error: function (xhr, status, error) {
-									console.error("API Error:", error);
-								}
-							});
-
-
 						}
 					});
 
@@ -740,7 +696,7 @@ include './header.php';
 	<div class="row">
 		<div class="col">
 			<div class="section_title_container text-center">
-				<h2 class="section_title">Create a new Store Receipt</h2>
+				<h2 class="section_title">Create a new Store Receipt | Clear Pending</h2>
 				<p>Field with * are required</p>
 			</div>
 		</div>
@@ -812,8 +768,7 @@ include './header.php';
 					</script>
 					<div class="tab-pane " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 						<div class="login100-form validate-form">
-							<button type="button" onclick="tabReceipt('procedures');" class="btn btn-success">In Stock Products</button>
-							<button type="button" onclick="tabReceipt('extras');" class="btn btn-success">Out of Stock Product</button>
+							<button type="button" onclick="tabReceipt('procedures');" class="btn btn-success">Products</button>
 							<button type="button" onclick="tabReceipt('breakdown');" class="btn btn-success">Breakdown</button>
 							<button type="button" onclick="tabReceipt('paymentmode');" class="btn btn-success">Payment Mode</button>
 							<br>
@@ -878,7 +833,6 @@ include './header.php';
 								</thead>
 								<tbody>
 								<?php foreach($allData as $key => $value){
-								if( $value->stockinhand>0){
 								?>
 								<tr class="template">
 									<td>
@@ -907,7 +861,7 @@ include './header.php';
 									</td>
 									<td><input type="text" readonly=""  value="<?= floatval($value->price)? $value->price : 0  ?>" class="form-control amount" placeholder="Amount"></td>
 								</tr>
-								<?php }}?>
+								<?php }?>
 								</tbody>
 							</table>
 							<table style="display:none" class="table tableClass breakdown">
@@ -1016,26 +970,18 @@ include './header.php';
 							<table id="ExtrasTable" style="display:none" class="table tableClass extras">
 								<thead>
 									<tr>
-										<td colspan="6">
-											<input id="searchInputExtras" onkeyup="searchExtras()" placeholder="Search Products" class="form-control" type="text">
-											<br/>
-											<a style="color:#F60017;font-weight:bold;text-decoration:none;" href="store-products.php">Update Stock Now!</a>
-										</td>
-									</tr>
-									<tr>
 										<th scope="col" style="width:35%">Item</th>
 										<th scope="col" style="width:15%">Price</th>
 									</tr>
 								</thead>
 								<tbody>
 								<?php foreach($allData as $key => $value){
-								if( $value->stockinhand<=0){
 								?>
 								<tr class="template">
 									<td><?=$value->name?></td>
 									<td><?=$value->price?></td>
 								</tr>
-								<?php } }?>
+								<?php }?>
 								</tbody>
 							</table>
 							<div class="container-login100-form-btn">
