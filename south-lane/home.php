@@ -123,6 +123,24 @@ include './header.php'; ?>
                             </div>
                         </a>
                     </div>
+                    <div class="col-lg-4 feature_col">
+                        <a href="./add-quote.php">
+                            <div class="feature text-center trans_400">
+                                <div class="feature_icon"><img class="section-icon" src="./assets/images/create-1.png" alt=""></div>
+                                <h3 class="feature_title">Create Quotes</h3>
+                                <p>Create a new quote only when the client requests one — do not use it for billing purposes.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 feature_col">
+                        <a href="./view-quotes.php">
+                            <div class="feature text-center trans_400">
+                                <div class="feature_icon"><img class="section-icon" src="./assets/images/read-1.png" alt=""></div>
+                                <h3 class="feature_title">View Quotes</h3>
+                                <p>View all client quote requests here.</p>
+                            </div>
+                        </a>
+                    </div>
                    
                 </div>
             </div>

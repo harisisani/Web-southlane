@@ -6,8 +6,8 @@
             $user="u270102017_blitz";
             $password='Programmer@123';
             // $db_name="app_southlane";
-            // $user="root";
-            // $password='';
+            $user="root";
+            $password='';
             try{
                 $connection=new PDO("mysql:host=".$host.";dbname=".$db_name,$user,$password);
             }

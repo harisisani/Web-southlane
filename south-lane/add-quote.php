@@ -4,7 +4,7 @@ include './header.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Receipt</title>
+	<title>Quotes</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
@@ -122,6 +122,27 @@ include './header.php';
 
 	curl_close($curl);
 	$allExtraData=json_decode($response);
+
+	$curl = curl_init();
+
+	curl_setopt_array($curl, array(
+	CURLOPT_URL => $_SERVER['SERVER_NAME'].'/south-lane/api/products/read.php',
+	CURLOPT_RETURNTRANSFER => true,
+	CURLOPT_ENCODING => '',
+	CURLOPT_MAXREDIRS => 10,
+	CURLOPT_TIMEOUT => 0,
+	CURLOPT_FOLLOWLOCATION => true,
+	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+	CURLOPT_CUSTOMREQUEST => 'GET',
+	CURLOPT_HTTPHEADER => array(
+		'Cookie: PHPSESSID=6tnki7omhgrjkvoc844tc8ji4m'
+	),
+	));
+	
+	$response = curl_exec($curl);
+	
+	curl_close($curl);
+	$allStockData=json_decode($response);
 
 ?>
 <?php
@@ -248,15 +269,15 @@ include './header.php';
 		});
 		nextForm(0);
 		}
-		else if($('Select[name="paymentmode"]').val()=="0"){
-		Swal.fire({
-			icon: 'error',
-			title: 'Oops...',
-			text: 'Payment Mode is Mandatory (*)',
-			footer: '<a href="">Why do I have this issue?</a>'
-		});
-		tabReceipt('paymentmode');
-		}
+		// else if($('Select[name="paymentmode"]').val()=="0"){
+		// Swal.fire({
+		// 	icon: 'error',
+		// 	title: 'Oops...',
+		// 	text: 'Payment Mode is Mandatory (*)',
+		// 	footer: '<a href="">Why do I have this issue?</a>'
+		// });
+		// tabReceipt('paymentmode');
+		// }
 		else{
 			completeReceipt="<table style='width:100%; margin:0 auto;color:auto'>";
 			completeReceipt+=
@@ -267,6 +288,7 @@ include './header.php';
 			completeReceipt+=($('Select[name="paymentmode"]').val()!="0" && $('Select[name="checkPaymentMode"]').val()!="no")? '<tr><td>Payment Mode</td><td>: '+$('Select[name="paymentmode"]').val()+"</td></tr>" : "";
 			completeReceipt+=($('input[name="procedures_with_amount_print"]').val()!="")? ""+$('input[name="procedures_with_amount_print"]').val()+"" : "";
 			completeReceipt+="</table>";
+			completeReceipt+="<p style='color:red'>**Please note this is just for Quotation, use the billing section for normal bills**</p>";
 			Swal.fire({
 				title: 'Do you wish to save the below details?',
 				html: completeReceipt,
@@ -355,7 +377,7 @@ include './header.php';
 	function saveBill()
 	{
 		var settings = {
-						"url": "./api/billing/create.php",
+						"url": "./api/quotes/create.php",
 						"method": "POST",
 						"timeout": 0,
 						"headers": {
@@ -418,7 +440,7 @@ include './header.php';
 								print_receipt: printReceipt,
 							}
 							var settings = {
-								"url": "./api/billing/savereceipt.php?id="+invoiceId,
+								"url": "./api/quotes/savereceipt.php?id="+invoiceId,
 								"method": "POST",
 								"timeout": 0,
 								"headers": {
@@ -588,7 +610,7 @@ include './header.php';
 					"data": JSON.stringify({
 						"receiver_email": ""+$('#emailText').val(),
 						"receiver_name": ""+name,
-						"subject": "Thank you for the Payment",
+						"subject": "Thank you visiting!",
 						"body": "<div style='color:black !important; padding:25px; width:400px !important;background-image: url(https://southlaneanimalhospital.com/south-lane/assets/emailimages/v2/bg.jpg); background-repeat: no-repeat; background-size: cover;'><img style='width:400px;' src='https://southlaneanimalhospital.com/south-lane/assets/emailimages/v2/header.jpg'>"+completeReceipt+"</div><div style='padding:0px !important;'><img style='width:450px !important;' src='https://southlaneanimalhospital.com/south-lane/assets/emailimages/v2/footer.jpg'></div></div>"
 					}),
 					};
@@ -661,6 +683,49 @@ include './header.php';
 		});
 	}
 
+	function searchStockProducts() {
+		var searchTerm = $('#searchInputStockProducts').val().toLowerCase(); // Get the search term and convert it to lowercase
+
+		$('#stockProductsTable tbody tr').each(function() {
+			var rowMatch = false; // Initialize a flag to check if the row matches
+
+			// Loop through all text fields in the row
+			$(this).find('input[type="text"]').each(function() {
+				if ($(this).val().toLowerCase().indexOf(searchTerm) !== -1) {
+					rowMatch = true; // Set the flag if any field matches
+					return false; // Break out of the loop
+				}
+			});
+
+			if (rowMatch) {
+				$(this).show(); // Show the row if any field matches the search term
+			} else {
+				$(this).hide(); // Hide the row if no fields match
+			}
+		});
+	}
+
+	function searchOutStockProducts() {
+		var searchTerm = $('#searchInputOutStockProducts').val().toLowerCase(); // Get the search term and convert it to lowercase
+
+		$('#OutstockProductsTable tbody tr').each(function() {
+			var rowMatch = false; // Initialize a flag to check if the row matches
+
+			// Loop through all text fields in the row
+			$(this).find('input[type="text"]').each(function() {
+				if ($(this).val().toLowerCase().indexOf(searchTerm) !== -1) {
+					rowMatch = true; // Set the flag if any field matches
+					return false; // Break out of the loop
+				}
+			});
+
+			if (rowMatch) {
+				$(this).show(); // Show the row if any field matches the search term
+			} else {
+				$(this).hide(); // Hide the row if no fields match
+			}
+		});
+	}
 	
 </script>
 
@@ -668,8 +733,9 @@ include './header.php';
 	<div class="row">
 		<div class="col">
 			<div class="section_title_container text-center">
-				<h2 class="section_title">Create a Receipt</h2>
+				<h2 class="section_title">Create a Quote Request</h2>
 				<p>Field with * are required</p>
+				<p style="color:red;">Please use this page to submit quote requests only. For billing, use the designated billing section.</p>
 			</div>
 		</div>
 
@@ -686,7 +752,7 @@ include './header.php';
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <button class="nav-link disabled active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Patient Details</button>
-                        <button class="nav-link disabled" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Billing Details</button>
+                        <button class="nav-link disabled" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Quote Request Details</button>
                         <button class="nav-link disabled" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Save & Print</button>
                     </div>
                 </nav>
@@ -747,8 +813,10 @@ include './header.php';
 
 							<button type="button" onclick="tabReceipt('procedures');" class="btn btn-success">Procedures</button>
 							<button type="button" onclick="tabReceipt('extras');" class="btn btn-success">Extras</button>
+							<button type="button" onclick="tabReceipt('stockProducts');" class="btn btn-success">In Stock Products</button>
+							<button type="button" onclick="tabReceipt('OutofstockProducts');" class="btn btn-success">Out of Stock Product</button>
 							<button type="button" onclick="tabReceipt('breakdown');" class="btn btn-success">Breakdown</button>
-							<button type="button" onclick="tabReceipt('paymentmode');" class="btn btn-success">Payment Mode</button>
+							<button style="display:none;" type="button" onclick="tabReceipt('paymentmode');" class="btn btn-success">Payment Mode</button>
 							<br>
 							<table style="display:none" class="table tableClass paymentmode">
 								<tr>
@@ -781,14 +849,14 @@ include './header.php';
 										margin: 10px;
 									}
 								</style>
-								<tr>
+								<tr >
 									<td style="float: right;">
 										<span class="circle-badge">Send SMS After Bill Creation?</span>
 									</td>
 									<td>
 										<select class="form-control" name="sendsms">
-											<option selected value="yes">Yes</option>
-											<option value="no">No</option>
+											<option value="yes">Yes</option>
+											<option selected value="no">No</option>
 										</select>
 									</td>
 								</tr></td>
@@ -849,7 +917,7 @@ include './header.php';
 											</select>
 										</td>
 										<td>
-											<input type="text" value="Sub-Total"  class="form-control text" placeholder="Sub-Total">
+											<input type="text" value="Estimated Sub-Total"  class="form-control text" placeholder="Sub-Total">
 										</td>
 										<td>
 											<input name="extra_charges" readonly="" onblur="updateTotal();" type="text" value="0" class="form-control amount" placeholder="Amount">
@@ -863,7 +931,7 @@ include './header.php';
 											</select>
 										</td>
 										<td>
-											<input type="text" value="Discount"  class="form-control text" placeholder="Discount">
+											<input type="text" value="Estimated Discount"  class="form-control text" placeholder="Discount">
 										</td>
 										<td>
 											<input name="discount" onblur="updateTotal();" type="text" value="0" class="form-control amount" placeholder="Amount">
@@ -895,13 +963,13 @@ include './header.php';
 											<input type="hidden" name="procedures_with_amount_print">
 										</td>
 										<td>
-											<input type="text" value="Grand Total" class="form-control text" placeholder="Grand Total">
+											<input type="text" value="Estimated Grand Total" class="form-control text" placeholder="Grand Total">
 										</td>
 										<td>
 											<input name="total_amount" readonly="" type="text" readonly="" value="0" class="form-control amount" placeholder="Amount">
 										</td>
 									</tr>
-									<tr class="templateTwo">
+									<!-- <tr class="templateTwo">
 										<td>
 											<select onchange="updateTotal();" class="show_receipt form-control">
 												<option value="yes">Show</option>
@@ -928,7 +996,7 @@ include './header.php';
 										<td>
 											<input name="amountToBePaid" onblur="updateTotal();" type="text" value="0" class="form-control amount" placeholder="Amount">
 										</td>
-									</tr>
+									</tr> -->
 								</tbody>
 							</table>
 							<table id="ExtrasTable" style="display:none" class="table tableClass extras">
@@ -968,6 +1036,106 @@ include './header.php';
 									<td><input type="text" readonly=""  value="<?= floatval($value->extra_amount)? $value->extra_amount : 0  ?>" class="form-control amount" placeholder="Amount"></td>
 								</tr>
 								<?php }?>
+								</tbody>
+							</table>
+							<table id="stockProductsTable" class="table tableClass stockProducts">
+								<thead>
+									<tr>
+										<td colspan=6>
+											<input id="searchInputStockProducts" onkeyup="searchStockProducts()" placeholder="Search Stock Products" class="form-control" type="text">
+										</td>
+									</tr>
+									<tr>
+										<th scope="col" style="width:5%">Inc./Exc.</th>
+										<th scope="col" style="width:15%">Receipt</th>
+										<th scope="col" style="width:35%">Item</th>
+										<th scope="col" style="width:15%">Unit Price</th>
+										<th scope="col" style="width:15%">Quantity</th>
+										<th scope="col" style="width:15%">Total Price</th>
+									</tr>
+								</thead>
+								<tbody>
+								<?php foreach($allStockData as $key => $value){
+								if( $value->stockinhand>0){
+								?>
+								<tr class="template">
+									<td>
+										<div class="form-check">
+											<input class="form-check-input position-static" onclick="setHiddenValue(this);" type="checkbox" value="option1" aria-label="...">
+											<input class="valueBox" type="hidden" value="no">
+										</div>
+									</td>
+									<td>
+										<select onchange="updateTotal();" class="show_receipt form-control">
+											<option value="yes">Show</option>
+											<option value="no">Hide</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" value="<?=$value->name?>" class="form-control text" placeholder="Label">
+										<input type="hidden" value="<?=$value->vendor_id?>" class="form-control vendorId" placeholder="Label">
+										<input type="hidden" value="<?=$value->id?>" class="form-control id" placeholder="Label">
+										<input type="hidden" value="<?=$value->cost?>" class="form-control cost" placeholder="Label">
+										<input type="hidden" value="<?=$value->stockinhand?>" class="form-control stockinhand" placeholder="Label">
+										<input type="hidden" value="<?= floatval($value->cost)? $value->cost : 0  ?>" class="form-control totalcost" placeholder="Label">
+									</td>
+									<td><input type="text" onblur="validateInput(this);" value="<?= floatval($value->price)? $value->price : 0  ?>" class="form-control unit" placeholder="Unit Price"></td>
+									<td><input type="text" onblur="validateInput(this);" value="1" class="form-control qty" placeholder="Quantity">
+									Available in Stock: <?=$value->stockinhand?>
+									</td>
+									<td><input type="text" readonly=""  value="<?= floatval($value->price)? $value->price : 0  ?>" class="form-control amount" placeholder="Amount"></td>
+								</tr>
+								<?php }}?>
+								</tbody>
+							</table>
+							<table id="OutstockProductsTable" class="table tableClass OutofstockProducts">
+								<thead>
+									<tr>
+										<td colspan=6>
+											<input id="searchInputOutStockProducts" onkeyup="searchOutStockProducts()" placeholder="Search Products" class="form-control" type="text">
+										</td>
+									</tr>
+									<tr>
+										<th scope="col" style="width:5%">Inc./Exc.</th>
+										<th scope="col" style="width:15%">Receipt</th>
+										<th scope="col" style="width:35%">Item</th>
+										<th scope="col" style="width:15%">Unit Price</th>
+										<th scope="col" style="width:15%">Quantity</th>
+										<th scope="col" style="width:15%">Total Price</th>
+									</tr>
+								</thead>
+								<tbody>
+								<?php foreach($allStockData as $key => $value){
+								if( $value->stockinhand<=0){
+								?>
+								<tr class="template">
+									<td>
+										<div class="form-check">
+											<input class="form-check-input position-static" onclick="setHiddenValue(this);" type="checkbox" value="option1" aria-label="...">
+											<input class="valueBox" type="hidden" value="no">
+										</div>
+									</td>
+									<td>
+										<select onchange="updateTotal();" class="show_receipt form-control">
+											<option value="yes">Show</option>
+											<option value="no">Hide</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" value="<?=$value->name?>" class="form-control text" placeholder="Label">
+										<input type="hidden" value="<?=$value->vendor_id?>" class="form-control vendorId" placeholder="Label">
+										<input type="hidden" value="<?=$value->id?>" class="form-control id" placeholder="Label">
+										<input type="hidden" value="<?=$value->cost?>" class="form-control cost" placeholder="Label">
+										<input type="hidden" value="<?=$value->stockinhand?>" class="form-control stockinhand" placeholder="Label">
+										<input type="hidden" value="<?= floatval($value->cost)? $value->cost : 0  ?>" class="form-control totalcost" placeholder="Label">
+									</td>
+									<td><input type="text" onblur="validateInput(this);" value="<?= floatval($value->price)? $value->price : 0  ?>" class="form-control unit" placeholder="Unit Price"></td>
+									<td><input type="text" onblur="validateInput(this);" value="1" class="form-control qty" placeholder="Quantity">
+									Available in Stock: <?=$value->stockinhand?>
+									</td>
+									<td><input type="text" readonly=""  value="<?= floatval($value->price)? $value->price : 0  ?>" class="form-control amount" placeholder="Amount"></td>
+								</tr>
+								<?php }}?>
 								</tbody>
 							</table>
 							<div class="container-login100-form-btn">
@@ -1020,9 +1188,9 @@ include './header.php';
 <div style="display:none;" class="printCSS" >
         <div style="background:#F2F2F2;" class="ticket">
             <img src="./assets/images/logo.jpg" alt="Logo">
-            <p style="text-align:center" class="centered">PAYMENT INVOICE</p>
+            <p style="text-align:center" class="centered">Quotation Request</p>
 			<p class="centered printContent"></p>
-            <p style="text-align:center" class="centered">Thanks for the payment!
+            <p style="text-align:center" class="centered">Thanks for visiting!
         </div>
 </div>
 
