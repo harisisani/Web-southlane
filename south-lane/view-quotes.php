@@ -227,7 +227,8 @@ include './header.php'; ?>
                 <img src="./assets/images/logo.jpg" alt="Logo">
                 <p style="text-align:center" class="centered">Quotation Request</p>
                 <p class="centered printContent"></p>
-                <p style="text-align:center" class="centered">Thanks for visiting!
+                <p style="text-align:center" class="centered">Thanks for visiting!</p>
+                <p class="centered">**This is an estimated quote. The final amount may vary at the time of billing.**</p>
             </div>
     </div>
 
