@@ -849,17 +849,6 @@ include './header.php';
 										margin: 10px;
 									}
 								</style>
-								<tr >
-									<td style="float: right;">
-										<span class="circle-badge">Send SMS After Bill Creation?</span>
-									</td>
-									<td>
-										<select class="form-control" name="sendsms">
-											<option value="yes">Yes</option>
-											<option selected value="no">No</option>
-										</select>
-									</td>
-								</tr></td>
 							</table>
 							<table id="proceduresTable" class="table tableClass procedures">
 								<thead>
@@ -997,6 +986,17 @@ include './header.php';
 											<input name="amountToBePaid" onblur="updateTotal();" type="text" value="0" class="form-control amount" placeholder="Amount">
 										</td>
 									</tr> -->
+									<tr>
+										<td style="float: right;">
+											<span class="circle-badge">Send SMS After Bill Creation?</span>
+										</td>
+										<td>
+											<select class="form-control" name="sendsms">
+												<option selected value="yes">Yes</option>
+												<option value="no">No</option>
+											</select>
+										</td>
+									</tr>
 								</tbody>
 							</table>
 							<table id="ExtrasTable" style="display:none" class="table tableClass extras">

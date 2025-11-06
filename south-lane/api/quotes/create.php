@@ -48,9 +48,9 @@ if($_POST){
         user_name='".$_SESSION["user_name"]."'";
         $stmt = $connection->prepare($query);
         $sendSms=true;
-        // if($_POST['sendsms']=="no"){
-        //     $sendSms=false;
-        // }
+        if($_POST['sendsms']=="no"){
+            $sendSms=false;
+        }
         if($stmt->execute()){
             if($sendSms){
                 $sms_text="Greetings ".$_POST['ownername']."!\n";
