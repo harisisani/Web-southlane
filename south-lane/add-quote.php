@@ -987,7 +987,7 @@ include './header.php';
 										</td>
 									</tr> -->
 									<tr>
-										<td colspan="2" style="float: right;">
+										<td colspan="2" style="text-align: right;    padding: 20px;">
 											<span class="circle-badge">Send SMS After Bill Creation?</span>
 										</td>
 										<td>
