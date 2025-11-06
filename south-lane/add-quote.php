@@ -988,7 +988,7 @@ include './header.php';
 									</tr> -->
 									<tr>
 										<td colspan="2" style="text-align: right;    padding: 20px;">
-											<span class="circle-badge">Send SMS After Bill Creation?</span>
+											<span class="circle-badge">Send SMS After Quote Creation?</span>
 										</td>
 										<td>
 											<select class="form-control" name="sendsms">
